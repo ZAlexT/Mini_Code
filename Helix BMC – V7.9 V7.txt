@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Helix BMC – V7.9 V7
+// @name         Helix BMC – V7.9 V7 Test Remove Dups
 // @namespace    http://tampermonkey.net/
 // @version      V7.9 V7
 // @description  ATOM | Colorize + Blinks + ReCheck 2' + ReColorize
@@ -83,7 +83,7 @@
         { texto: 'ALEJANDRO LOZANO MORALES', 							color: 'Orange' },
         { texto: 'OVIDIO PARRON MARTINEZ', 								color: 'Grey' },
 		{ texto: 'MARIA PILAR CARRILLO SENDER', 						color: 'Grey' },
-        { texto: 'JS', 						color: 'Grey' },
+        { texto: 'JOSIAS', 						color: 'Grey' },
 
 	//-------------------------------------------------------------
     // 						Technicians T-Systems
@@ -209,15 +209,12 @@
                     return `<span class="${clase}" style="${estilos}">${match}</span>`;
                 }
 
-                // Si es un estado que parpadea (Assigned / In Progress / 2-High)
+                // Si es estado con parpadeo
                 if (CONFIG.parpadeoEstados && (
                     r.texto.toLowerCase() === "assigned" ||
-                    r.texto.toLowerCase() === "in progress" ||
-                    r.texto.toLowerCase() === "work in progress" ||
-                    r.texto.toLowerCase() === "implementation in progress" ||
-                    r.texto.toLowerCase() === "2-high"
+                    r.texto.toLowerCase() === "2-high" ||
+                    r.texto.toLowerCase() === "in progress"
                 )) {
-                    // aplicar animación inline para el estado en la celda (inmediato)
                     estilos += ` animation: helixBlink 1.2s infinite;`;
                 }
 
