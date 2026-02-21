@@ -83,7 +83,7 @@
         { texto: 'ALEJANDRO LOZANO MORALES', 							color: 'Orange' },
         { texto: 'OVIDIO PARRON MARTINEZ', 								color: 'Grey' },
 		{ texto: 'MARIA PILAR CARRILLO SENDER', 						color: 'Grey' },
-        { texto: 'JOSE ANTONIO ERAUS IGLESIAS', 						color: 'Grey' },
+        { texto: 'JAS', 						color: 'Grey' },
 
 	//-------------------------------------------------------------
     // 						Technicians T-Systems
