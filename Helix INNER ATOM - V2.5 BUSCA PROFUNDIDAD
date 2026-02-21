@@ -1,0 +1,85 @@
+// ==UserScript==
+// @name         Helix INNER ATOM - V2.5 BUSCA PROFUNDIDAD
+// @namespace    http://tampermonkey.net/
+// @version      2.5
+// @description  Busca texto en cualquier nivel de anidamiento
+// @match        https://atomgencat.onbmc.com/*
+// @run-at       document-idle
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    console.log('🟢 [INNER ATOM V2.5] Busca texto en profundidad');
+
+    function obtenerTextoReal(elemento) {
+        // Busca texto en el elemento o cualquiera de sus descendientes
+        return elemento.textContent ? elemento.textContent.trim() :
+               elemento.querySelector('span, div')?.textContent?.trim() || '';
+    }
+
+    function colorearProfundo() {
+        const headers = document.querySelector('.BaseTableColHeaders');
+        if (!headers) return false;
+
+        console.log('🎉 HEADERS OK');
+
+        const contenedor = headers.closest('.BaseTableOuter, .TableInner') || headers.parentElement;
+        const filas = contenedor.querySelectorAll('div[draggable="1"], [class*="Row"], div[class*="base-table-row"]');
+
+        if (filas.length === 0) return false;
+
+        console.log(`📊 ${filas.length} filas`);
+
+        let coloreados = 0;
+        filas.forEach((fila, idx) => {
+            const celdasRaw = Array.from(fila.children);
+
+            // Para cada columna clave [0,2,3,11]
+            [0,2,3,11].forEach(colIdx => {
+                if (celdasRaw[colIdx]) {
+                    const celdaRaw = celdasRaw[colIdx];
+                    const textoReal = obtenerTextoReal(celdaRaw);
+
+                    if (textoReal) {
+                        console.log(`🔍 Fila ${idx} Col ${colIdx}: "${textoReal}"`);
+
+                        // REGAS SIMPLIFICADAS para probar
+                        if (colIdx === 3 && ['1','2','3','4','5'].includes(textoReal)) {
+                            celdaRaw.style.color = 'red';
+                            coloreados++;
+                            console.log(`✅ FILES ${idx}: "${textoReal}" -> ROJO`);
+                        }
+                        if (colIdx === 0 && textoReal.includes('customer')) {
+                            celdaRaw.style.color = 'red';
+                            coloreados++;
+                            console.log(`✅ TYPE ${idx}: "${textoReal}" -> ROJO`);
+                        }
+                        if (colIdx === 11 && textoReal.includes('467259')) {
+                            celdaRaw.style.color = 'orange';
+                            coloreados++;
+                            console.log(`✅ SUBMITTER ${idx}: "${textoReal}" -> NARANJA`);
+                        }
+                    }
+                }
+            });
+        });
+
+        console.log(`🎉 ✅ ${coloreados} celdas coloreadas`);
+        return coloreados > 0;
+    }
+
+    // Reintentar cada 2s
+    let intentos = 0;
+    const interval = setInterval(() => {
+        intentos++;
+        if (colorearProfundo()) {
+            clearInterval(interval);
+        }
+        if (intentos > 15) {
+            clearInterval(interval);
+            console.log('😞 Fin intentos');
+        }
+    }, 2000);
+})();
