@@ -1,0 +1,130 @@
+// ==UserScript==
+// @name         Helix BMC – V7.9 V9 Pastilla Fondo Solo
+// @namespace    http://tampermonkey.net/
+// @version      7.9
+// @description  ATOM | Colorize + Blinks + ReCheck 2' + ReColorize || Nuevo Parpadeo
+// @match        https://atomgencat.onbmc.com/*
+// @run-at       document-end
+// @grant        none
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    //-------------------------------------------------------------
+    // CONFIGURACIÓN
+    //-------------------------------------------------------------
+    const CONFIG = {
+        parpadeoEstados: true,
+        fondoEstados: true
+    };
+
+    //-------------------------------------------------------------
+    // ANIMACIÓN BLINK
+    //-------------------------------------------------------------
+    const style = document.createElement("style");
+    style.textContent = `
+        @keyframes helixBlink {
+            0%   { opacity: 1; }
+            50%  { opacity: 0.25; }
+            100% { opacity: 1; }
+        }
+        .Lx-blink {
+            animation: helixBlink 1.2s infinite;
+        }
+    `;
+    document.head.appendChild(style);
+
+    //-------------------------------------------------------------
+    // REGLAS DE COLOREADO
+    //-------------------------------------------------------------
+    const RESALTADOS = [
+        { texto: "assigned", color: "#ffffff", fondo: "#0078d4" },
+        { texto: "2-high", color: "#ffffff", fondo: "#d13438" },
+        { texto: "in progress", color: "#ffffff", fondo: "#ff8c00" },
+        { texto: "alejandro lozano morales", color: "#6e7bf0" }
+    ];
+
+    //-------------------------------------------------------------
+    // COLOREAR TABLA
+    //-------------------------------------------------------------
+    function colorearTabla() {
+
+        const tabla = document.querySelector("table.BaseTable");
+        if (!tabla) return;
+
+        tabla.querySelectorAll("tbody tr").forEach(tr => {
+
+            const textoFila = (tr.textContent || "")
+                .toLowerCase()
+                .replace(/\s+/g, " ");
+
+            const tieneEstado =
+                textoFila.includes("assigned") ||
+                textoFila.includes("in progress");
+
+            tr.querySelectorAll("td").forEach(td => {
+
+                const texto = td.textContent.trim();
+
+                RESALTADOS.forEach(r => {
+
+                    if (!texto.toLowerCase().includes(r.texto)) return;
+
+                    let estilos = `color:${r.color};`;
+
+                    if (CONFIG.fondoEstados && r.fondo) {
+                        estilos += ` background:${r.fondo}; padding:1px 3px; border-radius:3px;`;
+                    }
+
+                    const estado = r.texto.toLowerCase();
+
+                    if (
+                        CONFIG.parpadeoEstados &&
+                        (
+                            estado === "assigned" ||
+                            estado === "2-high" ||
+                            estado.includes("in progress")
+                        )
+                    ) {
+                        estilos += ` animation: helixBlink 1.2s infinite;`;
+                    }
+
+                    // Alejandro blink condicional
+                    if (r.texto.toLowerCase() === "alejandro lozano morales") {
+                        const clase = (CONFIG.parpadeoEstados && tieneEstado)
+                            ? "Lx-blink"
+                            : "";
+                        td.innerHTML = `<span class="${clase}" style="${estilos}">${texto}</span>`;
+                    } else {
+                        td.innerHTML = `<span style="${estilos}">${texto}</span>`;
+                    }
+
+                });
+
+            });
+
+        });
+    }
+
+    //-------------------------------------------------------------
+    // RESPALDO PARPADEO Lx (cada 2 minutos)
+    //-------------------------------------------------------------
+    function actualizarParpadeoLX_respaldo() {
+        colorearTabla();
+    }
+
+    //-------------------------------------------------------------
+    // AUTO-RECOLOR GENERAL + RESPALDO (2 min)
+    //-------------------------------------------------------------
+    setInterval(colorearTabla, 120000);
+    setInterval(actualizarParpadeoLX_respaldo, 120000);
+
+    //-------------------------------------------------------------
+    // INICIO
+    //-------------------------------------------------------------
+    setTimeout(() => {
+        colorearTabla();
+    }, 1200);
+
+})();
