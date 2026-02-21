@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         ARC - States Colorize V1.9 - Extended Blocks
+// @name         01. ARC Colorizer | V1.9 - Colorear Textos
 // @namespace    http://tampermonkey.net/
 // @version      1.9
 // @description  Colorear Estados en ARC | Estavos VBox + Detalles + Órgano de Prueba + Tipo + SI
@@ -45,21 +45,35 @@
 		//-------------------------------------------------------------
 		//  						VBox States
 		//-------------------------------------------------------------
-        'Ocupada Grabando':              { color: 'green', bold: false, blink: true },
-        'Ocupada Gravant':               { color: 'green', bold: false, blink: true },
-        'Ocupada parada estado erroneo': { color: 'red',   bold: false },
+        'Ocupada Grabando':              { color: 'green',		bold: false, blink: true },
+        'Ocupada Gravant':               { color: 'green',		bold: false, blink: true },
+        'Ocupada parada estado erroneo': { color: 'red',		bold: false },
         'Ocupada parada':                { color: 'orange' },
 
         //-------------------------------------------------------------
-        //  						Session States
+        //  					  Session States
         //-------------------------------------------------------------
         'En Hora':        				{ color: 'orange'},
-        'En Curso':       				{ color: 'red', bold: true, blink: true, glow: false }, //  Green Lime #09ff09 | 🔥 ahora Glow en vez de Blink
+        'En Curso':       				{ color: 'red', 		bold: true, blink: true, glow: false }, //  Green Lime #09ff09 | 🔥 ahora Glow en vez de Blink
         'Finalizada':     				{ color: 'SpringGreen', bold: false },
         'Suspendida':     				{ color: 'blue' },
-        'Anulada':        				{ color: 'SandyBrown',   bold: false },
+        'Anulada':        				{ color: 'SandyBrown',	bold: false },
         'Retrasada':   		   			{ color: 'violet' },
-        'No celebrada':   				{ color: 'violet' }
+        'No celebrada':   				{ color: 'violet' },
+
+        //-------------------------------------------------------------
+        //  				VBox Senyal Institucional
+        //-------------------------------------------------------------
+        'En Hora':        				{ color: 'orange'},
+        'En Hora':        				{ color: 'orange'},
+        'En Hora':        				{ color: 'orange'},
+        'En Hora':        				{ color: 'orange'},
+        'En Hora':        				{ color: 'orange'},
+        'En Hora':        				{ color: 'orange'},
+        'En Hora':        				{ color: 'orange'},
+        'En Hora':        				{ color: 'orange'},
+        'En Hora':        				{ color: 'orange'}
+
     };
 
     //-------------------------------------------------------------
@@ -69,7 +83,7 @@
     const bloqueOrgano = {
 
         'Órgano de Prueba': {
-            selector: '.titIdenWeb_A, .titIdenWeb_B', color: 'orange', bold: false },
+            selector: '.titIdenWeb_A, .titIdenWeb_B', 	color: 'orange', bold: false },
 
         'Apremio': {
             selector: '.txt2IdenWeb_A, .txt2IdenWeb_B', color: 'green', bold: true, glow: false },
@@ -78,13 +92,13 @@
             selector: '.txt2IdenWeb_A, .txt2IdenWeb_B', color: 'green', bold: false, glow: false },
 
 		'Audiencia Previa': {
-			selector: '.texto1', color: 'blue', bold: false, glow: true },
+			selector: '.texto1', 						color: 'blue', bold: false, glow: true },
 
 
 
         // 👉 03 - Añadir aquí futuras entradas colgantes
         // 'Texto Nuevo': {
-		//     selector: '.txtXIdenWeb_B',  //     color: '...',    //     bold: true    // }
+		//     selector: '.txtXIdenWeb_B',  //     		color: '...',    //     bold: true    // }
 
     };
 
