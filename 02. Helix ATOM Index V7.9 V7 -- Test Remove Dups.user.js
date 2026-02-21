@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         02. Helix ATOM Index – V7.9 V7 Test Remove Dups
+// @name         02. Helix ATOM Index | V7.9 V7 - Test Remove Dups
 // @namespace    http://tampermonkey.net/
 // @version      V7.9 V7
 // @description  ATOM | Colorize + Blinks + ReCheck 2' + ReColorize + Optimized
@@ -83,7 +83,9 @@
         { texto: 'ALEJANDRO LOZANO MORALES', 							color: 'Orange' },
         { texto: 'OVIDIO PARRON MARTINEZ', 								color: 'Grey' },
 		{ texto: 'MARIA PILAR CARRILLO SENDER', 						color: 'Grey' },
-        { texto: 'JAS', 						color: 'Grey' },
+        { texto: 'Next Text', 						color: 'Grey' },
+        { texto: 'Next Text', 						color: 'Grey' },
+        { texto: 'Next Text', 						color: 'Grey' },
 
 	//-------------------------------------------------------------
     // 						Technicians T-Systems
@@ -154,10 +156,10 @@
 
         { texto: 'Work Order',  										color: 'Violet' },
         { texto: 'Incident', 											color: 'Grey' },
-        { texto: 'WO0', 												color: 'Violet' },
+        { texto: 'WO0000', 												color: 'Violet' },
         { texto: 'TAS000', 												color: 'Violet' },
         { texto: 'CRQ000', 												color: 'Violet' },
-        { texto: 'INC000', 												color: '#6e7bf0' },
+        { texto: 'INC0000', 											color: '#6e7bf0' },
 
         { texto: 'Change', 												color: 'Violet' },
         { texto: 'Task', 												color: 'Violet' }
