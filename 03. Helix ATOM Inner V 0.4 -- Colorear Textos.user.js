@@ -44,11 +44,13 @@
     };
 
     const submitterColors = {
-        "46725918S": 				"orange",
-        "44795918S": 				"yellow",
-        "46000918S": 				"yellow",
-        "AR_ESCALATOR": 			"orange",
-        "AM09_23 - DATA": 			"brown"
+        "46725918S": 					"orange",
+        "DNI / NIF de Juan Luis - ET MICasaTeléfono": 				"yellow",
+        "DNI / NIF Aquí": 				"yellow",
+        "Remedy Application Service": 	"grey",
+        "AR_ESCALATOR": 				"grey",
+        "integracioitsm_AM09_23": 		"brown",
+        "AM09_23 - DATA": 				"brown"
     };
 
     const filesColors = {
