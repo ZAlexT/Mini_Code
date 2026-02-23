@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         03. Helix ATOM Inner | V 0.5 - Colorear Textos
+// @name         03. ATOM Inner | V 0.5 - Colorear Textos
 // @namespace    http://tampermonkey.net/
 // @version      0.5
 // @description  Coloreado dinámico de texto definido en columnas de Inner ATOM (INCs)
@@ -118,3 +118,4 @@
     observer.observe(document.body, { childList:true, subtree:true });
 
 })();
+
