@@ -9,6 +9,96 @@
 // @grant        none
 // ==/UserScript==
 
+
+/*
+==========================================================
+  01. ARC Colorizer | V1.9 - Colorear Textos
+==========================================================
+
+DESCRIPCIÓN:
+Este UserScript colorea y anima textos dentro del entorno ARC.
+Actúa sobre:
+
+- Estados generales (VBox + Session)
+- Señal institucional VBox
+- Bloque específico "Órgano de Prueba"
+- Tipos concretos dentro del bloque
+- Elementos dinámicos recargados vía MutationObserver
+
+Permite aplicar:
+- Color
+- Negrita
+- Parpadeo (blink)
+- Efecto Glow
+
+El script está preparado para ampliaciones futuras mediante
+objetos configurables y selectores específicos.
+
+----------------------------------------------------------
+ÍNDICE DE BLOQUES Y ESTRUCTURA INTERNA
+----------------------------------------------------------
+
+1. ESTILOS Y ANIMACIONES
+   - @keyframes arcBlink
+   - @keyframes arcGlow
+   - Clases:
+       .arc-blink
+       .arc-glow
+
+2. ESTADOS GENERALES
+   - VBox States
+   - Session States
+   - Señal Institucional
+   - Configuración por objeto:
+       { color, bold, blink, glow }
+
+3. BLOQUE ÓRGANO DE PRUEBA (ESPECÍFICO)
+   - Configuración por texto clave
+   - Selector CSS asociado
+   - Propiedades:
+       { selector, color, bold, glow }
+   - Preparado para ampliar con nuevas entradas
+
+4. NORMALIZADOR
+   - Normalizar(texto)
+   - Conversión a minúsculas
+   - Limpieza de espacios
+   - Comparación robusta mediante includes()
+
+5. PROCESADO DE ESTADOS
+   - QuerySelector múltiple:
+       zona-lineadatos
+       celdaRegistro
+       celdaRegistroLinea
+       ARC_textoValor
+   - Aplicación dinámica de estilos
+   - Toggle inteligente de clases animadas
+
+6. PROCESADO BLOQUE ÓRGANO
+   - Búsqueda por selector específico
+   - Aplicación selectiva de color y efectos
+   - No interfiere con estados generales
+
+7. OBSERVER DINÁMICO
+   - MutationObserver sobre document.body
+   - Reaplicación automática tras recargas internas
+   - Debounce con setTimeout (250ms)
+
+----------------------------------------------------------
+NOTAS GENERALES
+----------------------------------------------------------
+
+- La coincidencia se realiza por texto parcial (includes).
+- El sistema está preparado para:
+    - Añadir nuevos estados fácilmente.
+    - Añadir nuevos bloques específicos.
+    - Separar en el futuro Includes independientes.
+- No modifica estructura DOM, solo estilos.
+- No interfiere con eventos internos de ARC.
+
+==========================================================
+*/
+
 (function() {
     'use strict';
 
