@@ -1,0 +1,516 @@
+// ==UserScript==
+// @name         02. ATOM Index | V7.9 108 - Stable Blink Modes Broken
+// @namespace    http://tampermonkey.net/
+// @version      V7.9 108
+// @description  ATOM | Colorize + Blink Modes FIXED + Tooltip init
+// @match        https://atomgencat.onbmc.com/*
+// @run-at       document-end
+// @grant        none
+// ==/UserScript==
+
+/*
+==========================================================
+  02. Helix ATOM Index | V7.9 108 - Stable Blink Modes
+==========================================================
+
+DESCRIPCIÓN:
+UserScript principal para ATOM (Helix BMC) que:
+
+• Colorea estados, técnicos, grupos, tipos y textos clave.
+• Aplica modos de parpadeo configurables (constante, intermitente, independiente).
+• Gestiona alerta visual en pestaña mediante favicon dinámico.
+• Reengancha automáticamente tras refrescos SPA de Helix.
+• Estiliza de forma estable el tooltip BMC (#artooltip + iframe interno).
+• Funciona independientemente de reglas uBlock (no depende de bloqueo de PNG).
+
+ARQUITECTURA GENERAL:
+
+0. TOOLTIP CORE
+   - injectTooltipStyle() → Fuerza fondo sólido oscuro y elimina imágenes PNG.
+   - Compatible con uBlock activo o desactivado.
+   - Previene transparencias accidentales.
+
+1. CONFIGURACIÓN GENERAL
+   - MODO_PARPADEO:
+       "constante"
+       "intermitente"
+       "independiente"
+   - CONFIG:
+       fondoEstados
+       fondoConBordes
+   - usuariosBlink → Usuarios que activan blink en modo independiente.
+
+2. CSS GLOBAL
+   - Lx-blink / Lx-noblink
+   - Animación helixBlink
+
+3. RESALTADOS
+   - Técnicos FUJI
+   - Técnicos T-Systems
+   - Groups
+   - Common Entries
+   - Status
+   - Types
+   Cada entrada admite:
+       texto, color, fondo (opcional)
+
+4. FECHAS
+   - parseFecha()
+   - coloresFecha según antigüedad
+
+5. COLOREAR CELDA (colorearTD)
+   - Aplica estilos dinámicos
+   - Evita doble procesado
+   - Respeta modo de parpadeo
+   - Integra actualización de favicon y tooltip
+
+6. PROCESAR TABLA (colorearTabla)
+   - Recorre BaseTable
+
+7. INTERMITENCIA CONTROLADA
+   - Reinicia animación cada 45s sin acumulación
+
+8. FAVICON DINÁMICO
+   - Parpadeo rojo si hay "Assigned"
+   - Restauración automática
+
+9. OBSERVER INTELIGENTE
+   - Reenganche automático tras refresh Helix
+   - Debounce optimizado
+
+10. TOOLTIP IFRAME
+   - Elimina imagen SmallTooltip3.png
+   - Fuerza fondo sólido
+   - Ajusta color de texto interno
+   - Se ejecuta al inicio y tras cada refresh
+
+11. REGLAS uBLOCK (Referencia)
+   - Bloqueos visuales opcionales
+   - No crítico para funcionamiento del script
+
+NOTAS:
+- Cada celda procesada se marca con td.dataset.lxProcesado
+- Blink y favicon respetan MODO_PARPADEO
+- Tooltip es autónomo y no depende de filtros externos
+- Compatible con futuras restricciones MV3
+==========================================================
+*/
+
+(function() {
+'use strict';
+
+console.log("[Helix V7.9 108] Iniciado…");
+
+//-------------------------------------------------------------
+// 0.0 ESTILIZAR TOOLTIP BMC (artooltip + divToolTipHtml)
+//-------------------------------------------------------------
+(function injectTooltipStyle() {
+
+    if (document.getElementById("helixTooltipOverride")) return;
+
+    const styleTooltipCustom = document.createElement("style");
+    styleTooltipCustom.id = "helixTooltipOverride";
+
+    styleTooltipCustom.textContent = `
+    #artooltip,
+    #artooltip.divToolTipHtml {
+        background-image: none !important;
+        background: #161e21 !important;
+        background-color: #161e21 !important;
+        color: #ff4500 !important;
+    }
+
+    #artooltip * {
+        background-image: none !important;
+        background: transparent !important;
+        color: #ff4500 !important;
+    }
+
+    #artooltip {
+        border: 1px solid #444 !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.4) !important;
+        border-radius: 4px !important;
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+
+        /* Opcional futuro:
+           Desactiva posibles efectos blur si Helix empieza a usar backdrop */
+        /* backdrop-filter: none !important; */
+    }
+    `;
+
+    document.head.appendChild(styleTooltipCustom);
+
+})();
+
+//-------------------------------------------------------------
+// Inicializar tooltip al cargar la página
+//-------------------------------------------------------------
+estilizarTooltipIframe();
+
+//-------------------------------------------------------------
+// 1. CONFIGURACIÓN GENERAL
+//-------------------------------------------------------------
+
+const MODO_PARPADEO = "independiente";
+
+const CONFIG = {
+    fondoEstados: true,
+    fondoConBordes: false
+};
+
+const usuariosBlink = [
+    "alejandro lozano morales",
+    "juan luis tortola martinez",
+    "sonia fernandez fernandez"
+];
+
+//-------------------------------------------------------------
+// 2. CSS GLOBAL
+//-------------------------------------------------------------
+
+const styleHelix = document.createElement("style");
+styleHelix.textContent = `
+@keyframes helixBlink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.Lx-blink {
+    animation: helixBlink 1.2s ease-in-out 6;
+}
+.Lx-noblink {
+    animation: none !important;
+}
+`;
+document.head.appendChild(styleHelix);
+
+//-------------------------------------------------------------
+// 3. RESALTADOS
+//-------------------------------------------------------------
+
+const resaltados = [
+   //-------------------------------------------------------------
+    // Technicians FUJI
+    //-------------------------------------------------------------
+    { texto: 'ALEJANDRO LOZANO MORALES', color: 'Orange' },
+    { texto: 'OVIDIO PARRON MARTINEZ', color: 'Grey' },
+    { texto: 'MARIA PILAR CARRILLO SENDER', color: 'Grey' },
+    { texto: 'Next Text', color: 'Grey' },
+    { texto: 'Next Text', color: 'Grey' },
+    { texto: 'Next Text', color: 'Grey' },
+
+    //-------------------------------------------------------------
+    // Technicians T-Systems
+    //-------------------------------------------------------------
+    { texto: 'JUAN LUIS TORTOLA MARTINEZ', color: 'green' },
+    { texto: 'MIGUEL ANGEL GUEMES ALONSO', color: '#4B0082' },
+    { texto: 'ERIC RODRIGUEZ LUQUE', color: 'Orange' },
+    { texto: 'JOAN CARLES MESTRE GUILLEN', color: 'violet' },
+    { texto: 'EDIFICI CIUTAT DE LA JUSTICIA', color: 'Green' },
+    { texto: 'ANGEL ROIG LORENZO', color: 'blue' },
+    { texto: 'FERNANDO JIMENEZ PORTILLO', color: 'Blue' },
+    { texto: 'DANIEL ESPLUGAS SANCHEZ', color: 'red' },
+    { texto: 'SONIA FERNANDEZ FERNANDEZ', color: '#007FFF' },
+
+    //-------------------------------------------------------------
+    // Groups
+    //-------------------------------------------------------------
+    { texto: 'X03_ARCONTE_GSV-N2', color: '#6e7bf0' },
+    { texto: 'X03_ARCONTE_GSV-N3-MAQ', color: 'White' },
+    { texto: 'X03_ARCONTE_GSV-N3-ESPECIALISTES', color: 'Brown' },
+    { texto: 'X03_ARCONTE_GSV-N3-SENYAL_INSTITUCIONAL', color: 'red' },
+
+    //-------------------------------------------------------------
+    // Common Entries
+    //-------------------------------------------------------------
+    { texto: '[Desplegament d’ARCONTE pujada de versió de la', color: 'Brown' },
+    { texto: '[FASE1]', color: 'Brown' },
+    { texto: '[FASE2]', color: 'Brown' },
+    { texto: 'Actualitzar Aplicació. 3h', color: 'Brown' },
+    { texto: 'Marxa enrere', color: 'Brown' },
+    { texto: 'Proves. 30min', color: 'Brown' },
+    { texto: 'Proves. 1h', color: 'Brown' },
+    { texto: 'Marxa enrere. 1h', color: 'Brown' },
+    { texto: 'Realització de Backups. 30m', color: 'Brown' },
+    { texto: 'Proves . 30m', color: 'Brown' },
+    { texto: 'Actualitzar Aplicació. 3h', color: 'Brown' },
+    { texto: 'Actualitzar Aplicació. 3h', color: 'Brown' },
+    { texto: 'Revisio de Sales SALA DE VISTES - AUDITORIUM', color: 'red' },
+    { texto: 'Revisio de Sales SALA DE VISTES ', color: 'red' },
+    { texto: 'Alta Certificats Digitals SSL, Aplicació i Segell', color: 'Pink' },
+    { texto: 'Scheduled For Approval', color: 'Brown' },
+    { texto: 'Staged', color: 'Brown' },
+    { texto: 'Scheduled', color: 'Brown' },
+    { texto: 'Aplicació de l', color: 'Brown' },
+    { texto: 'actualització. 2h', color: 'Brown' },
+    { texto: 'proves. 30m', color: 'Brown' },
+    { texto: 'marxa enrere. 1h', color: 'Brown' },
+    { texto: 'Moviments entre videos', color: '#6e7bf0' },
+    { texto: 'Validacions funcionals ARCONTE', color: 'Violet' },
+
+    //-------------------------------------------------------------
+    // Status
+    //-------------------------------------------------------------
+    { texto: 'Assigned', color: 'white', fondo: 'red' },
+    { texto: 'In Progress', color: 'Green', fondo: '#ccffcc' },
+    { texto: '2-High', color: 'Red', fondo: '#NoColor' },
+    { texto: 'Reopen', color: 'black' },
+    { texto: '3-Medium', color: 'Orange' },
+    { texto: 'Pending', color: 'orange' },
+    { texto: '4-Low', color: 'Grey' },
+
+    //-------------------------------------------------------------
+    // TYPES
+    //-------------------------------------------------------------
+    { texto: 'Work Order', color: 'Violet' },
+    { texto: 'Incident', color: 'Grey' },
+    { texto: 'WO0000', color: 'Violet' },
+    { texto: 'TAS0000', color: 'Violet' },
+    { texto: 'CRQ000', color: 'Violet' },
+    { texto: 'INC0000', color: '#6e7bf0' },
+    { texto: 'Change', color: 'Violet' },
+    { texto: 'Task', color: 'Violet' }
+];
+
+const coloresFecha = {
+    reciente : "green",
+    media    : "orange",
+    antigua  : "red"
+};
+
+//-------------------------------------------------------------
+// 4. PARSE FECHA
+//-------------------------------------------------------------
+function parseFecha(text) {
+    if (!/^\d{2}\/\d{2}\/\d{4}/.test(text)) return null;
+    const [f, h] = text.split(" ");
+    const [d, m, y] = f.split("/").map(Number);
+    const [hh, mm, ss] = h.split(":").map(Number);
+    return new Date(y, m - 1, d, hh, mm, ss);
+}
+
+//-------------------------------------------------------------
+// 5. COLOREAR UNA CELDA (PROTEGIDO CONTRA DOBLE PROCESO)
+//-------------------------------------------------------------
+function colorearTD(td) {
+    if (td.dataset.lxProcesado === "1") return;
+
+    const textoOriginal = td.textContent.trim();
+    let html = td.innerHTML;
+
+    resaltados.forEach(r => {
+        const safe = r.texto.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const reg = new RegExp(`(${safe})`, "gi");
+
+        html = html.replace(reg, match => {
+            let estilos = `color:${r.color}; white-space:nowrap;`;
+
+            if (CONFIG.fondoEstados && r.fondo) {
+                estilos += `
+                    background:${r.fondo};
+                    box-decoration-break:clone;
+                    -webkit-box-decoration-break:clone;
+                    padding:1px 4px;
+                    border-radius:4px;
+                    line-height:1;
+                `;
+            }
+
+            const lower = match.toLowerCase();
+            let clases = "Lx-noblink";
+            let extraAttr = "";
+
+            if (lower === "2-high") extraAttr = ' data-estado="2-High" ';
+
+            if (MODO_PARPADEO === "constante") clases = "Lx-blink";
+            else if (MODO_PARPADEO === "intermitente") clases = "Lx-blink";
+            else if (MODO_PARPADEO === "independiente") {
+                if (["assigned","in progress"].includes(lower) || usuariosBlink.includes(lower)) clases = "Lx-blink";
+                if (lower === "2-high") clases = "Lx-blink";
+            }
+
+            return `<span class="${clases}" style="${estilos}" ${extraAttr}>${match}</span>`;
+        });
+    });
+
+    td.innerHTML = html;
+
+    const fecha = parseFecha(td.textContent.trim());
+    if (fecha) {
+        const ahora = new Date();
+        let colorFecha = coloresFecha.reciente;
+        const diffHoras = (ahora - fecha) / (1000 * 60 * 60);
+
+        if (diffHoras > 24 && diffHoras <= 72) colorFecha = coloresFecha.media;
+        else if (diffHoras > 72) colorFecha = coloresFecha.antigua;
+
+        td.style.color = colorFecha;
+    }
+
+    td.dataset.lxProcesado = "1";
+
+    setTimeout(() => {
+        if (hayAssigned()) activarParpadeoFavicon();
+        else desactivarParpadeoFavicon();
+
+        estilizarTooltipIframe(); // 🔹 Tooltip cada refresh
+    }, 50);
+}
+
+//-------------------------------------------------------------
+// 6. PROCESAR TABLA
+//-------------------------------------------------------------
+function colorearTabla() {
+    const tabla = document.querySelector("table.BaseTable");
+    if (!tabla) return;
+    tabla.querySelectorAll("tbody tr td").forEach(td => colorearTD(td));
+}
+
+//-------------------------------------------------------------
+// 7. INTERMITENCIA CONTROLADA
+//-------------------------------------------------------------
+if (MODO_PARPADEO === "intermitente" || MODO_PARPADEO === "independiente") {
+    setInterval(() => {
+        const elementos = document.querySelectorAll(".Lx-blink");
+        if (!elementos.length) return;
+        elementos.forEach(el => el.classList.remove("Lx-blink"));
+        void document.body.offsetWidth;
+        elementos.forEach(el => el.classList.add("Lx-blink"));
+    }, 45000);
+}
+
+//-------------------------------------------------------------
+// 8. ALERTA VISUAL EN PESTAÑA (FAVICON ROJO SI HAY ASSIGNED)
+//-------------------------------------------------------------
+let faviconOriginal = null;
+let faviconRojo = null;
+let faviconParpadeando = false;
+let intervaloFavicon = null;
+
+function crearFaviconRojo() {
+    const canvas = document.createElement("canvas");
+    canvas.width = 32; canvas.height = 32;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "red";
+    ctx.beginPath();
+    ctx.arc(16, 16, 14, 0, 2 * Math.PI);
+    ctx.fill();
+    return canvas.toDataURL("image/png");
+}
+
+function obtenerFaviconActual() {
+    const link = document.querySelector("link[rel*='icon']");
+    return link ? link.href : null;
+}
+
+function cambiarFavicon(url) {
+    let link = document.querySelector("link[rel*='icon']");
+    if (!link) {
+        link = document.createElement("link");
+        link.rel = "icon";
+        document.head.appendChild(link);
+    }
+    link.href = url;
+}
+
+function hayAssigned() {
+    const tabla = document.querySelector("table.BaseTable");
+    if (!tabla) return false;
+    return tabla.textContent.toLowerCase().includes("assigned");
+}
+
+function activarParpadeoFavicon() {
+    if (faviconParpadeando) return;
+    faviconOriginal = obtenerFaviconActual();
+    faviconRojo = crearFaviconRojo();
+    faviconParpadeando = true;
+    intervaloFavicon = setInterval(() => {
+        const actual = document.querySelector("link[rel*='icon']").href;
+        cambiarFavicon(actual === faviconRojo ? faviconOriginal : faviconRojo);
+    }, 1000);
+}
+
+function desactivarParpadeoFavicon() {
+    if (!faviconParpadeando) return;
+    clearInterval(intervaloFavicon);
+    faviconParpadeando = false;
+    cambiarFavicon(faviconOriginal);
+}
+
+//-------------------------------------------------------------
+// 9. OBSERVER INTELIGENTE (REENGANCHE TRAS REFRESH HELIX)
+//-------------------------------------------------------------
+let observerActivo = null;
+let tablaActual = null;
+let pendiente = false;
+
+function debouncedColor() {
+    if (pendiente) return;
+    pendiente = true;
+
+    setTimeout(() => {
+        pendiente = false;
+        colorearTabla();
+        setTimeout(estilizarTooltipIframe, 300); // 🔹 Init tooltip tras refresh
+    }, 120);
+}
+
+function engancharObserver(tabla) {
+    if (observerActivo) {
+        observerActivo.disconnect();
+        observerActivo = null;
+    }
+
+    observerActivo = new MutationObserver(() => debouncedColor());
+    observerActivo.observe(tabla.parentElement, { childList: true, subtree: true });
+    tablaActual = tabla;
+}
+
+function vigilarTabla() {
+    const tabla = document.querySelector("table.BaseTable");
+    if (!tabla) { setTimeout(vigilarTabla, 500); return; }
+    if (tabla !== tablaActual) {
+        console.log("[Helix] Nueva tabla detectada → reenganchando observer");
+        engancharObserver(tabla);
+        colorearTabla();
+        setTimeout(estilizarTooltipIframe, 300); // 🔹 Init tooltip
+    }
+    setTimeout(vigilarTabla, 2000);
+}
+
+vigilarTabla();
+
+//-------------------------------------------------------------
+// 10. TOOLTIP IFRAME
+//-------------------------------------------------------------
+function estilizarTooltipIframe() {
+    const iframe = document.querySelector("iframe[src=\"javascript:'<HTML></HTML>'\"]");
+    if (!iframe) return;
+    try {
+        const doc = iframe.contentDocument;
+        if (!doc) return;
+        const divInterno = doc.querySelector("div[style*='SmallTooltip3.png']");
+        if (!divInterno) return;
+        divInterno.style.backgroundImage = "none";
+        divInterno.style.background = "#5a5a5a";
+        divInterno.style.backgroundColor = "#5a5a5a";
+        doc.querySelectorAll("td").forEach(td => td.style.color = "#ffffff");
+    } catch (e) {}
+}
+
+//-------------------------------------------------------------
+// 11. DESACTIVAR TOOLTIP BMC (divToolTipHtml)
+//-------------------------------------------------------------
+const styleNoTooltip = document.createElement("style");
+styleNoTooltip.textContent = `
+#divToolTipHtml,
+.divToolTipHtml {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+`;
+document.head.appendChild(styleNoTooltip);
+
+})();
