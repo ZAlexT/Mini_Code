@@ -1,0 +1,69 @@
+! Jun 8, 2024 https://www.primevideo.com
+www.primevideo.com##.pv-footer
+
+! Jun 12, 2024 https://fastupload.io
+||fastupload.io/1daf6fec78482538$image
+fastupload.io##div.container:nth-of-type(2)
+fastupload.io##.gray-light-bg.ptb-100.pricing-section
+fastupload.io###faq
+fastupload.io##.dark-bg.ptb-60.footer-1
+fastupload.io##.gray-light-bg.py-3.footer-bottom
+
+! Sep 14, 2024 https://www.amazon.es
+www.amazon.es##.nav-sprite-v1.navLeftFooter
+
+! Apr 6, 2026 https://dlstreams.top
+dlstreams.top##.watch__notice
+dlstreams.top##.navbar__links > [href="/webmasters.php"]
+dlstreams.top##.navbar__links > [href="./api.php"]
+dlstreams.top##.navbar__links > [href="https://discord.gg/7Ku4cBeTpA"]
+dlstreams.top##.navbar__links > [href="https://t.me/daddylive2"]
+dlstreams.top##.navbar__links > [href="/contact.php"]
+dlstreams.top##div.watch__group:nth-of-type(2)
+dlstreams.top###embedCode
+dlstreams.top##.footer
+dlstreams.top##.watch__side
+dlstreams.top##h2
+dlstreams.top##.sidebar
+
+! Jun 24, 2026 https://tubitv.com
+tubitv.com##div.Col--xxl-2.Col--xl-1-5.Col--lg-3.Col--4.Col
+tubitv.com##.zbLtJ
+
+! Jul 11, 2026 https://series.ly
+series.ly##.z-50.bottom-0.inset-x-0.fixed
+
+! Jul 11, 2026 https://gscdn.cam
+gscdn.cam##.footer
+gscdn.cam##.block
+
+! Jul 11, 2026 https://dontorrent.review
+dontorrent.review###DonTelegram
+
+! Jul 13, 2026 https://okgrabber.com
+okgrabber.com##div.grid-container:nth-of-type(5)
+okgrabber.com##.grid-container.inside-site-info
+
+! Aug 1, 2026 https://dlhd.st
+dlhd.st##.sidebar
+dlhd.st##.is-marquee.upcoming-slider
+dlhd.st##.navbar__links > [href="/webmasters.php"]
+dlhd.st##.navbar__links > [href="/contact.php"]
+dlhd.st##.navbar__links > [href="./api.php"]
+dlhd.st##.navbar__links > [href="https://discord.gg/7Ku4cBeTpA"]
+dlhd.st##.navbar__links > [href="https://t.me/daddylive2"]
+dlhd.st##.watch__notice
+dlhd.st##.watch__side
+dlhd.st##.footer
+dlhd.st##h2
+
+! Aug 9, 2026 https://jonstream.top
+jonstream.top##.float-left
+jonstream.top##tr.table-dark.pnltbl .nav-link > [src="https://cdn.fastcdn.online/images/sportsx/football.png"]
+jonstream.top##.col-sm-12 > div
+
+! Aug 9, 2026 https://jonstream.best
+jonstream.best##.page-header
+jonstream.best##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
+jonstream.best##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
+jonstream.best##div > font
