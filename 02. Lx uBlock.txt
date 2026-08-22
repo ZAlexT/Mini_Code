@@ -1,4 +1,4 @@
-!Title: 02. Lx uBlock 
+!Title: 02. Lx uBlock Entertainment
 !--------------------------------------
 !Total lines: x
 !Version: 1.7.6-release
