@@ -5413,15 +5413,15 @@ www.watchathletics.com##.adsbygoogle
 
 ! DLStreams - click/popunder chain
 
-||top-toones.com^$domain=dlstreams.st
-||track.wbamedia.com^$domain=dlstreams.st
-||platformance.gotrackier.com^$domain=dlstreams.st
-||s.click.aliexpress.com^$domain=dlstreams.st
-||tracking.profferstrack.com^$domain=dlstreams.st
+||top-toones.com^
+||track.wbamedia.com^
+||platformance.gotrackier.com^
+||s.click.aliexpress.com^
+||tracking.profferstrack.com^
 
 ! Llvpn
-||llvpn.com/tag.min.js^$domain=dlstreams.st
+||llvpn.com/tag.min.js^
 
 ! Scripts publicitarios
-||qm.muggpolys.com^$domain=dlstreams.st
-||ld.hillsakra.com^$domain=dlstreams.st
+||qm.muggpolys.com^
+||ld.hillsakra.com^
