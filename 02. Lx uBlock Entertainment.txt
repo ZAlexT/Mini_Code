@@ -1,13 +1,11 @@
 !Title: 02. Lx uBlock Entertainment 
 !--------------------------------------
 !Total lines: x
-!Version: 1.7.6-release
+!Version: 0.1-release
 !Update time: 2026-08-20 11:45:33 UTC+8
-!Update content: Remove log.aliyuncs.com from domain suffix #211 close.\n\nRemoved 'log.aliyuncs.com' from the domain suffix list.
 
 !Homepage: 
 !License: 
-
 
 ! ATOM Elementos | 27 Nov 2025 https://atomgencat.onbmc.com | ATOM Elementos
 		||atomgencat.onbmc.com/arsys/imagepool/SHR%3ASHR%3AConsole-Banner-Slice%21onbmc-s$image
@@ -5183,10 +5181,6 @@ embx226122.apl373.me##.adv-ad
 emb.apl373.me###ads
 emb.apl373.me##.adv-ad
 
-
-! 28 May 2024 https://daddylive1.shop
-daddylive1.shop##div:nth-of-type(1)
-
 ! 1 Jun 2024 https://embedstreams.me
 embedstreams.me###dontfoid
 
@@ -5194,28 +5188,12 @@ embedstreams.me###dontfoid
 zvision.link###dontfoid
 
 
-
-! 13 Jul 2024 https://daddy-stream.xyz
-daddy-stream.xyz##div:nth-of-type(2)
-
 ! 20 Jul 2024 https://emb.apl358.me
 emb.apl358.me##.adv-ad
-
-! 20 Jul 2024 https://dlhd.so
-dlhd.so##p:nth-of-type(2)
-
-! 20 Jul 2024 https://daddylive.watch
-daddylive.watch###footer
-
-! 20 Jul 2024 https://dlhd.so
-dlhd.so##center > p
 
 ! 20 Jul 2024 https://www.livesporttv.com
 www.livesporttv.com##.page-footer
 
-
-! 5 Jun 2024 https://daddylive1.shop
-daddylive1.shop##div:nth-of-type(2)
 
 ! 5 Jun 2024 https://dlhd.so
 ||ad.a-ads.com/2326010$subdocument
@@ -5225,36 +5203,7 @@ daddylive1.shop##div:nth-of-type(2)
 ||acceptable.a-ads.com/2251272$subdocument
 ||ad.a-ads.com/2326018?size=300x250$subdocument
 ||acceptable.a-ads.com/2251272$subdocument
-dlhd.so###sidebar
-dlhd.so###footer > p
-dlhd.so###txtarea
 
-
-! 21 Jul 2024 https://dlhd.so
-dlhd.so##.container h1
-dlhd.so##html > div
-dlhd.so##html > div:nth-child(2)
-dlhd.so##html > div:nth-child(5)
-dlhd.so##div.grid-item:nth-of-type(670)
-||dlhd.so/cdn-cgi/speculation$other
-dlhd.so###footer
-dlhd.so##[href="contact-us.php"]
-dlhd.so##[href="https://t.me/dlhdlive"]
-dlhd.so##[href="https://discord.gg/Q3GEJx4zBU"]
-dlhd.so##[href="#"]
-dlhd.so##[href="/schedule/schedule-generated.json"]
-
-! 21 Oct 2024 https://thedaddy.to
-thedaddy.to##html > div
-
-
-! 21 Oct 2024 https://thedaddy.to
-thedaddy.to###sidebar
-thedaddy.to###footer
-thedaddy.to##.container > center
-thedaddy.to###txtarea
-thedaddy.to##p:nth-of-type(2)
-thedaddy.to##center > p
 
 ! 21 Oct 2024 https://adfpoint.com
 ||adfpoint.com^
@@ -5277,13 +5226,7 @@ bcgame.top##.sm\:gap-3\.5.gap-3.overflow-hidden.items-center.grid-flow-col.grid.
 ! 21 Oct 2024 https://bcgame.top
 ||bcgame.top^
 
-! 21 Oct 2024 https://thedaddy.to
-thedaddy.to##[href="https://t.me/dlhdlive"]
-thedaddy.to##[href="https://discord.gg/Q3GEJx4zBU"]
-thedaddy.to##[href="#"]
-thedaddy.to##[href="contact-us.php"]
-thedaddy.to##[href="/schedule/schedule-generated.json"]
-thedaddy.to###featured
+
 ||gbmivigkwlka.com^
 ||rutchauthe.net^$script
 ||ht.escinsuper.com^
@@ -5309,27 +5252,12 @@ www.sofascore.com##.fMtikg.ggRYVx.Flex.Box > div.kZtOTB.Box > .bWQicO.sc-809d5fb
 ! Feb 7, 2025 https://newembedplay.xyz
 ||wisssbriqn.com^$xhr
 
-! Feb 7, 2025 https://thedaddy.to
-thedaddy.to##.recent > center > center
 
 ! Feb 8, 2025 https://nikaplayerr.com
 ||nikaplayerr.com/static/images/logo.svg$image
 
-! Mar 21, 2025 https://sporttuna.website
-sporttuna.website##.float-left
-||cdn.sporttuna.website/images/sportsx/football.png$image
-
 ! Mar 21, 2025 https://emb.apl374.me
 emb.apl374.me##.adv-ad
-
-! Apr 12, 2025 https://stream.sporttuna.pro
-stream.sporttuna.pro##p
-
-! Apr 12, 2025 https://sporttuna.click
-sporttuna.click##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-sporttuna.click##.page-header
-sporttuna.click##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-sporttuna.click##div > font
 
 ! Apr 12, 2025 https://embedsports.me
 ||vslmummg.com^
@@ -5348,17 +5276,6 @@ psg-streaming-direct.ru##.row.logo
 psg-streaming-direct.ru##p:nth-of-type(3)
 psg-streaming-direct.ru##p:nth-of-type(2)
 
-! Apr 13, 2025 https://daddylive.mp
-daddylive.mp###sidebar
-daddylive.mp###preview-link
-daddylive.mp##p:nth-of-type(2)
-daddylive.mp##center > p
-daddylive.mp###footer > p
-daddylive.mp##.container h1
-daddylive.mp###txtarea
-
-! Apr 20, 2025 https://daddylive.mp
-daddylive.mp###frame-link
 
 ! Apr 20, 2025 https://gaotfoot.ru
 ||gaotfoot.ru/theme2/avif/video.avif$image
@@ -5381,13 +5298,6 @@ gaotfoot.ru##html > div
 ! Apr 20, 2025 https://hoca5.com
 ||hoca5.com/sw.js$script,1p
 
-! Apr 20, 2025 https://daddylive2.click
-daddylive2.click##div:nth-of-type(1)
-daddylive2.click##div:nth-of-type(2)
-
-daddylive2.click##div:nth-of-type(1)
-daddylive2.click##div:nth-of-type(2)
-
 ! Apr 20, 2025 https://emb.apl375.me
 emb.apl375.me###ads
 
@@ -5396,13 +5306,6 @@ embx235562.apl375.me###ads
 
 ! Apr 20, 2025 https://daddylive.mp
 daddylive.mp###header
-
-! Apr 21, 2025 https://dontorrent.website
-dontorrent.website###DonTelegram
-dontorrent.website###news-container-chapuzas
-dontorrent.website##div.alert-primary.alert:nth-of-type(4)
-dontorrent.website##[href="https://discord.gg/nx7aNqp5GC"]
-
 ! Apr 21, 2025 https://www9.playdede.link
 www9.playdede.link##[href^="https://extraiptv.top"]
 www9.playdede.link###popup-alertx
@@ -5445,8 +5348,6 @@ sporthd.live##.font-normal.\!text-xs.text-center.w-full
 sporthd.live##.gap-4.justify-between.items-center.flex-row.w-full.flex
 ||sporthd.live/images/futbol-solid.svg$image
 
-! May 24, 2025 https://daddylive2.top
-daddylive2.top##div:nth-of-type(1)
 
 
 ! May 31, 2025 https://gopst.link
@@ -5455,19 +5356,6 @@ gopst.link##.special-text
 ! May 31, 2025 https://bedsport.live
 bedsport.live##.special-text
 
-! Jun 21, 2025 https://thedaddy.click
-thedaddy.click##body > div:nth-of-type(3)
-thedaddy.click##body > div:nth-of-type(2)
-thedaddy.click##body > div:nth-of-type(5)
-thedaddy.click##body > div:nth-of-type(4)
-thedaddy.click###sidebar
-
-thedaddy.click##center > p
-thedaddy.click###header
-thedaddy.click##.container h1
-
-! Jun 22, 2025 https://dontorrent.institute
-dontorrent.institute###DonTelegram
 
 ! Jun 22, 2025 https://gopst.link
 gopst.link##html > div
@@ -5481,34 +5369,6 @@ embx238025.apl375.me###ads
 ! Jun 22, 2025 https://andrenalynrushplay.cfd
 andrenalynrushplay.cfd##html > div
 
-! Jun 28, 2025 https://sporttuna.cyou
-sporttuna.cyou##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-sporttuna.cyou##.page-header
-sporttuna.cyou##div > font
-sporttuna.cyou##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-
-! Jun 28, 2025 https://home.sporttuna.vip
-home.sporttuna.vip##p
-
-! Jul 1, 2025 https://sporttuna.website
-||cdn.sporttuna.lc/images/sportsx/football.png$image
-
-! Jul 13, 2025 https://thedaddy.click
-thedaddy.click###txtarea
-
-! Jul 13, 2025 https://sporttunatv.top
-sporttunatv.top##.page-header
-sporttunatv.top##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-sporttunatv.top##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-sporttunatv.top##div > font
-
-! Jul 19, 2025 https://sporttuna.top
-sporttuna.top##.float-left
-sporttuna.top##div:nth-of-type(3)
-
-! Jul 19, 2025 https://sporttuna.lc
-||cdn.sporttuna.lc/images/sporttunacom_logo.png$image
-sporttuna.lc##p
 
 ! Jul 21, 2025 https://www11.playdede.link
 www11.playdede.link##.boton-x
@@ -5529,14 +5389,6 @@ sporttunalive.top##div > font
 ! Jul 27, 2025 https://bloodycount.net
 @@||q798pny3jdmgsk6wetz5hc.cdnweigh.net:8443/hls/h1gn2.m3u8?s=yTMdJQ9VidqmB_wQ9oFIxg&e=1753629229$xhr,domain=bloodycount.net
 @@||q798pny3jdmgsk6wetz5hc.cdnweigh.net:8443/hls/h1gn2.m3u8?s=nTSnfAt_XvFzzg3MGCByqQ&e=1753629273$xhr,domain=bloodycount.net
-
-! Aug 2, 2025 https://dlhd.click
-dlhd.click###sidebar
-dlhd.click###footer > p
-dlhd.click##.container h1
-dlhd.click###txtarea
-dlhd.click##center > p
-dlhd.click##.header-fixed
 
 ! Aug 2, 2025 https://www.teledirecto.es
 www.teledirecto.es##.adsbygoogle
@@ -5757,76 +5609,22 @@ embx239744.apl375.me##.adv-ad
 ! Aug 3, 2025 https://jxoplay.xyz
 ||madurird.com/tag.min.js$script,domain=jxoplay.xyz,important
 
-! Aug 9, 2025 https://sporttuna.top
-sporttuna.top##.col-sm-12 > div
-
-! May 10, 2025 https://daddylive.dad
-daddylive.dad###sidebar
-daddylive.dad##.recent > center > center
-daddylive.dad###footer > p
-daddylive.dad###txtarea
-daddylive.dad##center > p
-daddylive.dad###header
-
-! Aug 9, 2025 https://thedaddy.dad
-
-thedaddy.dad###header
-thedaddy.dad###footer
-thedaddy.dad###sidebar
-thedaddy.dad##center > p
-thedaddy.dad###txtarea
-thedaddy.dad##body > div:nth-of-type(2)
-thedaddy.dad##.container h1
-
-! Aug 10, 2025 https://sporttunalive.top
-sporttunalive.top##.float-left
-sporttunalive.top##div:nth-of-type(3)
-
 ! Aug 10, 2025 https://fbstreams.pm
 fbstreams.pm##.col-lg-3
 fbstreams.pm##h2
 fbstreams.pm##div.justify-content-center.text-center.row > .col-12 > p
 fbstreams.pm##.text-warning
 
-! Aug 16, 2025 https://thedaddy.top
-
-daddylive3.com##html > div
-daddylive3.com##div:nth-of-type(2)
-
-! Aug 16, 2025 https://thedaddy.top
-thedaddy.top###footer
-thedaddy.top###sidebar
-thedaddy.top##center > p
-thedaddy.top##.container h1
-thedaddy.top###txtarea
-thedaddy.top##body > div:nth-of-type(2)
-
-! Aug 21, 2025 https://sporttunalive.top
-sporttunalive.top##tr.table-dark.pnltbl .nav-link > [src="https://cdn.sporttunas.top/images/sportsx/football.png"]
-
 ! Aug 23, 2025 https://zukiplay.cfd
 zukiplay.cfd##html > div:nth-of-type(1)
 
 ! Aug 23, 2025 https://e1link.link
 e1link.link##html > div
-
-! Sep 13, 2025 https://daddylivestream.com
-daddylivestream.com##body > div:nth-of-type(2)
-daddylivestream.com###sidebar
-daddylivestream.com###footer > p
-daddylivestream.com###txtarea
-daddylivestream.com##center > p
-daddylivestream.com##body > div:nth-of-type(3)
-daddylivestream.com##.container h1
-daddylivestream.com###header
-
 ! Sep 13, 2025 https://mmastreams.me
 mmastreams.me##.text-start.row > .col-12
 
 ! Sep 13, 2025 https://mirandaa.es
 mirandaa.es##html > div
-
-! Sep 13, 2025 https://miranda23.strp2p.com
 
 ! Sep 13, 2025 http://192.168.1.1
 192.168.1.1###\31 00002 > p
@@ -5834,31 +5632,8 @@ mirandaa.es##html > div
 ! Sep 19, 2025 https://emb.apl378.me
 emb.apl378.me###ads
 
-! Sep 19, 2025 https://dlhd.dad
-dlhd.dad##.watch__notice
-dlhd.dad##.sidebar
-dlhd.dad###embedCode
-dlhd.dad##.watch__embed.watch__group
-dlhd.dad##label
-dlhd.dad###toggleChatBtn
-dlhd.dad##.footer
-dlhd.dad##h2
-
-
 ! Sep 19, 2025 https://mmastreams.me
 mmastreams.me##div:nth-of-type(3)
-
-! Sep 19, 2025 https://daddylive3.com
-daddylive3.com##div:nth-of-type(1)
-daddylive3.com##div:nth-of-type(2)
-daddylive3.com##div:nth-of-type(3)
-
-! Sep 24, 2025 https://dlhd.dad
-dlhd.dad##.navbar__links > [href="/contact.php"]
-dlhd.dad##.navbar__links > [href="/webmasters.php"]
-dlhd.dad##.navbar__links > [href="/contact.php"]
-dlhd.dad##.navbar__links > [href="https://discord.gg/T8XC4vKxt9"]
-dlhd.dad##.navbar__links > [href="./api.php"]
 
 ! Sep 27, 2025 https://www.youtube.com
 www.youtube.com###panels-full-bleed-container
@@ -5866,8 +5641,6 @@ www.youtube.com###panels-full-bleed-container
 ! Sep 28, 2025 https://windowcross.net
 windowcross.net##div:nth-of-type(4)
 
-! Sep 28, 2025 https://kevinsport.pro
-kevinsport.pro##.col-sm-12 > div
 
 ! Oct 5, 2025 https://dabac.link
 dabac.link##html > div
@@ -5878,26 +5651,9 @@ intac.pro###openLinks
 ! Oct 5, 2025 https://embx242483.apl373.me
 embx242483.apl373.me###ads
 
-! Oct 5, 2025 https://dlhd.dad
-dlhd.dad##html > div:nth-of-type(1)
-dlhd.dad##html > div:nth-of-type(2)
-
-! Oct 12, 2025 https://kevinsport.digital
-kevinsport.digital##.clearfix
-||cdn.kevinsport.top/images/kevinsportcom_logo.png$image
-kevinsport.digital##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
 
 ! Oct 12, 2025 https://emb.apl380.me
 emb.apl380.me###ads
-
-! Oct 12, 2025 https://kevinsport.digital
-kevinsport.digital##[href="https://kevinsport.top"]
-kevinsport.digital##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsport.digital##div > font
-
-! Oct 12, 2025 https://kevinsport.pro
-kevinsport.pro##.float-left
-kevinsport.pro##tr.table-dark.pnltbl .nav-link > [src="https://cdn.kevinsport.top/images/sportsx/football.png"]
 
 ! Oct 19, 2025 https://antenasport.org
 antenasport.org##div:nth-of-type(2)
@@ -5909,25 +5665,12 @@ meltol.net###micast_ads
 ! Nov 16, 2025 https://gool21.online
 gool21.online###ldhemsHtml11
 
-! Dec 5, 2025 https://daddyhd.com
-daddyhd.com##.watch__notice
-daddyhd.com##.navbar__links > [href="/webmasters.php"]
-daddyhd.com##.navbar__links > [href="/contact.php"]
-daddyhd.com##.navbar__links > [href="./api.php"] > .nav-icon
-daddyhd.com##.navbar__links > [href="./api.php"]
-daddyhd.com##.navbar__links > [href="https://discord.gg/rwckRxrp3K"]
-daddyhd.com##.footer
-daddyhd.com##.watch__embed.watch__group
-daddyhd.com##.watch__side
-
 ! Dec 7, 2025 https://emb.apl385.me
 emb.apl385.me##.adv-ad
 
 ! Dec 12, 2025 https://playembed.top
 playembed.top##html > div
 
-! Dec 21, 2025 https://daddyhd.com
-daddyhd.com##html > div
 
 ! Dec 25, 2025 https://dontorrent.prof
 dontorrent.prof###DonTelegram
@@ -5938,110 +5681,29 @@ dontorrent.prof##[href="https://privtr.ee/@DonTorrent"]
 dontorrent.prof##div.p-4.shadow-sm.card:nth-of-type(5)
 dontorrent.prof##div.alert-primary.alert:nth-of-type(4)
 
-! Jan 18, 2026 https://kevinsport.icu
-kevinsport.icu##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsport.icu##.clearfix
-kevinsport.icu##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsport.icu##div > font
-
-! Jan 18, 2026 https://dlhd.link
-dlhd.link##.sidebar
-dlhd.link##.footer__inner > p
-dlhd.link##.watch__side
-dlhd.link##.footer
-dlhd.link##.watch__notice
-dlhd.link##.navbar__links > [href="/webmasters.php"]
-dlhd.link##.navbar__links > [href="./api.php"]
-dlhd.link##.navbar__links > [href="https://discord.gg/T8XC4vKxt9"]
-dlhd.link##.navbar__links > [href="https://t.me/daddylive2"]
-dlhd.link##.navbar__links > [href="/contact.php"]
-
-! Mar 1, 2026 https://kevinsport.sbs
-kevinsport.sbs##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsport.sbs##.clearfix
-kevinsport.sbs##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsport.sbs##div > font
-
-
-! 1 Feb 2026 https://dlhd.link
-dlhd.link##.watch__notice
-dlhd.link##.navbar__links > [href="https://t.me/daddylive2"]
-dlhd.link##.navbar__links > [href="https://discord.gg/eJs8FRqt7G"]
-dlhd.link##.navbar__links > [href="/webmasters.php"]
-dlhd.link##.sidebar
-dlhd.link##.watch__side
-dlhd.link##.footer__inner
-dlhd.link##.navbar__links > [href="./api.php"]
-
-! 7 Mar 2026 https://kevinsport.lat
-kevinsport.lat##.float-left
-kevinsport.lat##tr.table-dark.pnltbl .nav-link > [src="https://cdn.kevinsport.top/images/sportsx/football.png"]
-kevinsport.lat##div:nth-of-type(3)
-
-! 7 Mar 2026 https://kevinsport.sbs
-kevinsport.sbs##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsport.sbs##div > font
-kevinsport.sbs##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsport.sbs##.clearfix
-kevinsport.sbs##.float-left
-
 ! 7 Mar 2026 https://viewembed.ru
 viewembed.ru##.hero-subtitle
 viewembed.ru##.hero-title
 
-! 7 Mar 2026 https://dlstreams.top
-dlstreams.top##.watch__notice
-dlstreams.top##.sidebar__inner
-dlstreams.top##.footer
-dlstreams.top##.watch__side
-dlstreams.top##h2
-dlstreams.top##.navbar__links > [href="/webmasters.php"]
-dlstreams.top##.navbar__links > [href="/contact.php"]
-dlstreams.top##.navbar__links > [href="./api.php"]
-dlstreams.top##.navbar__links > [href="https://discord.gg/7Ku4cBeTpA"]
-dlstreams.top##.navbar__links > [href="https://t.me/daddylive2"]
-dlstreams.top###toggleChatBtn
-dlstreams.top##.mobileBottomNav__top
-dlstreams.top###drawer > [href="https://t.me/daddylive2"]
-dlstreams.top###drawer > [href="https://discord.gg/7Ku4cBeTpA"]
-dlstreams.top###drawer > [href="./api.php"]
-dlstreams.top###drawer > [href="/contact.php"]
-dlstreams.top###drawer > [href="/webmasters.php"]
-dlstreams.top##.drawer
-dlstreams.top##.site-ad--top.site-ad
 ||jnbhi.com^
 
 ! Mar 7, 2026 https://adfgetlink.net
 ||adfgetlink.net^
 
-! Mar 14, 2026 https://kevinsport.top
-kevinsport.top##p
-
-! Mar 14, 2026 https://kevinsportlive.top
-kevinsportlive.top##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsportlive.top##.clearfix
-kevinsportlive.top##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsportlive.top##div > font
 
 ! Mar 29, 2026 https://dlstreams.top
 ||dlstreams.top/casting/ads.php$document,1p,important
 dlstreams.top##.navbar
 ddyplayer.cfd##div:nth-of-type(2)
 
-dlstreams.top##.featured-card
-
-
 ! Mar 29, 2026 https://timstreams.net
 timstreams.net##.watch-card.chat-container
 timstreams.net##.footer
-
 timstreams.net##.site-banner
 timstreams.net##.genre-badge
 timstreams.net##div.watch-card:nth-of-type(2)
 timstreams.net###watchTitle
 
-! Apr 3, 2026 https://kevinsport.lat
-kevinsport.lat##.col-sm-12 > div
 
 ! Apr 5, 2026 https://emb.apl397.me
 emb.apl397.me##.adv-ad
@@ -6055,53 +5717,9 @@ soyspace.cyou##div:nth-of-type(2)
 ai-action-figure.org##div:nth-of-type(2)
 logoai.com##div:nth-of-type(2)
 
-! Apr 5, 2026 https://dlstreams.top
-!dlstreams.top##body div:nth-of-type(2)
-
-! Apr 10, 2026 https://kevinsportlive.lol
-kevinsportlive.lol##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsportlive.lol##.clearfix
-kevinsportlive.lol##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsportlive.lol##div > font
-
-!
-
-! Apr 11, 2026 https://kevinsportstream.top
-kevinsportstream.top##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsportstream.top##.clearfix
-kevinsportstream.top##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsportstream.top##div > font
 
 ! Apr 12, 2026 https://antenasport.top
 antenasport.top##html > div
-
-! Apr 19, 2026 https://kevinsport.homes
-kevinsport.homes##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsport.homes##.clearfix
-kevinsport.homes##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsport.homes##div > font
-
-! 7 Mar 2026 https://dlstreams.com
-dlstreams.com##.watch__notice
-dlstreams.com##.sidebar__inner
-dlstreams.com##.footer
-dlstreams.com##.watch__side
-dlstreams.com##h2
-dlstreams.com##.navbar__links > [href="/webmasters.php"]
-dlstreams.com##.navbar__links > [href="/contact.php"]
-dlstreams.com##.navbar__links > [href="./api.php"]
-dlstreams.com##.navbar__links > [href="https://discord.gg/7Ku4cBeTpA"]
-dlstreams.com##.navbar__links > [href="https://t.me/daddylive2"]
-dlstreams.com###toggleChatBtn
-dlstreams.com##.mobileBottomNav__top
-dlstreams.com###drawer > [href="https://t.me/daddylive2"]
-dlstreams.com###drawer > [href="https://discord.gg/7Ku4cBeTpA"]
-dlstreams.com###drawer > [href="./api.php"]
-dlstreams.com###drawer > [href="/contact.php"]
-dlstreams.com###drawer > [href="/webmasters.php"]
-dlstreams.com##.drawer
-dlstreams.com##.site-ad--top.site-ad
-dlstreams.com##.sidebar
 
 ! Apr 25, 2026 https://emb.apl405.me
 emb.apl405.me##.adv-ad
@@ -6116,111 +5734,10 @@ kevinsport.space##div > font
 kevinsport.space##.page-header
 kevinsport.space##tr.table-dark.pnltbl .nav-link > [src="https://cdn.fastcdn.online/images/sportsx/football.png"]
 
-! Apr 25, 2026 https://kevinsport.mom
-kevinsport.mom##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsport.mom##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsport.mom##div > font
-kevinsport.mom##.page-header
-kevinsport.mom##tr.table-dark.pnltbl .nav-link > [src="https://cdn.fastcdn.online/images/sportsx/football.png"]
-
-
-! Apr 25, 2026 https://kevinsport.best
-kevinsport.best##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsport.best##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsport.best##div > font
-kevinsport.best##.page-header
-kevinsport.best##tr.table-dark.pnltbl .nav-link > [src="https://cdn.fastcdn.online/images/sportsx/football.png"]
-
-
 ! May 9, 2026 https://nflbite1.xyz
 nflbite1.xyz##div:nth-of-type(2)
 nflbite1.xyz##html > div:nth-of-type(2)
 nflbite1.xyz##html > div
-
-
-! 7 Mar 2026 https://dlhd.pk
-dlhd.pk##.watch__notice
-dlhd.pk##.sidebar__inner
-dlhd.pk##.footer
-dlhd.pk##.watch__side
-dlhd.pk##h2
-dlhd.pk##.navbar__links > [href="/webmasters.php"]
-dlhd.pk##.navbar__links > [href="/contact.php"]
-dlhd.pk##.navbar__links > [href="./api.php"]
-dlhd.pk##.navbar__links > [href="https://discord.gg/7Ku4cBeTpA"]
-dlhd.pk##.navbar__links > [href="https://t.me/daddylive2"]
-dlhd.pk###toggleChatBtn
-dlhd.pk##.mobileBottomNav__top
-dlhd.pk###drawer > [href="https://t.me/daddylive2"]
-dlhd.pk###drawer > [href="https://discord.gg/7Ku4cBeTpA"]
-dlhd.pk###drawer > [href="./api.php"]
-dlhd.pk###drawer > [href="/contact.php"]
-dlhd.pk###drawer > [href="/webmasters.php"]
-dlhd.pk##.drawer
-dlhd.pk##.site-ad--top.site-ad
-dlhd.pk##.sidebar
-
-! 7 Mar 2026 https://dlhd.st
-dlhd.st##.watch__notice
-dlhd.st##.sidebar__inner
-dlhd.st##.footer
-dlhd.st##.watch__side
-dlhd.st##h2
-dlhd.st##.navbar__links > [href="/webmasters.php"]
-dlhd.st##.navbar__links > [href="/contact.php"]
-dlhd.st##.navbar__links > [href="./api.php"]
-dlhd.st##.navbar__links > [href="https://discord.gg/7Ku4cBeTpA"]
-dlhd.st##.navbar__links > [href="https://t.me/daddylive2"]
-dlhd.st###toggleChatBtn
-dlhd.st##.mobileBottomNav__top
-dlhd.st###drawer > [href="https://t.me/daddylive2"]
-dlhd.st###drawer > [href="https://discord.gg/7Ku4cBeTpA"]
-dlhd.st###drawer > [href="./api.php"]
-dlhd.st###drawer > [href="/contact.php"]
-dlhd.st###drawer > [href="/webmasters.php"]
-dlhd.st##.drawer
-dlhd.st##.site-ad--top.site-ad
-dlhd.st##.sidebar
-
-! Apr 25, 2026 https://kevinsport.skin
-kevinsport.skin##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsport.skin##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsport.skin##div > font
-kevinsport.skin##.page-header
-kevinsport.skin##tr.table-dark.pnltbl .nav-link > [src="https://cdn.fastcdn.online/images/sportsx/football.png"]
-
-! Apr 25, 2026 https://kevinsport.monster
-kevinsport.monster##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-kevinsport.monster##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-kevinsport.monster##div > font
-kevinsport.monster##.page-header
-kevinsport.monster##tr.table-dark.pnltbl .nav-link > [src="https://cdn.fastcdn.online/images/sportsx/football.png"]
-
-! Jun 13, 2026 https://kevinsportlive.lol
-kevinsportlive.lol##.float-left
-||cdn.fastcdn.online/images/kevinsportcom_logo.png$image
-
-! Jun 14, 2026 https://kevinsportlive.top
-kevinsportlive.top###dontfoid
-
-
-! Jul 11, 2026 https://jonstream.lat
-jonstream.lat##div:nth-of-type(3)
-jonstream.lat##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-jonstream.lat##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-jonstream.lat##div > font
-jonstream.lat##.page-header
-jonstream.lat##tr.table-dark.pnltbl .nav-link > [src="https://cdn.fastcdn.online/images/sportsx/football.png"]
-
-
-! Apr 25, 2026 https://jonstream.best
-jonstream.best##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-jonstream.best##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-jonstream.best##div > font
-jonstream.best##.page-header
-jonstream.best##tr.table-dark.pnltbl .nav-link > [src="https://cdn.fastcdn.online/images/sportsx/football.png"]
-
-
 
 ! Jun 16, 2026 https://watchf1full.com
 watchf1full.com##.rr-watch-actions
@@ -6258,10 +5775,10 @@ jonstream.icu##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
 jonstream.icu##div > font
 
 ! Aug 2, 2026 https://jonstream.sbs
-jonstream.sbs##.page-header
-jonstream.sbs##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
-jonstream.sbs##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
-jonstream.sbs##div > font
+jonstream.monster##.page-header
+jonstream.monster##div.alert-dark.alert-dismissible.alert:nth-of-type(1)
+jonstream.monster##div.alert-dark.alert-dismissible.alert:nth-of-type(3)
+jonstream.monster##div > font
 
 ! Aug 2, 2026 https://jonstream.top
 jonstream.top##div:nth-of-type(3)
@@ -6289,3 +5806,27 @@ dlstreams.st##.drawer
 dlstreams.st##.site-ad--top.site-ad
 dlstreams.st##.sidebar
 dlstreams.st##.is-marquee.upcoming-slider
+
+! Aug 23, 2026 https://dlstreams.st
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(2)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(5)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(6)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(7)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(8)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(9)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(10)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(20)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(25)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(33)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(34)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(35)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(36)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(37)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(39)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(40)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(46)
+dlstreams.st##div.is-expanded.schedule__category:nth-of-type(50)
+
+
+! Aug 23, 2026 https://www.watchathletics.com
+www.watchathletics.com##.adsbygoogle
