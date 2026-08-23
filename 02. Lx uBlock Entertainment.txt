@@ -5410,3 +5410,18 @@ dlstreams.st##div.is-expanded.schedule__category:nth-of-type(50)
 
 ! Aug 23, 2026 https://www.watchathletics.com
 www.watchathletics.com##.adsbygoogle
+
+! DLStreams - click/popunder chain
+
+||top-toones.com^$domain=dlstreams.st
+||track.wbamedia.com^$domain=dlstreams.st
+||platformance.gotrackier.com^$domain=dlstreams.st
+||s.click.aliexpress.com^$domain=dlstreams.st
+||tracking.profferstrack.com^$domain=dlstreams.st
+
+! Llvpn
+||llvpn.com/tag.min.js^$domain=dlstreams.st
+
+! Scripts publicitarios
+||qm.muggpolys.com^$domain=dlstreams.st
+||ld.hillsakra.com^$domain=dlstreams.st
