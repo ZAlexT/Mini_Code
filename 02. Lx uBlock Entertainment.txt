@@ -5402,5 +5402,11 @@ dlstreams.st##div.is-expanded.schedule__category:nth-of-type(46)
 dlstreams.st##div.is-expanded.schedule__category:nth-of-type(50)
 
 
+! DLStreams / DaddyLive - publicidad detectada
+
+||qm.muggpolys.com^
+||ld.hillsakra.com^
+||llvpn.com/tag.min.js^
+
 ! Aug 23, 2026 https://www.watchathletics.com
 www.watchathletics.com##.adsbygoogle
