@@ -5431,4 +5431,6 @@ www.watchathletics.com##.adsbygoogle
 ||pshdo.com^
 ||ea2j.yourdatingoasis.com^
 ||onelink.shein.com^
+||togglevpn.app^
 ||click.togglevpn.app^
+||togglevpn.org^
