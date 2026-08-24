@@ -1,0 +1,77 @@
+<fieldset class=" pnl " style="z-index:997;">
+<legend class="hidden acc">PanelPanel</legend>
+<div id="WIN_3_1000000161" arid="1000000161" artype="Char" ardbn="Incident Number" arlbox="0,4,112,15" class="df arfid1000000161 ardbnIncidentNumber Char" style="z-index:991;top:1px; left:10px; width:292px; height:21px;" arwindowid="3">
+<label id="label1000000161" class="label f9" for="arid_WIN_3_1000000161" style="top:4px; left:0px; width:112px; height:15px;color:#;">Incident ID*+</label><textarea class="text sr " wrap="off" id="arid_WIN_3_1000000161" cols="20" maxlen="15" style="top: 0px; left: 117px; width: 175px; height: 21px; background-color: rgb(204, 204, 204);" arautocak="0" arautoctt="400" arencryptdataatrest="0" rows="1" readonly=""></textarea>
+</div>
+<div id="WIN_3_301572100" arid="301572100" artype="Char" ardbn="SRID" arlbox="0,4,112,17" class="df  dfro arfid301572100 ardbnSRID Char" style="z-index:1008;top:24px; left:10px; width:292px; height:21px;" arwindowid="3">
+<label id="label301572100" class="label f6" for="arid_WIN_3_301572100" style="top:4px; left:0px; width:112px; height:17px;">Service Request ID +</label><textarea class="text sr " wrap="off" id="arid_WIN_3_301572100" cols="20" maxlen="30" style="top: 0px; left: 117px; width: 175px; height: 21px; background-color: rgb(204, 204, 204);" readonly="" arautocak="0" arautoctt="400" arencryptdataatrest="0" rows="1"></textarea>
+</div>
+<div id="WIN_3_1000000082" arid="1000000082" artype="Char" ardbn="Contact Company" arlbox="0,4,112,17" class="df arfid1000000082 ardbnContactCompany Char" style="z-index:992;top:47px; left:10px; width:319px; height:21px;" arwindowid="3">
+<label id="label1000000082" class="label f9" for="arid_WIN_3_1000000082" style="top:4px; left:0px; width:112px; height:17px;">Company*+</label><textarea class="text sr " wrap="off" id="arid_WIN_3_1000000082" cols="20" maxlen="254" style="top: 0px; left: 117px; width: 176px; height: 21px; background-color: rgb(204, 204, 204);" armenu="COM:CPY:Company=Oper/Cust-Q" mstyle="2" arautoc="1" arautocmb="1" arautocak="0" arautoctt="400" arencryptdataatrest="0" rows="1" readonly="" title="DEPARTAMENT DE JUSTÍCIA"></textarea>
+<a href="javascript:" class="btn btn3d menu" style="top:0px; left:298px; width:21px; height:21px;">
+<img class="btnimg" src="../../../../resources/images/mt_sprites.gif" alt="Menu for Company*+" title="">
+</a>
+</div>
+<div id="WIN_3_303530000" arid="303530000" artype="Char" ardbn="Customer" arlbox="0,4,112,17" ardcf="1" class="df arfid303530000 ardbnCustomer Char" style="z-index:998;top:89px; left:10px; width:293px; height:21px;" arwindowid="3">
+<label id="label303530000" class="label f9 do" for="arid_WIN_3_303530000" style="top:4px; left:0px; width:112px; height:17px;">Customer*+</label><textarea class="text sr " wrap="off" id="arid_WIN_3_303530000" cols="20" maxlen="255" style="top: 0px; left: 117px; width: 176px; height: 21px; background-color: rgb(204, 204, 204);" armenu="$NULL$" mstyle="2" arautoc="1" arautocmb="1" arautocak="3" arautoctt="400" arencryptdataatrest="0" rows="1" readonly="" title="SONIA MORALES DUGO"></textarea>
+</div>
+<a href="javascript:" id="WIN_3_304248190" arid="304248190" artype="Control" ardbn="z3Btn_SearchHPDCustomer" title="Customer Search" artcolor="null" class="btnflt  pointerCursor arfid304248190 ardbnz3Btn_SearchHPDCustomer" style="top:92px; left:307px; width:19px; height:19px;z-index:1005;" arwindowid="3"><div class="btnimgdiv" style="top:0px; left:0px; width:19px; height:19px;">
+<img src="../../../../imagepool/SHR%3ASHR%3ASearch-Icon%21onbmc-s?cid=1" id="reg_img_304248190" aralttxt="1" artxt="Customer Search" arimgcenter="1" alt="Customer Search" title="Customer Search" class="btnimg" style="top:1px; left:1px; width:16px; height:16px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_3_303498000" arid="303498000" artype="Control" ardbn="z3Btn_CustomerDetail" title="Customer Details" artcolor="null" class="btnflt arfid303498000 ardbnz3Btn_CustomerDetail" style="top:93px; left:327px; width:19px; height:19px;z-index:999;" arwindowid="3"><div class="btnimgdiv" style="top:0px; left:0px; width:19px; height:19px;">
+<img src="../../../../imagepool/SHR%3ASHR%3AView-Details%21onbmc-s?cid=1" id="reg_img_303498000" aralttxt="1" artxt="Customer Details" arimgcenter="1" alt="Customer Details" title="Customer Details" class="btnimg" style="top:1px; left:1px; width:16px; height:16px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_3_302060300" arid="302060300" artype="Control" ardbn="z3Btn Clear Contact Info" title="Clear Customer Details" artcolor="null" class="btnflt arfid302060300 ardbnz3BtnClearContactInfo" style="top:93px; left:348px; width:19px; height:19px;z-index:996;" arwindowid="3"><div class="btnimgdiv" style="top:0px; left:0px; width:19px; height:19px;">
+<img src="../../../../imagepool/SHR%3ASHR%3AUndo-Icon%21onbmc-s?cid=1" id="reg_img_302060300" aralttxt="1" artxt="Clear Customer Details" arimgcenter="1" alt="Clear Customer Details" title="Clear Customer Details" class="btnimg" style="top:1px; left:1px; width:16px; height:16px;">
+</div>
+</a>
+<div id="WIN_3_303497600" arid="303497600" artype="Char" ardbn="z1D_Contact" arlbox="0,4,112,17" ardcf="1" class="df arfid303497600 ardbnz1D_Contact Char" style="z-index: 1000; top: 112px; left: 10px; width: 293px; height: 21px; cursor: default;" arwindowid="3">
+<label id="label303497600" class="label f1 do" for="arid_WIN_3_303497600" style="top:4px; left:0px; width:112px; height:17px;">Contact+</label><textarea class="text sr " wrap="off" id="arid_WIN_3_303497600" cols="20" maxlen="255" style="top: 0px; left: 117px; width: 176px; height: 21px; background-color: rgb(204, 204, 204);" armenu="$NULL$" mstyle="2" arautoc="1" arautocmb="1" arautocak="3" arautoctt="400" arencryptdataatrest="0" rows="1" readonly="" title="SONIA MORALES DUGO"></textarea>
+</div>
+<a href="javascript:" id="WIN_3_304248210" arid="304248210" artype="Control" ardbn="z3Btn_SearchHPDContact" title="Contact Search" artcolor="null" class="btnflt  pointerCursor arfid304248210 ardbnz3Btn_SearchHPDContact" style="top:115px; left:307px; width:19px; height:19px;z-index:1006;" arwindowid="3"><div class="btnimgdiv" style="top:0px; left:0px; width:19px; height:19px;">
+<img src="../../../../imagepool/SHR%3ASHR%3ASearch-Icon%21onbmc-s?cid=1" id="reg_img_304248210" aralttxt="1" artxt="Contact Search" arimgcenter="1" alt="Contact Search" title="Contact Search" class="btnimg" style="top:1px; left:1px; width:16px; height:16px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_3_303500700" arid="303500700" artype="Control" ardbn="z3Btn_ContactDetail" title="Contact Details" artcolor="null" class="btnflt arfid303500700 ardbnz3Btn_ContactDetail" style="top:116px; left:326px; width:19px; height:19px;z-index:1001;" arwindowid="3"><div class="btnimgdiv" style="top:0px; left:0px; width:19px; height:19px;">
+<img src="../../../../imagepool/SHR%3ASHR%3AView-Details%21onbmc-s?cid=1" id="reg_img_303500700" aralttxt="1" artxt="Contact Details" arimgcenter="1" alt="Contact Details" title="Contact Details" class="btnimg" style="top:1px; left:1px; width:16px; height:16px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_3_302060400" arid="302060400" artype="Control" ardbn="z3Btn Clear Direct Contact Info" title="Clear Contact Details" artcolor="null" class="btnflt arfid302060400 ardbnz3BtnClearDirectContactInfo" style="top:116px; left:348px; width:19px; height:19px;z-index:995;" arwindowid="3"><div class="btnimgdiv" style="top:0px; left:0px; width:19px; height:19px;">
+<img src="../../../../imagepool/SHR%3ASHR%3AUndo-Icon%21onbmc-s?cid=1" id="reg_img_302060400" aralttxt="1" artxt="Clear Contact Details" arimgcenter="1" alt="Clear Contact Details" title="Clear Contact Details" class="btnimg" style="top:1px; left:1px; width:16px; height:16px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_3_301463100" arid="301463100" artype="Control" ardbn="z3Btn_Next" title="Next" artcolor="null" class="btnflt  pointerCursor arfid301463100 ardbnz3Btn_Next" style="top:6px; right:8px; width:21px; height:20px;z-index:997;" arwindowid="3"><div class="btnimgdiv" style="top:0px; left:0px; width:21px; height:20px;">
+<img src="../../../../imagepool/SHR%3ASHR%3AButtons-Collapse_Right-ro%21onbmc-s?cid=1" id="reg_img_301463100" png="1" aralttxt="1" artxt="Next" arimgcenter="1" alt="Next" title="Next" class="btnimg" style="top:0px; left:0px; width:21px; height:21px;">
+</div>
+</a>
+<div id="WIN_3_301390046" arid="301390046" artype="Trim" arsubtype="3" ardbn="z5Text Contact VIP" arcolor="transparent" class="arfid301390046 ardbnz5TextContactVIP trimdiv" style="visibility:hidden;z-index:1004;top:71px; left:223px; width:26px; height:15px;background-color:transparent;" arwindowid="3">
+<table style="top:0px; left:0px; width:26px; height:15px;" class="trimTable" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="middle" artcolor="#ff0000" style="color:#ff0000;" class="f9 trimJustc">VIP</td>
+</tr>
+</tbody></table>
+</div>
+<div id="WIN_3_301390047" arid="301390047" artype="Trim" arsubtype="3" ardbn="z5Text Contact Sensitive" arcolor="transparent" class="arfid301390047 ardbnz5TextContactSensitive trimdiv" style="visibility:hidden;z-index:1003;top:71px; left:128px; width:60px; height:15px;background-color:transparent;" arwindowid="3">
+<table style="top:0px; left:0px; width:60px; height:15px;" class="trimTable" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="middle" artcolor="#ff0000" style="color:#ff0000;" class="f9 trimJustc">Sensitive</td>
+</tr>
+</tbody></table>
+</div>
+<div id="WIN_3_2010050255" arid="2010050255" artype="Trim" arsubtype="3" ardbn="f01_txt_FuncionesEspecificas" arcolor="transparent" class="arfid2010050255 ardbnf01_txt_FuncionesEspecificas trimdiv" style="visibility:hidden;z-index:1667;top:71px; left:262px; width:120px; height:15px;background-color:transparent;" arwindowid="3">
+<table style="top:0px; left:0px; width:120px; height:15px;" class="trimTable" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="middle" artcolor="#ff0000" style="color:#ff0000;" class="f9 trimJustc">Fun&nbsp;Espec</td>
+</tr>
+</tbody></table>
+</div>
+<div id="WIN_3_301390048" arid="301390048" artype="Trim" arsubtype="3" ardbn="z5Text Contact Sensitive VIP" arcolor="transparent" class="arfid301390048 ardbnz5TextContactSensitiveVIP trimdiv" style="visibility:hidden;z-index:1002;top:71px; left:112px; width:152px; height:15px;background-color:transparent;" arwindowid="3">
+<table style="top:0px; left:0px; width:152px; height:15px;" class="trimTable" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="middle" artcolor="#ff0000" style="color:#ff0000;" class="f9 trimJustc">Sensitive&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VIP</td>
+</tr>
+</tbody></table>
+</div>
+</fieldset>
