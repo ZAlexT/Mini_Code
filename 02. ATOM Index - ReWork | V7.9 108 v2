@@ -1,0 +1,1033 @@
+// ==UserScript==
+// @name         02. ATOM Index - ReWork | V7.9 108 v2
+// @namespace    http://tampermonkey.net/
+// @version      V7.9 108 v2
+// @description  ATOM | Colorize + Blink Modes | Column Structure
+// @match        https://atomgencat.onbmc.com/*
+// @run-at       document-end
+// @grant        none
+// ==/UserScript==
+
+(function() {
+'use strict';
+
+console.log("[Helix V7.9 108 ReWork Test] Iniciado…");
+
+
+// =============================================================
+// 1. CONFIGURACIÓN GENERAL
+// =============================================================
+
+const MODO_PARPADEO = "independiente";
+
+const CONFIG = {
+    fondoEstados: true,
+    fondoConBordes: false
+};
+
+const usuariosBlink = [
+    "alejandro lozano morales",
+    "juan luis tortola martinez",
+    "sonia fernandez fernandez"
+];
+
+
+// =============================================================
+// 2. CSS GLOBAL
+// =============================================================
+
+const styleHelix = document.createElement("style");
+
+styleHelix.textContent = `
+@keyframes helixBlink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.Lx-blink {
+    animation: helixBlink 1.2s ease-in-out 12;
+}
+
+.Lx-noblink {
+    animation: none !important;
+}
+`;
+
+document.head.appendChild(styleHelix);
+
+
+// =============================================================
+// 3. ENTRADAS
+// =============================================================
+
+
+// -------------------------------------------------------------
+// ASSIGNEE GROUP
+// -------------------------------------------------------------
+
+const assigneeGroupEntries = [
+
+    // PEGAR AQUÍ LAS ENTRADAS DE GROUPS
+
+    { texto: 'X03_ARCONTE_GSV-N2',                          color: '#6e7bf0' },
+    { texto: 'X03_ARCONTE_GSV-N3-MAQ',                      color: '#ffff00' },
+    { texto: 'X03_ARCONTE_GSV-N3-ESPECIALISTES',            color: 'Brown' },
+    { texto: 'X03_ARCONTE_GSV-N3-SENYAL_INSTITUCIONAL',     color: 'red' },
+
+];
+
+
+// -------------------------------------------------------------
+// ASSIGNEE
+// -------------------------------------------------------------
+
+const assigneeEntries = [
+
+    // PEGAR AQUÍ LAS ENTRADAS DE TECHNICIANS
+
+    //-------------------------------------------------------------
+    // Technicians FUJI
+    //-------------------------------------------------------------
+
+    { texto: 'ALEJANDRO LOZANO MORALES',       color: 'Orange' },
+    { texto: 'OVIDIO PARRON MARTINEZ',          color: 'Grey' },
+    { texto: 'MARIA PILAR CARRILLO SENDER',     color: 'Grey' },
+    { texto: 'JHONATHAN VIVAS RENDON',          color: 'Grey' },
+    { texto: 'Next Text',                       color: 'Grey' },
+    { texto: 'Next Text',                       color: 'Grey' },
+    { texto: 'Next Text',                       color: 'Grey' },
+
+    //-------------------------------------------------------------
+    // Technicians T-Systems
+    //-------------------------------------------------------------
+
+    { texto: 'JUAN LUIS TORTOLA MARTINEZ',      color: 'green' },
+    { texto: 'MIGUEL ANGEL GUEMES ALONSO',      color: '#4B0082' },
+    { texto: 'ERIC RODRIGUEZ LUQUE',            color: 'Orange' },
+    { texto: 'JOAN CARLES MESTRE GUILLEN',      color: 'violet' },
+    { texto: 'EDIFICI CIUTAT DE LA JUSTICIA',   color: 'Green' },
+    { texto: 'ANGEL ROIG LORENZO',              color: 'blue' },
+    { texto: 'FERNANDO JIMENEZ PORTILLO',       color: 'Blue' },
+    { texto: 'DANIEL ESPLUGAS SANCHEZ',         color: 'red' },
+    { texto: 'SONIA FERNANDEZ FERNANDEZ',       color: '#007FFF' },
+
+];
+
+
+// -------------------------------------------------------------
+// SUMMARY
+// -------------------------------------------------------------
+
+const summaryEntries = [
+
+    // PEGAR AQUÍ LAS ENTRADAS DE SUMMARY
+
+    { texto: '[Desplegament d’ARCONTE pujada de versió de la', color: 'Brown' },
+    { texto: '[FASE1]',                                      color: 'Brown' },
+    { texto: '[FASE2]',                                      color: 'Brown' },
+    { texto: 'Actualitzar Aplicació. 3h',                    color: 'Brown' },
+    { texto: 'Marxa enrere',                                 color: 'Brown' },
+    { texto: 'Proves. 30min',                                color: 'Brown' },
+    { texto: 'Proves. 1h',                                   color: 'Brown' },
+    { texto: 'Marxa enrere. 1h',                             color: 'Brown' },
+    { texto: 'Realització de Backups. 30m',                  color: 'Brown' },
+    { texto: 'Proves . 30m',                                 color: 'Brown' },
+    { texto: 'Actualitzar Aplicació. 3h',                    color: 'Brown' },
+    { texto: 'Actualitzar Aplicació. 3h',                    color: 'Brown' },
+    { texto: 'Revisio de Sales SALA DE VISTES - AUDITORIUM', color: 'red' },
+    { texto: 'Revisio de Sales SALA DE VISTES ',             color: 'red' },
+    { texto: 'Incidència Arconte En un ',                    color: 'grey' },
+    { texto: 'Incidència Arconte ',                          color: 'grey' },
+    { texto: 'Incidència ',                                  color: 'grey' },
+    { texto: 'Alta Certificats Digitals SSL, Aplicació i Segell', color: 'Pink' },
+    { texto: 'Scheduled For Approval',                       color: 'Brown' },
+    { texto: 'Staged',                                       color: 'Brown' },
+    { texto: 'Scheduled',                                    color: 'Brown' },
+    { texto: 'Aplicació de l',                               color: 'Brown' },
+    { texto: 'actualització. 2h',                            color: 'Brown' },
+    { texto: 'proves. 30m',                                  color: 'Brown' },
+    { texto: 'marxa enrere. 1h',                             color: 'Brown' },
+    { texto: 'Moviments entre videos',                       color: '#6e7bf0' },
+    { texto: 'Petició Sessió en Passat',                     color: '#6e7bf0' },
+    { texto: 'Validacions funcionals ARCONTE',               color: 'Violet' },
+
+];
+
+
+// -------------------------------------------------------------
+// STATUS
+// -------------------------------------------------------------
+
+const statusEntries = [
+
+    // PEGAR AQUÍ LAS ENTRADAS DE STATUS
+
+    { texto: 'Assigned',    color: 'white', fondo: 'red' },
+    { texto: 'In Progress', color: 'Green', fondo: '#ccffcc' },
+
+    { texto: 'Medium',      color: 'Orange' },
+    { texto: 'Low',         color: 'Grey' },
+
+    { texto: 'Reopen',      color: 'black' },
+    { texto: '3-Medium',    color: 'Orange' },
+    { texto: 'Pending',     color: 'orange' },
+    { texto: '4-Low',       color: 'Grey' },
+
+];
+
+
+// -------------------------------------------------------------
+// REQUEST TYPE
+// -------------------------------------------------------------
+
+const requestTypeEntries = [
+
+    // PEGAR AQUÍ LAS ENTRADAS DE TYPES
+
+    { texto: 'Work Order', color: 'Violet' },
+    { texto: 'Incident',   color: 'Grey' },
+    { texto: 'WO0000',     color: 'Violet' },
+    { texto: 'TAS0000',    color: 'Violet' },
+    { texto: 'CRQ000',     color: 'Violet' },
+    { texto: 'INC0000',    color: '#6e7bf0' },
+
+    { texto: 'Change',     color: 'Violet' },
+    { texto: 'Task',       color: 'Violet' }
+
+];
+
+
+// -------------------------------------------------------------
+// PRIORITY
+// -------------------------------------------------------------
+
+const priorityEntries = [
+
+    // PEGAR AQUÍ LAS ENTRADAS DE PRIORITY
+
+    { texto: 'High',      color: 'Red' },
+    { texto: '2-High',    color: 'Red' },
+
+    { texto: 'Medium',    color: 'Orange' },
+    { texto: 'Low',       color: 'Grey' },
+
+    { texto: '3-Medium',  color: 'Orange' },
+    { texto: '4-Low',     color: 'Grey' },
+
+];
+
+
+// -------------------------------------------------------------
+// REQUEST ID
+//
+// INC000011390235
+// WO0000005426331
+//
+// Se colorea la entrada COMPLETA.
+// -------------------------------------------------------------
+
+const requestIDEntries = [
+
+    // PEGAR AQUÍ SI SE QUIEREN ENTRADAS ADICIONALES
+
+];
+
+
+// =============================================================
+// 4. COLORES DE FECHA
+// =============================================================
+
+const coloresFecha = {
+    reciente: "green",
+    media:    "orange",
+    antigua:  "red"
+};
+
+
+// =============================================================
+// 5. IDENTIFICACIÓN DE COLUMNAS
+//
+// SOLO CAMBIAR EL NÚMERO SI ATOM CAMBIA EL ORDEN.
+//
+// Los nombres NO cambian.
+// =============================================================
+
+const COLUMNAS = {
+
+    assigneeGroup: 0,   // ASSIGNEE GROUP
+    parentRequest: 1,   // PARENT REQUEST ID
+    status:        2,   // STATUS
+    assignee:      3,   // ASSIGNEE
+    summary:       4,   // SUMMARY
+    priority:      5,   // PRIORITY
+    urgency:       6,   // URGENCY
+    submitDate:    7,   // SUBMIT DATE
+    requestType:   8,   // REQUEST TYPE
+    service:       9,   // SERVICE
+    requestID:    10,   // REQUEST ID
+
+    // CAMPOS OCULTOS
+
+    company:      11,   // COMPANY
+    customerSite: 12,   // CUSTOMER SITE
+    department:   13,   // DEPARTMENT
+    escalated:    14,   // ESCALATED?
+    impact:       15,   // IMPACT
+
+    operationalTier1: 16, // OPERATIONAL CATEGORIZATION TIER 1
+    operationalTier2: 17, // OPERATIONAL CATEGORIZATION TIER 2
+    operationalTier3: 18, // OPERATIONAL CATEGORIZATION TIER 3
+
+    productTier1: 19, // PRODUCT CATEGORIZATION TIER 1
+    productTier2: 20, // PRODUCT CATEGORIZATION TIER 2
+    productTier3: 21, // PRODUCT CATEGORIZATION TIER 3
+
+    productName: 22 // PRODUCT NAME
+};
+
+
+// =============================================================
+// 6. PARSE FECHA
+// =============================================================
+
+function parseFecha(text) {
+
+    if (!/^\d{2}\/\d{2}\/\d{4}/.test(text))
+        return null;
+
+    const [f, h] = text.split(" ");
+
+    if (!h)
+        return null;
+
+    const [d, m, y] = f.split("/").map(Number);
+    const [hh, mm, ss] = h.split(":").map(Number);
+
+    return new Date(y, m - 1, d, hh, mm, ss);
+}
+
+
+// =============================================================
+// 7. FUNCIÓN DE COLOR
+//
+// 107 — PROTECCIÓN DOBLE PROCESO
+// Coloreado con parpadeo.
+//
+// Se marca cada elemento procesado para impedir que el mismo
+// elemento sea coloreado nuevamente por el MutationObserver.
+// =============================================================
+
+function aplicarEntrada(td, entrada) {
+
+    if (!td || !entrada)
+        return;
+
+    // ---------------------------------------------------------
+    // PROTECCIÓN DOBLE PROCESO
+    // ---------------------------------------------------------
+
+    if (td.dataset.lxProcesado === "1")
+        return;
+
+
+    const textoOriginal = td.textContent;
+
+    if (!textoOriginal)
+        return;
+
+
+    const safe = entrada.texto
+        .replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+    const reg = new RegExp(`(${safe})`, "gi");
+
+    if (!reg.test(textoOriginal))
+        return;
+
+
+    // ---------------------------------------------------------
+    // COLOREADO + PARPADEO
+    // ---------------------------------------------------------
+
+    let html = td.innerHTML;
+
+    html = html.replace(reg, match => {
+
+        let estilos =
+            `color:${entrada.color}; white-space:nowrap;`;
+
+        if (CONFIG.fondoEstados && entrada.fondo) {
+
+            estilos += `
+                background:${entrada.fondo};
+                box-decoration-break:clone;
+                -webkit-box-decoration-break:clone;
+                padding:1px 3px;
+                border-radius:3px;
+                line-height:1;
+            `;
+        }
+
+        const lower = match.toLowerCase();
+
+        let clases = "Lx-noblink";
+
+
+        // -----------------------------------------------------
+        // MODO DE PARPADEO
+        // -----------------------------------------------------
+
+        if (MODO_PARPADEO === "constante") {
+
+            clases = "Lx-blink";
+
+        }
+
+        else if (MODO_PARPADEO === "intermitente") {
+
+            clases = "Lx-blink";
+
+        }
+
+        else if (MODO_PARPADEO === "independiente") {
+
+            if (
+                ["assigned", "in progress"].includes(lower) ||
+                usuariosBlink.includes(lower)
+            ) {
+                clases = "Lx-blink";
+            }
+
+            // 107 — HIGH: color de entrada + parpadeo
+            if (lower === "high") {
+                clases = "Lx-blink";
+            }
+        }
+
+
+        return `<span class="${clases}" style="${estilos}">${match}</span>`;
+    });
+
+
+    td.innerHTML = html;
+
+    // ---------------------------------------------------------
+    // 107 — MARCA DE PROCESADO
+    // ---------------------------------------------------------
+
+    td.dataset.lxProcesado = "1";
+}
+
+
+// =============================================================
+// 8. PROCESAR ENTRADAS DE UNA COLUMNA
+// =============================================================
+
+function procesarEntradas(td, entradas) {
+
+    if (!td || !entradas || !entradas.length)
+        return;
+
+    entradas.forEach(entrada => {
+
+        aplicarEntrada(td, entrada);
+
+    });
+}
+
+
+// =============================================================
+// 9. REQUEST ID
+//
+// Detecta el tipo completo, independientemente del número.
+//
+// INC000011390235
+// WO0000005426331
+// TAS0000000000000
+// CRQ0000000000000
+// =============================================================
+
+function procesarRequestID(td) {
+
+    if (!td)
+        return;
+
+    if (td.dataset.lxProcesado === "1")
+        return;
+
+
+    const texto = td.textContent.trim();
+
+    if (!/^(INC|WO|TAS|CRQ)\d+$/i.test(texto))
+        return;
+
+
+    let color = null;
+
+    if (/^INC\d+$/i.test(texto)) {
+
+        color = "#6e7bf0";
+
+    }
+
+    else if (/^(WO|TAS|CRQ)\d+$/i.test(texto)) {
+
+        color = "Violet";
+
+    }
+
+
+    if (!color)
+        return;
+
+
+    td.innerHTML =
+        `<span class="Lx-noblink"
+               style="color:${color}; white-space:nowrap;">${texto}</span>`;
+
+    td.dataset.lxProcesado = "1";
+}
+
+
+// =============================================================
+// 10. PROCESAR UNA FILA
+// =============================================================
+
+function procesarFila(tr) {
+
+    if (!tr)
+        return;
+
+    const cells = Array.from(tr.children);
+
+    if (cells.length < 11)
+        return;
+
+
+    // ---------------------------------------------------------
+    // REFERENCIA DE COLUMNAS
+    // ---------------------------------------------------------
+
+    const assigneeGroup = cells[COLUMNAS.assigneeGroup];
+    const parentRequest = cells[COLUMNAS.parentRequest];
+    const status        = cells[COLUMNAS.status];
+    const assignee      = cells[COLUMNAS.assignee];
+    const summary       = cells[COLUMNAS.summary];
+    const priority      = cells[COLUMNAS.priority];
+    const urgency       = cells[COLUMNAS.urgency];
+    const submitDate    = cells[COLUMNAS.submitDate];
+    const requestType   = cells[COLUMNAS.requestType];
+    const service       = cells[COLUMNAS.service];
+    const requestID     = cells[COLUMNAS.requestID];
+
+
+    // ---------------------------------------------------------
+    // ASSIGNEE GROUP
+    // ---------------------------------------------------------
+
+    procesarEntradas(
+        assigneeGroup,
+        assigneeGroupEntries
+    );
+
+
+    // ---------------------------------------------------------
+    // ASSIGNEE
+    // ---------------------------------------------------------
+
+    procesarEntradas(
+        assignee,
+        assigneeEntries
+    );
+
+
+    // ---------------------------------------------------------
+    // SUMMARY
+    // ---------------------------------------------------------
+
+    procesarEntradas(
+        summary,
+        summaryEntries
+    );
+
+
+    // ---------------------------------------------------------
+    // STATUS
+    // ---------------------------------------------------------
+
+    procesarEntradas(
+        status,
+        statusEntries
+    );
+
+
+    // ---------------------------------------------------------
+    // PRIORITY
+    // ---------------------------------------------------------
+
+    procesarEntradas(
+        priority,
+        priorityEntries
+    );
+
+
+    // ---------------------------------------------------------
+    // REQUEST TYPE
+    // ---------------------------------------------------------
+
+    procesarEntradas(
+        requestType,
+        requestTypeEntries
+    );
+
+
+    // ---------------------------------------------------------
+    // REQUEST ID
+    // ---------------------------------------------------------
+
+    procesarRequestID(requestID);
+
+
+    // ---------------------------------------------------------
+    // SUBMIT DATE
+    // ---------------------------------------------------------
+
+    if (submitDate) {
+
+        const fecha =
+            parseFecha(submitDate.textContent.trim());
+
+        if (fecha) {
+
+            const ahora = new Date();
+
+            let colorFecha =
+                coloresFecha.reciente;
+
+            const diffHoras =
+                (ahora - fecha) /
+                (1000 * 60 * 60);
+
+            if (
+                diffHoras > 24 &&
+                diffHoras <= 72
+            ) {
+
+                colorFecha =
+                    coloresFecha.media;
+
+            }
+
+            else if (diffHoras > 72) {
+
+                colorFecha =
+                    coloresFecha.antigua;
+            }
+
+            submitDate.style.color = colorFecha;
+        }
+    }
+}
+
+
+// =============================================================
+// 11. PROCESAR TABLA
+// =============================================================
+
+function colorearTabla() {
+
+    const tabla =
+        document.querySelector("table.BaseTable");
+
+    if (!tabla)
+        return;
+
+
+    tabla.querySelectorAll("tbody tr")
+        .forEach(tr => {
+
+            if (
+                tr.classList.contains("hiddentablehdr")
+            )
+                return;
+
+            procesarFila(tr);
+
+        });
+}
+
+
+// =============================================================
+// 12. PARPADEO GLOBAL
+//
+// Protección doble proceso:
+// - Texto: animación CSS.
+// - Favicon: mismo ciclo temporal.
+// - Ambos empiezan y terminan simultáneamente.
+// =============================================================
+
+const BLINK_DURACION = 1200;
+const BLINK_REPETICIONES = 12;
+const BLINK_CICLO = 90000;
+
+let blinkCicloActivo = false;
+let timeoutFinBlink = null;
+
+
+function iniciarCicloBlink() {
+
+    if (MODO_PARPADEO !== "intermitente" &&
+        MODO_PARPADEO !== "independiente")
+        return;
+
+
+    // ---------------------------------------------------------
+    // TEXTO
+    // ---------------------------------------------------------
+
+    const elementos =
+        document.querySelectorAll(".Lx-blink");
+
+    if (elementos.length) {
+
+        elementos.forEach(el =>
+            el.classList.remove("Lx-blink")
+        );
+
+        void document.body.offsetWidth;
+
+        elementos.forEach(el =>
+            el.classList.add("Lx-blink")
+        );
+    }
+
+
+    // ---------------------------------------------------------
+    // FAVICON
+    //
+    // Sólo si existe Assigned.
+    // ---------------------------------------------------------
+
+    if (hayAssigned()) {
+
+        activarParpadeoFavicon();
+
+    } else {
+
+        desactivarParpadeoFavicon();
+    }
+
+
+    blinkCicloActivo = true;
+
+
+    // ---------------------------------------------------------
+    // FINAL DEL PARPADEO
+    //
+    // 1,2 s × 12 = 14,4 segundos
+    // ---------------------------------------------------------
+
+    clearTimeout(timeoutFinBlink);
+
+    timeoutFinBlink = setTimeout(() => {
+
+        desactivarParpadeoFavicon();
+
+        blinkCicloActivo = false;
+
+    }, BLINK_DURACION * BLINK_REPETICIONES);
+}
+
+
+// -------------------------------------------------------------
+// INICIO
+//
+// Se retrasa hasta que el bloque 13 (FAVICON) haya sido
+// inicializado.
+// -------------------------------------------------------------
+
+setTimeout(() => {
+
+    iniciarCicloBlink();
+
+    setInterval(
+        iniciarCicloBlink,
+        BLINK_CICLO
+    );
+
+}, 1000);
+
+
+// =============================================================
+// 13. FAVICON
+// =============================================================
+
+let faviconOriginal = null;
+let faviconRojo = null;
+let faviconParpadeando = false;
+let intervaloFavicon = null;
+
+
+// -------------------------------------------------------------
+// CREAR FAVICON ROJO
+// -------------------------------------------------------------
+
+function crearFaviconRojo() {
+
+    const canvas =
+        document.createElement("canvas");
+
+    canvas.width = 32;
+    canvas.height = 32;
+
+    const ctx =
+        canvas.getContext("2d");
+
+    ctx.fillStyle = "red";
+
+    ctx.beginPath();
+
+    ctx.arc(
+        16,
+        16,
+        14,
+        0,
+        2 * Math.PI
+    );
+
+    ctx.fill();
+
+    return canvas.toDataURL("image/png");
+}
+
+
+// -------------------------------------------------------------
+// OBTENER FAVICON ACTUAL
+// -------------------------------------------------------------
+
+function obtenerFaviconActual() {
+
+    const link =
+        document.querySelector("link[rel*='icon']");
+
+    return link ? link.href : null;
+}
+
+
+// -------------------------------------------------------------
+// CAMBIAR FAVICON
+// -------------------------------------------------------------
+
+function cambiarFavicon(url) {
+
+    let link =
+        document.querySelector("link[rel*='icon']");
+
+    if (!link) {
+
+        link =
+            document.createElement("link");
+
+        link.rel = "icon";
+
+        document.head.appendChild(link);
+    }
+
+    link.href = url;
+}
+
+
+// -------------------------------------------------------------
+// COMPROBAR ASSIGNED
+// -------------------------------------------------------------
+
+function hayAssigned() {
+
+    const tabla =
+        document.querySelector("table.BaseTable");
+
+    if (!tabla)
+        return false;
+
+    return tabla.textContent
+        .toLowerCase()
+        .includes("assigned");
+}
+
+
+// -------------------------------------------------------------
+// ACTIVAR PARPADEO FAVICON
+//
+// Utiliza el mismo ritmo que el parpadeo general.
+// BLINK_DURACION = 1200 ms
+// → cambio cada 600 ms
+// -------------------------------------------------------------
+
+function activarParpadeoFavicon() {
+
+    if (faviconParpadeando)
+        return;
+
+
+    faviconOriginal =
+        obtenerFaviconActual();
+
+    faviconRojo =
+        crearFaviconRojo();
+
+    faviconParpadeando = true;
+
+
+    intervaloFavicon =
+        setInterval(() => {
+
+            const link =
+                document.querySelector("link[rel*='icon']");
+
+            if (!link)
+                return;
+
+
+            const actual =
+                link.href;
+
+            cambiarFavicon(
+                actual === faviconRojo
+                    ? faviconOriginal
+                    : faviconRojo
+            );
+
+        }, BLINK_DURACION / 2);
+}
+
+
+// -------------------------------------------------------------
+// DESACTIVAR PARPADEO FAVICON
+// -------------------------------------------------------------
+
+function desactivarParpadeoFavicon() {
+
+    if (!faviconParpadeando)
+        return;
+
+
+    clearInterval(intervaloFavicon);
+
+    intervaloFavicon = null;
+
+    faviconParpadeando = false;
+
+    cambiarFavicon(faviconOriginal);
+}
+// =============================================================
+// 14. OBSERVER
+// =============================================================
+
+let observerActivo = null;
+let tablaActual = null;
+let pendiente = false;
+
+
+function debouncedColor() {
+
+    if (pendiente)
+        return;
+
+    pendiente = true;
+
+
+    setTimeout(() => {
+
+        pendiente = false;
+
+        colorearTabla();
+
+
+        if (hayAssigned()) {
+
+            activarParpadeoFavicon();
+
+        }
+
+        else {
+
+            desactivarParpadeoFavicon();
+
+        }
+
+    }, 120);
+}
+
+
+function engancharObserver(tabla) {
+
+    if (observerActivo) {
+
+        observerActivo.disconnect();
+
+        observerActivo = null;
+    }
+
+
+    observerActivo =
+        new MutationObserver(() =>
+            debouncedColor()
+        );
+
+
+    observerActivo.observe(
+        tabla.parentElement,
+        {
+            childList: true,
+            subtree: true
+        }
+    );
+
+
+    tablaActual = tabla;
+}
+
+
+function vigilarTabla() {
+
+    const tabla =
+        document.querySelector("table.BaseTable");
+
+
+    if (!tabla) {
+
+        setTimeout(
+            vigilarTabla,
+            500
+        );
+
+        return;
+    }
+
+
+    if (tabla !== tablaActual) {
+
+        console.log(
+            "[Helix] Nueva tabla detectada → reenganchando observer"
+        );
+
+        engancharObserver(tabla);
+
+        colorearTabla();
+    }
+
+
+    setTimeout(
+        vigilarTabla,
+        2000
+    );
+}
+
+
+// =============================================================
+// 15. INICIO
+// =============================================================
+
+vigilarTabla();
+
+})();
