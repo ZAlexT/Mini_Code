@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         02. ATOM Index | V7.9 108 002
+// @name         02. ATOM Index | V7.9 108 V002
 // @namespace    http://tampermonkey.net/
-// @version      V7.9 108 002
+// @version      V7.9 108 V002
 // @description  ATOM | Colorize + Blink + Favicon + Bold + Glow
 // @match        https://atomgencat.onbmc.com/*
 // @run-at       document-end
@@ -208,8 +208,8 @@ console.log("[Helix V7.9 107] Iniciado…");
         /*{ texto: 'Assigned', color: 'white', fondo: '#0078d4', padding: '7px 37px', borderRadius: '7px' },//  Códgo pinta fondo in pastilla || // #fcccc */
         { texto: 'Assigned', 											color: 'white', fondo: 'red'}, // #fcccc
         { texto: 'In Progress', 										color: 'Green', fondo: '#ccffcc' }, // #ccffcc
-        { texto: 'High', 												color: 'Red', bold: 'false', glow: 'true' },  // Eliminamos fondo: '#d13438' para evitar el espacio extra #d13438
-        { texto: '2-High', 												color: 'Red', 	}, // Eliminamos fondo: '#d13438' para evitar el espacio extra #d13438
+        { texto: 'High', 												color: 'Red', bold: 'true', glow2: 'false' },  // Eliminamos fondo: '#d13438' para evitar el espacio extra #d13438
+        { texto: '2-High', 												color: 'Red' }, // Eliminamos fondo: '#d13438' para evitar el espacio extra #d13438
 
 /*   //------------------- Texto Blanco Fondo Color -------------------------
         { texto: 'Assigned', 											color: 'white', 	fondo: '#0078d4' }, // #fcccc
@@ -283,17 +283,17 @@ console.log("[Helix V7.9 107] Iniciado…");
 
         html = html.replace(reg, match => {
 
-            let estilos = `color:${r.color}; white-space:nowrap;`;
-             if (r.bold) {
-                estilos += `font-weight:560;`;
+          let estilos = `color:${r.color}; white-space:nowrap;`;
+           if (r.bold) {
+                estilos += `font-weight:700;`;
             }
 
-            //  if (r.glow) {
-            //      estilos += `text-shadow: 0 0 3px #FFD700, 0 0 6px #FFD700, 0 0 10px #FFD700 !important;`;
-            //   }
-
             if (r.glow) {
-                estilos += `text-shadow: 0 0 2px #FFD700 !important;`;
+                estilos += `text-shadow: 0 0 1px #FFD700, 0 0 3px #FFD700, 0 0 4px #FFD700 !important;`;
+               }
+
+            if (r.glow2) {
+                estilos += `text-shadow: 0 0 1px green, 0 0 3px green, 0 0 4px green !important;`;
             }
 
             if (CONFIG.fondoEstados && r.fondo) {
@@ -402,7 +402,7 @@ function colorearTabla() {
 }
 
 //-------------------------------------------------------------
-// 7. PARPADEO GLOBAL SINCRONIZADO
+// 7. PARPADEO GLOBAL SINCRONIZADO // ORIGINAL
 //
 // Protección doble proceso:
 // - Texto: animación CSS.
@@ -413,13 +413,30 @@ function colorearTabla() {
 // Nuevo ciclo cada 90 segundos.
 //-------------------------------------------------------------
 
-const BLINK_DURACION = 1200;
-const BLINK_REPETICIONES = 12;
-const BLINK_CICLO = 90000;
+const BLINK_DURACION = 1200;		// 1,2 s
+const BLINK_REPETICIONES = 12;		// 12 repeticiones
+const BLINK_CICLO = 90000;			// 90 s
 
 let blinkTimeoutFin = null;
 let blinkIntervaloFavicon = null;
 
+/*
+		//-------------------------------------------------------------
+		// 7. PARPADEO GLOBAL SINCRONIZADO ** SALTO EDITION **
+		//
+		// Protección doble proceso:
+		// - Texto: animación CSS.
+		// - Favicon: mismo ciclo temporal.
+		// - Ambos empiezan y terminan simultáneamente.
+		//
+		// 1,2 s × 12 = 14,4 segundos de parpadeo
+		// Nuevo ciclo cada 90 segundos.
+		//-------------------------------------------------------------
+
+		const BLINK_DURACION = 900;       // 0,9 s
+		const BLINK_REPETICIONES = 5;     // 5 repeticiones
+		const BLINK_CICLO = 190000;       // 190 s ≈ 3 min 10 s
+*/
 
 //-------------------------------------------------------------
 // INICIAR CICLO GLOBAL
@@ -842,7 +859,7 @@ function procesarRequestID(td) {
     // 12. ATOM | Entradas para uBlock Origin
     //-------------------------------------------------------------
 
-	
+
 ! ! 27 Nov 2025 https://atomgencat.onbmc.com | ATOM Elementos
 
  atomgencat.onbmc.com###WIN_10_304196200 > .PageBodyHorizontal
@@ -867,7 +884,7 @@ function procesarRequestID(td) {
  atomgencat.onbmc.com###WIN_4_304196200 > .PageBodyHorizontal
 
 ! ! Feb 13, 2026 https://atomgencat.onbmc.com | ATOM ToolTip
-! Revisar la siguiente entrada | Pierde el Fondo -- 
+! Revisar la siguiente entrada | Pierde el Fondo --
 ||atomgencat.onbmc.com/arsys/sharedresources/image/SmallTooltip3.png?server=onbmc-s$image,domain=atomgencat.onbmc.com,important
 ||atomgencat.onbmc.com/arsys/sharedresources/image/WorkOrderSubmitterTooltip.png?server=onbmc-s$image,domain=atomgencat.onbmc.com,important
 ! atomgencat.onbmc.com###artooltip.divToolTipHtml
@@ -898,6 +915,7 @@ atomgencat.onbmc.com##.Char.ardbnf01_chr_CustomerEmail.arfid2010250803.df
 
 ---------------------------------------------------------------------------------------------------------
 */
+
 /*
     //////////////////     Desactivado | Sólo Tests | Ubicar Bajo CSS GLOBAL |       //////////////////
 
