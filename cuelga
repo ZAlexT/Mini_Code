@@ -1,3 +1,57 @@
+<div class="PageBody pbChrome" style="border-radius: 0px 0px 0px 0px ;-moz-border-radius: 0px 0px 0px 0px ;-webkit-border-radius: 0px 0px 0px 0px ;background: -moz-linear-gradient(top, rgba(), rgba());background: -webkit-gradient(linear, center center, center center, from(rgba()),to(rgba()));background: linear-gradient(rgba(), rgba());background-color:transparent;">
+<div id="WIN_1_80118" arid="80118" artype="PageHolder" armaxh="22" class="PageHolder arfid80118 ardbnContentPanelHolder" arcontainerid="80112" arpercentwidth="100" arpercentheight="100" arphviewtype="StackView" arorientation="vertical" arstackviewtype="fixed" armargin="0,0,0,0" style="top: auto; left: auto; width: 1170px; height: 744px; z-index: 1170; margin: 0px; padding: 0px; min-width: 20px; max-width: 32767px; min-height: 20px; max-height: 32767px; position: relative;" arwindowid="1">
+<div class="PageHolderStackViewResizable" style="overflow-y:auto">
+<div class="PageHolderStackViewFixedCV" style="height: 744px;">
+<div id="WIN_1_80101" arid="80101" class="StackPanel arfid80101 ardbnContentToolBarPanel" artype="Page" ardbn="ContentToolBarPanel" arfillstyle="0" arvisibility="visible" arinitsize="28" arminsize="28" armaxsize="28" arslackorder="10" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:999;height:auto;width:100%;" arwindowid="1">
+<fieldset class="PageBodyVertical" arbwidth="0" arbw="0,0,0,0" aropacity="1.0" arbcolor="transparent" style="height: 28px;">
+<legend class="hidden acc">Panel</legend>
+<div class="PageBody pbChrome" style="border-radius: 0px; background-color: transparent; height: 100%;">
+<div id="WIN_1_80082" arid="80082" artype="Page" ardbn="Control Panel" arfillstyle="0" arvspace="0" arcolor="ffffff" arbcolor="#e9eff2" style="top:0px; right:0px; width:90px; height:27px;z-index:1173;border-top:1px solid #e9eff2;border-right:1px solid #e9eff2;border-bottom:1px solid #e9eff2;border-left:1px solid #e9eff2;border-radius: 0px 0px 0px 0px ;-moz-border-radius: 0px 0px 0px 0px ;-webkit-border-radius: 0px 0px 0px 0px ; background: -moz-linear-gradient(bottom, rgba(223,223,223,1.0), rgba(255,255,255,1.0)) ;background: -webkit-gradient(linear,center top, center bottom, from(rgba(255,255,255,1.0)),to(rgba(223,223,223,1.0))) ;background: -ms-linear-gradient(to top, rgba(223,223,223,1.0), rgba(255,255,255,1.0)) ;background: linear-gradient(to top, rgba(223,223,223,1.0), rgba(255,255,255,1.0));background-color:#ffffff;" class="Panel arfid80082 ardbnControlPanel rl" argcolor="LHffffffdfdfdf" arbwidth="0" arbw="1,1,1,1" arwindowid="1">
+<fieldset class=" pnl " style="z-index:1173;">
+<legend class="hidden acc"></legend>
+<div id="WIN_1_80160" arid="80160" artype="Page" ardbn="controlBar-s-curve-panel" arfillstyle="0" arvspace="0" arcolor="f5f5f5" arbcolor="#f5f5f5" style="top:0px; left:0px; width:10px; height:24px;z-index:1174;border-width:0px;border-radius: 0px 0px 0px 0px ;-moz-border-radius: 0px 0px 0px 0px ;-webkit-border-radius: 0px 0px 0px 0px ;  background: -moz-linear-gradient(top, rgba(245,245,245,0.0), rgba(245,245,245,0.0)) repeat scroll 0 0 transparent;  background: -webkit-gradient(linear, center center, center center, from(rgba(245,245,245,0.0)),to(rgba(245,245,245,0.0)));  background: -ms-linear-gradient(top, rgba(245,245,245,0.0), rgba(245,245,245,0.0));background: linear-gradient(rgba(245,245,245,0.0), rgba(245,245,245,0.0));" class="Panel arfid80160 ardbncontrolBar-s-curve-panel" arbwidth="0" arbw="0,0,0,0" aropacity="0.0" arwindowid="1">
+<div class="FormContainerBackground" style="width:100%;height:100%;background-image:url(../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1);background-position:top left;background-repeat:no-repeat;">
+</div>
+<fieldset class=" pnl " style="z-index:1174;">
+<legend class="hidden acc"></legend>
+</fieldset>
+</div>
+<a href="javascript:" id="WIN_1_80138" arid="80138" artype="Control" ardbn="btnAddPanels" title="Add Content to Layout" artcolor="null" class="btnflt  pointerCursor arfid80138 ardbnbtnAddPanels" style="top:1px; left:12px; width:25px; height:21px;z-index:1141;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80138" aralttxt="1" artxt="Add Content to Layout" arimgcenter="1" alt="Add Content to Layout" title="Add Content to Layout" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_1_80108" arid="80108" artype="Control" ardbn="btnSaveCurrentConfiguration" title="Save Current Layout" artcolor="null" class="btnfltd  btnd arfid80108 ardbnbtnSaveCurrentConfiguration" style="top:1px; left:37px; width:25px; height:21px;z-index:1113;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80108" aralttxt="1" artxt="Save Current Layout" arimgcenter="1" alt="Save Current Layout Disabled" title="Save Current Layout Disabled" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_1_80106" arid="80106" artype="Control" ardbn="btnRestoreDefaults" title="Restore Default Layout" artcolor="null" class="btnflt arfid80106 ardbnbtnRestoreDefaults" style="top:1px; left:62px; width:25px; height:21px;z-index:1119;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80106" aralttxt="1" artxt="Restore Default Layout" arimgcenter="1" alt="Restore Default Layout" title="Restore Default Layout" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+</fieldset>
+</div>
+<a href="javascript:" id="WIN_1_80171" arid="80171" artype="Control" ardbn="z3Btn_RSS" title="RSS Feed" artcolor="null" class="btnflt  pointerCursor arfid80171 ardbnz3Btn_RSS" style="top:6px; right:110px; width:16px; height:16px;visibility:hidden;z-index:1182;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:16px; height:16px;">
+<img src="../../../../imagepool/rss-feed%21onbmc-s?cid=1" id="reg_img_80171" png="1" aralttxt="1" artxt="RSS Feed" arimgcenter="1" alt="RSS Feed" title="RSS Feed" class="btnimg" style="top:0px; left:0px; width:16px; height:16px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_1_80170" arid="80170" artype="Control" ardbn="z3Btn_Twitter" title="Twitter" artcolor="null" class="btnflt  pointerCursor arfid80170 ardbnz3Btn_Twitter" style="top:6px; right:130px; width:16px; height:16px;visibility:hidden;z-index:1183;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:16px; height:16px;">
+<img src="../../../../imagepool/twitter%21onbmc-s?cid=1" id="reg_img_80170" png="1" aralttxt="1" artxt="Twitter" arimgcenter="1" alt="Twitter" title="Twitter" class="btnimg" style="top:0px; left:0px; width:16px; height:16px;">
+</div>
+</a>
+</div>
+</fieldset>
+</div>
+<div id="WIN_1_80102" arid="80102" class="StackPanel arfid80102 ardbnContentBodyPanel" artype="Page" ardbn="ContentBodyPanel" arfillstyle="1" arvisibility="visible" arinitsize="200" arminsize="25" armaxsize="2000" arslackorder="0" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:1000;height:auto;width:100%;" arwindowid="1">
+<fieldset class="PageBodyVertical" arbwidth="0" arbw="0,0,0,0" aropacity="1.0" arbcolor="transparent" style="height: 716px; width: 1170px;">
+<legend class="hidden acc">Panel2</legend>
+<div class="PageBody pbChrome" style="border-radius: 0px 0px 0px 0px ;-moz-border-radius: 0px 0px 0px 0px ;-webkit-border-radius: 0px 0px 0px 0px ;background: -moz-linear-gradient(top, rgba(), rgba());background: -webkit-gradient(linear, center center, center center, from(rgba()),to(rgba()));background: linear-gradient(rgba(), rgba());background-color:transparent;">
+<div id="WIN_1_80109" arid="80109" artype="PageHolder" armaxh="22" class="PageHolder arfid80109 ardbnShellsColumnsPanelHolder" arcontainerid="80102" arpercentwidth="100" arpercentheight="100" arphviewtype="StackView" arorientation="horizontal" arstackviewtype="fixed" armargin="0,0,0,0" style="top: auto; left: auto; width: 1170px; height: 716px; z-index: 1006; margin: 0px; padding: 0px; overflow-x: auto; min-width: 20px; max-width: 32767px; min-height: 20px; max-height: 32767px; position: relative;" arwindowid="1">
+<div class="PageHolderStackViewResizable" style="overflow-x:auto">
+<div class="PageHolderStackViewFixedCH" style="width: 1170px;">
+<div id="WIN_1_80110" arid="80110" class="StackPanel arfid80110 ardbnShellsLeftPanel" artype="Page" ardbn="Shells Left Panel" arfillstyle="1" arvisibility="visible" arinitsize="250" arminsize="250" armaxsize="2000" arslackorder="1" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:998;width:auto;float:left;height:100%;" arwindowid="1">
+<fieldset class="PageBodyHorizontal" arbwidth="0" arbw="0,0,0,0" aropacity="1.0" arbcolor="transparent" style="width: 1145px;">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 0px 0px 0px 0px ;-moz-border-radius: 0px 0px 0px 0px ;-webkit-border-radius: 0px 0px 0px 0px ;background: -moz-linear-gradient(top, rgba(), rgba());background: -webkit-gradient(linear, center center, center center, from(rgba()),to(rgba()));background: linear-gradient(rgba(), rgba());background-color:transparent;">
 <div id="WIN_1_80111" arid="80111" artype="PageHolder" armaxh="22" class="PageHolder arfid80111 ardbnShellsLeftPanelHolder" arcontainerid="80110" arpercentwidth="100" arpercentheight="100" arphviewtype="StackView" arorientation="vertical" arstackviewtype="fixed" armargin="5,25,0,25" style="top: auto; left: auto; width: 1145px; height: 716px; z-index: 996; margin: 0px; padding: 5px 25px 0px; min-width: 20px; max-width: 32767px; min-height: 20px; max-height: 32767px; position: relative;" arwindowid="1">
 <div class="PageHolderStackViewResizable" style="overflow-y:auto">
 <div class="PageHolderStackViewFixedCV" style="height: 711px;">
@@ -57,15 +111,16 @@ structural form signature: 9695849752885046652
 form name: 
 form id: 
 form button titles: 
-field frame token: 7A218BC1EF5032B87D9C3EC172A73049
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
 form renderer id: 0
-field renderer id: 15291
+field renderer id: 663
 visible: false
 focusable: false
 field rank: 8
 field rank in signature group: 0
 field rank in host form: 8
-field rank in host form signature group: 0" autofill-prediction="UNKNOWN_TYPE"></textarea>
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"></textarea>
 </div>
 </div>
 </fieldset>
@@ -145,15 +200,16 @@ structural form signature: 9695849752885046652
 form name: 
 form id: 
 form button titles: 
-field frame token: 7A218BC1EF5032B87D9C3EC172A73049
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
 form renderer id: 0
-field renderer id: 15339
+field renderer id: 710
 visible: false
 focusable: false
 field rank: 9
 field rank in signature group: 2
 field rank in host form: 9
-field rank in host form signature group: 2" autofill-prediction="UNKNOWN_TYPE"><a href="javascript:" class="btn btn3d " style="top:0px; left:60px; width:18px; height:17px;"><img class="btnimg" src="../../../../resources/images/menu_down.gif" style="top:6px; left:4px; width:7px; height:4px;" alt="Click to show a menu to choose a record set displayed in table null" title=""></a></div><a href="javascript:" class="btn chunkright" style="top:0px; left:116px; width:18px; height:18px;"><img class="btnimg" src="../../../../resources/images/chunking_sprite.png" alt="Click to move to the next page in table null" title="Next Chunk"></a></div></td><td nowrap="" valign="middle" class="TableHdrL"></td><td nowrap="" valign="middle" class="TableHdrR"></td></tr></tbody></table></div><div class="TableInner"></div><div class="TableFtr" style="visibility:hidden"><table class="TableFtr" cellpadding="0" cellspacing="0"><tbody><tr><td nowrap="" valign="middle" class="TableFtrL"></td><td nowrap="" valign="middle" class="TableFtrR"></td></tr></tbody></table></div></div>
+field rank in host form signature group: 2
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"><a href="javascript:" class="btn btn3d " style="top:0px; left:60px; width:18px; height:17px;"><img class="btnimg" src="../../../../resources/images/menu_down.gif" style="top:6px; left:4px; width:7px; height:4px;" alt="Click to show a menu to choose a record set displayed in table null" title=""></a></div><a href="javascript:" class="btn chunkright" style="top:0px; left:116px; width:18px; height:18px;"><img class="btnimg" src="../../../../resources/images/chunking_sprite.png" alt="Click to move to the next page in table null" title="Next Chunk"></a></div></td><td nowrap="" valign="middle" class="TableHdrL"></td><td nowrap="" valign="middle" class="TableHdrR"></td></tr></tbody></table></div><div class="TableInner"></div><div class="TableFtr" style="visibility:hidden"><table class="TableFtr" cellpadding="0" cellspacing="0"><tbody><tr><td nowrap="" valign="middle" class="TableFtrL"></td><td nowrap="" valign="middle" class="TableFtrR"></td></tr></tbody></table></div></div>
 </div>
 <div id="Splitter" arindex="Splitter" draggable="1" dragoriginal="1" dragrl="1" arwindowid="2" style="left: 100000px;">
 </div>
@@ -175,7 +231,7 @@ heuristic type: UNKNOWN_TYPE
 pwm ml type: NO_SERVER_DATA
 label: Show
 parseable name: arid_WIN_2_303174300
-section: arid_WIN_0_302258625_0_15211
+section: arid_WIN_0_302258625_0_610
 field signature: 3177722687
 form signature: 12249101121965938366
 form signature in host form: 12249101121965938366
@@ -184,15 +240,16 @@ structural form signature: 9695849752885046652
 form name: 
 form id: 
 form button titles: 
-field frame token: 7A218BC1EF5032B87D9C3EC172A73049
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
 form renderer id: 0
-field renderer id: 15340
+field renderer id: 711
 visible: true
 focusable: true
 field rank: 10
 field rank in signature group: 0
 field rank in host form: 10
-field rank in host form signature group: 0" autofill-prediction="UNKNOWN_TYPE">
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE">
 <a href="javascript:" class="btn btn3d selectionbtn" style="top:0px; left:169px; width:21px; height:21px;">
 <img class="btnimg" src="../../../../resources/images/mt_sprites.gif" alt="">
 </a>
@@ -206,7 +263,7 @@ heuristic type: UNKNOWN_TYPE
 pwm ml type: NO_SERVER_DATA
 label: Company
 parseable name: arid_WIN_2_1000000720
-section: arid_WIN_0_302258625_0_15211
+section: arid_WIN_0_302258625_0_610
 field signature: 1853933882
 form signature: 12249101121965938366
 form signature in host form: 12249101121965938366
@@ -215,15 +272,16 @@ structural form signature: 9695849752885046652
 form name: 
 form id: 
 form button titles: 
-field frame token: 7A218BC1EF5032B87D9C3EC172A73049
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
 form renderer id: 0
-field renderer id: 15341
+field renderer id: 712
 visible: true
 focusable: true
 field rank: 11
 field rank in signature group: 0
 field rank in host form: 11
-field rank in host form signature group: 0" autofill-prediction="UNKNOWN_TYPE"></textarea>
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE" title=""></textarea>
 <a href="javascript:" class="btn btn3d menu" style="top:0px; left:161px; width:21px; height:21px;">
 <img class="btnimg" src="../../../../resources/images/mt_sprites.gif" alt="Menu for Company" title="">
 </a>
@@ -262,15 +320,16 @@ structural form signature: 9695849752885046652
 form name: 
 form id: 
 form button titles: 
-field frame token: 7A218BC1EF5032B87D9C3EC172A73049
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
 form renderer id: 0
-field renderer id: 15366
+field renderer id: 716
 visible: false
 focusable: false
 field rank: 12
 field rank in signature group: 0
 field rank in host form: 12
-field rank in host form signature group: 0" autofill-prediction="UNKNOWN_TYPE"></textarea></td><td width="70"><a href="javascript:" style="position:static;height:19px;width:70px;text-align:center" class="btn btn3d menu">Fields&nbsp;<img style="border:none" alt="" src="../../../../resources/images/menu_down.gif"></a></td></tr></tbody></table></div>
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"></textarea></td><td width="70"><a href="javascript:" style="position:static;height:19px;width:70px;text-align:center" class="btn btn3d menu">Fields&nbsp;<img style="border:none" alt="" src="../../../../resources/images/menu_down.gif"></a></td></tr></tbody></table></div>
 <input id="ARState" arindex="ARState" type="text" style="visibility:hidden" field_signature="4257964360" form_signature="12249101121965938366" alternative_form_signature="9695849752885046652" visibility_annotation="false" autofill-information="overall type: UNKNOWN_TYPE
 html type: HTML_TYPE_UNSPECIFIED
 server type: SERVER_RESPONSE_PENDING
@@ -287,15 +346,16 @@ structural form signature: 9695849752885046652
 form name: 
 form id: 
 form button titles: 
-field frame token: 7A218BC1EF5032B87D9C3EC172A73049
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
 form renderer id: 0
-field renderer id: 15343
+field renderer id: 714
 visible: false
 focusable: false
 field rank: 13
 field rank in signature group: 0
 field rank in host form: 13
-field rank in host form signature group: 0" autofill-prediction="UNKNOWN_TYPE"></div></div>
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"></div></div>
 </div>
 </fieldset>
 </div>
@@ -320,15 +380,16 @@ structural form signature: 9695849752885046652
 form name: 
 form id: 
 form button titles: 
-field frame token: 7A218BC1EF5032B87D9C3EC172A73049
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
 form renderer id: 0
-field renderer id: 15292
+field renderer id: 664
 visible: false
 focusable: false
 field rank: 14
 field rank in signature group: 0
 field rank in host form: 14
-field rank in host form signature group: 0" autofill-prediction="UNKNOWN_TYPE"></textarea>
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"></textarea>
 <a href="javascript:" class="btn btn3d menu" style="top:0px; left:253px; width:21px; height:21px;">
 <img class="btnimg" src="../../../../resources/images/mt_sprites.gif" alt="Menu for Show:" title="">
 </a>
@@ -402,15 +463,16 @@ structural form signature: 9695849752885046652
 form name: 
 form id: 
 form button titles: 
-field frame token: 7A218BC1EF5032B87D9C3EC172A73049
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
 form renderer id: 0
-field renderer id: 15293
+field renderer id: 665
 visible: false
 focusable: false
 field rank: 15
 field rank in signature group: 0
 field rank in host form: 15
-field rank in host form signature group: 0" autofill-prediction="UNKNOWN_TYPE"></textarea>
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"></textarea>
 </div>
 </div>
 </fieldset>
@@ -447,15 +509,16 @@ structural form signature: 9695849752885046652
 form name: 
 form id: 
 form button titles: 
-field frame token: 7A218BC1EF5032B87D9C3EC172A73049
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
 form renderer id: 0
-field renderer id: 15294
+field renderer id: 666
 visible: false
 focusable: false
 field rank: 16
 field rank in signature group: 0
 field rank in host form: 16
-field rank in host form signature group: 0" autofill-prediction="UNKNOWN_TYPE"></textarea>
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"></textarea>
 <a href="javascript:" class="btn btn3d menu" style="top:0px; left:253px; width:21px; height:21px;">
 <img class="btnimg" src="../../../../resources/images/mt_sprites.gif" alt="Menu for Show:" title="">
 </a>
@@ -472,6 +535,297 @@ field rank in host form signature group: 0" autofill-prediction="UNKNOWN_TYPE"><
 <div class="PageBody pbChrome" style="border-radius: 0px; background-color: transparent; height: 100%;">
 </div>
 </fieldset>
+</div>
+</div>
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+<div id="WIN_1_80113" arid="80113" class="StackPanel arfid80113 ardbnShellsRightPanel" artype="Page" ardbn="Shells Right Panel" arfillstyle="1" arvisibility="hidden" arinitsize="250" arminsize="250" armaxsize="2000" arslackorder="1" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:999;width:auto;float:left;height:100%;display:none;" arwindowid="1">
+<fieldset class="PageBodyHorizontal" arbwidth="0" arbw="0,0,0,0" aropacity="1.0" arbcolor="transparent">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 0px 0px 0px 0px ;-moz-border-radius: 0px 0px 0px 0px ;-webkit-border-radius: 0px 0px 0px 0px ;background: -moz-linear-gradient(top, rgba(), rgba());background: -webkit-gradient(linear, center center, center center, from(rgba()),to(rgba()));background: linear-gradient(rgba(), rgba());background-color:transparent;">
+<div id="WIN_1_80114" arid="80114" artype="PageHolder" armaxh="22" class="PageHolder arfid80114 ardbnShellsRightPanelHolder" arcontainerid="80113" arpercentwidth="100" arpercentheight="100" arphviewtype="StackView" arorientation="vertical" arstackviewtype="fixed" armargin="5,10,0,10" style="top: auto; left: auto; width: 442px; height: 503px; z-index: 1049; margin: 0px; padding: 5px 10px 0px; min-width: 20px; max-width: 32767px; min-height: 20px; max-height: 32767px; position: relative;" arwindowid="1">
+<div class="PageHolderStackViewResizable" style="overflow-y:auto">
+<div class="PageHolderStackViewFixedCV">
+<div id="WIN_1_80037" arid="80037" class="StackPanel noscroll arfid80037 ardbn1_2_header" artype="Page" ardbn="1_2_header" arfillstyle="0" arvisibility="hidden" arinitsize="25" arminsize="25" armaxsize="25" arslackorder="10" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:1052;height:auto;width:100%;display:none;" arwindowid="1">
+<fieldset class="PageBodyVertical" arcolor="ffffff" arradius="7,10,0,0" arbwidth="0,0,0,0" aropacity="1.0" arbcolor="#ffffff">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 7px 10px 0px 0px; background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)); border-width: 0px; border-style: solid; border-color: rgb(255, 255, 255); height: 100%;">
+<div id="WIN_1_80166" arid="80166" artype="Trim" arsubtype="3" ardbn="1_2Panel" arcolor="transparent" class="arfid80166 ardbn1_2Panel trimdiv" style="z-index:1000;top:4px; left:3px; width:1px; height:1px;background-color:transparent;" arwindowid="1">
+<table style="top:0px; left:0px; width:1px; height:1px;" class="trimTable" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="middle" artcolor="#000000" style="color:#000000;" class="f4 trimJustc"></td>
+</tr>
+</tbody></table>
+</div>
+<div id="WIN_1_80041" arid="80041" artype="Page" ardbn="1_2_header_right" arfillstyle="0" arvspace="0" arcolor="ffffff" arbcolor="#757371" style="top: 1px; right: 0px; width: 100px; height: 24px; z-index: 999; border-width: 0px; border-radius: 0px 7px 0px 0px; background: linear-gradient(to top, rgb(223, 223, 223), rgb(255, 255, 255)); border-style: solid; border-color: rgb(117, 115, 113);" class="Panel arfid80041 ardbn1_2_header_right rl" argcolor="LHffffffdfdfdf" arbwidth="0,0,0,0" arradius="0,7,0,0" arwindowid="1">
+<fieldset class=" pnl " style="z-index:999;">
+<legend class="hidden acc"></legend>
+<div id="WIN_1_80040" arid="80040" artype="Page" ardbn="1_2_s_curve_panel" arfillstyle="0" arvspace="0" arcolor="f5f5f5" arbcolor="#f5f5f5" style="top:0px; left:0px; width:10px; height:24px;z-index:1168;border-width:0px;border-radius: 0px 0px 0px 0px ;-moz-border-radius: 0px 0px 0px 0px ;-webkit-border-radius: 0px 0px 0px 0px ;  background: -moz-linear-gradient(top, rgba(245,245,245,0.0), rgba(245,245,245,0.0)) repeat scroll 0 0 transparent;  background: -webkit-gradient(linear, center center, center center, from(rgba(245,245,245,0.0)),to(rgba(245,245,245,0.0)));  background: -ms-linear-gradient(top, rgba(245,245,245,0.0), rgba(245,245,245,0.0));background: linear-gradient(rgba(245,245,245,0.0), rgba(245,245,245,0.0));" class="Panel arfid80040 ardbn1_2_s_curve_panel" arbwidth="0" arbw="0,0,0,0" aropacity="0.0" arwindowid="1">
+<div class="FormContainerBackground" style="width:100%;height:100%;background-image:url(../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1);background-position:top left;background-repeat:no-repeat;">
+</div>
+<fieldset class=" pnl " style="z-index:1168;">
+<legend class="hidden acc"></legend>
+</fieldset>
+</div>
+<a href="javascript:" id="WIN_1_80034" arid="80034" artype="Control" ardbn="1_2_edit_glyph" title="Edit" artcolor="null" class="btnflt  pointerCursor arfid80034 ardbn1_2_edit_glyph" style="top:1px; left:15px; width:25px; height:21px;z-index:1063;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80034" aralttxt="1" artxt="Edit" arimgcenter="1" alt="Edit" title="Edit" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_1_80035" arid="80035" artype="Control" ardbn="1_2_expand_glyph" title="Expand" artcolor="null" class="btnflt  pointerCursor arfid80035 ardbn1_2_expand_glyph" style="top:1px; left:41px; width:25px; height:21px;visibility:hidden;z-index:1070;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80035" aralttxt="1" artxt="Expand" arimgcenter="1" alt="Expand" title="Expand" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_1_80032" arid="80032" artype="Control" ardbn="1_2_collapse_glyph" title="Collapse" artcolor="null" class="btnflt  pointerCursor arfid80032 ardbn1_2_collapse_glyph" style="top:1px; left:41px; width:25px; height:21px;z-index:1153;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80032" aralttxt="1" artxt="Collapse" arimgcenter="1" alt="Collapse" title="Collapse" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_1_80031" arid="80031" artype="Control" ardbn="1_2_close_glyph" title="Close" artcolor="null" class="btnflt  pointerCursor arfid80031 ardbn1_2_close_glyph" style="top:1px; left:67px; width:25px; height:21px;z-index:1062;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80031" aralttxt="1" artxt="Close" arimgcenter="1" alt="Close" title="Close" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+</fieldset>
+</div>
+<div id="WIN_1_80039" arid="80039" artype="Char" ardbn="Panel 1_2" arlbox="0,4,4,17" class="df arfid80039 ardbnPanel1_2 Char" style="z-index:998;top:0px; left:1px; width:1000px; height:21px;" arwindowid="1">
+<label id="label80039" class="label f9 do" for="arid_WIN_1_80039" style="top:4px; left:0px; width:4px; height:17px;"></label><textarea class="text sr f9 dat" wrap="off" id="arid_WIN_1_80039" cols="20" maxlen="255" style="top:0px; left:9px; width:991px; height:21px;" readonly="" arautocak="0" arautoctt="400" arencryptdataatrest="0" rows="1" field_signature="1153131575" form_signature="12249101121965938366" alternative_form_signature="9695849752885046652" visibility_annotation="false" autofill-information="overall type: UNKNOWN_TYPE
+html type: HTML_TYPE_UNSPECIFIED
+server type: SERVER_RESPONSE_PENDING
+heuristic type: UNKNOWN_TYPE
+pwm ml type: NO_SERVER_DATA
+label: 
+parseable name: arid_WIN_1_80039
+section: -default
+field signature: 1153131575
+form signature: 12249101121965938366
+form signature in host form: 12249101121965938366
+alternative form signature: 9695849752885046652
+structural form signature: 9695849752885046652
+form name: 
+form id: 
+form button titles: 
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
+form renderer id: 0
+field renderer id: 667
+visible: false
+focusable: false
+field rank: 17
+field rank in signature group: 0
+field rank in host form: 17
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"></textarea>
+</div>
+</div>
+</fieldset>
+</div>
+<div id="WIN_1_80042" arid="80042" class="StackPanel arfid80042 ardbn1_2_shell" artype="Page" ardbn="1_2_shell" arfillstyle="1" arvisibility="hidden" arinitsize="50" arminsize="30" armaxsize="2000" arslackorder="0" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:1053;height:auto;width:100%;display:none;" arwindowid="1">
+<fieldset class="PageBodyVertical" arbwidth="0" arbw="0,0,0,0" aropacity="1.0" arbcolor="transparent">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 0px 0px 0px 0px ;-moz-border-radius: 0px 0px 0px 0px ;-webkit-border-radius: 0px 0px 0px 0px ;background: -moz-linear-gradient(top, rgba(), rgba());background: -webkit-gradient(linear, center center, center center, from(rgba()),to(rgba()));background: linear-gradient(rgba(), rgba());background-color:transparent;">
+<div id="WIN_1_80043" arid="80043" artype="View" ardbn="1_2_view_field" arcontainerid="80042" arpercentwidth="100" arpercentheight="100" class="arfid80043 ardbn1_2_view_field" style="top: auto; left: auto; width: 422px; height: 140px; z-index: 1056; background-color: transparent; min-width: 20px; max-width: 32767px; min-height: 20px; max-height: 32767px; position: relative;" arvfframe="&lt;iframe style=&quot;top:0px; left:0px; width:422px; height:140px;background-color: transparent;&quot; name=&quot;VF80043&quot; frameborder=0 scrolling=&quot;auto&quot; allowtransparency=&quot;true&quot; arviewbordercolor=&quot;null&quot; title=&quot;Panel 1_2 View&quot; src=&quot;javascript:&amp;#34;&amp;lt;HTML&amp;gt;&amp;lt;/HTML&amp;gt;&amp;#34;&quot; onload=&quot;DVFol&amp;#40;&amp;#41;&quot;&gt;
+&lt;/iframe&gt;
+" arwindowid="1">
+</div>
+</div>
+</fieldset>
+</div>
+<div id="WIN_1_80005" arid="80005" class="StackPanel arfid80005 ardbn1_2_edit_panel" artype="Page" ardbn="1_2_edit_panel" arfillstyle="0" arvisibility="hidden" arinitsize="100" arminsize="100" armaxsize="2000" arslackorder="0" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:1146;height:auto;width:100%;display:none;" arwindowid="1">
+<fieldset class="PageBodyVertical" arbwidth="0" arbw="1,1,1,1" aropacity="1.0" arcolor="ffffff" arbcolor="#757371">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 0px; background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) rgb(255, 255, 255); border-width: 1px; border-style: solid; border-color: rgb(117, 115, 113); height: 100%;">
+<div id="WIN_1_80033" arid="80033" artype="Char" ardbn="1_2_content" arlbox="0,4,33,17" class="df arfid80033 ardbn1_2_content Char" style="z-index:1103;top:27px; left:25px; width:274px; height:21px;" arwindowid="1">
+<label id="label80033" class="label f1 do" for="arid_WIN_1_80033" style="top:4px; left:0px; width:33px; height:17px;">Show:</label><textarea class="text sr " wrap="off" id="arid_WIN_1_80033" cols="20" maxlen="255" style="top:0px; left:38px; width:217px; height:21px;" armenu="CHP:ContentIdMenu" mstyle="2" mdd="1" arautoc="2" arautocak="0" arautoctt="400" arencryptdataatrest="0" rows="1" field_signature="3857519770" form_signature="12249101121965938366" alternative_form_signature="9695849752885046652" visibility_annotation="false" autofill-information="overall type: UNKNOWN_TYPE
+html type: HTML_TYPE_UNSPECIFIED
+server type: SERVER_RESPONSE_PENDING
+heuristic type: UNKNOWN_TYPE
+pwm ml type: NO_SERVER_DATA
+label: Show:
+parseable name: arid_WIN_1_80033
+section: -default
+field signature: 3857519770
+form signature: 12249101121965938366
+form signature in host form: 12249101121965938366
+alternative form signature: 9695849752885046652
+structural form signature: 9695849752885046652
+form name: 
+form id: 
+form button titles: 
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
+form renderer id: 0
+field renderer id: 668
+visible: false
+focusable: false
+field rank: 18
+field rank in signature group: 0
+field rank in host form: 18
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"></textarea>
+<a href="javascript:" class="btn btn3d menu" style="top:0px; left:253px; width:21px; height:21px;">
+<img class="btnimg" src="../../../../resources/images/mt_sprites.gif" alt="Menu for Show:" title="">
+</a>
+</div>
+<a href="javascript:" id="WIN_1_80006" arid="80006" artype="Control" ardbn="1_2_edit_cancel_btn" artcolor="null" class="btn btn3d arfid80006 ardbn1_2_edit_cancel_btn" style="top:62px; left:158px; width:48px; height:21px;z-index:1147;" arwindowid="1"><div class="btntextdiv" style="top:0px; left:0px; width:48px; height:21px;"><div class="f1" style=";width:48px">Cancel</div>
+</div>
+</a>
+</div>
+</fieldset>
+</div>
+<div id="WIN_1_80036" arid="80036" class="StackPanel arfid80036 ardbn1_2_footer" artype="Page" ardbn="1_2_footer" arfillstyle="0" arvisibility="hidden" arinitsize="25" arminsize="25" armaxsize="25" arslackorder="10" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:1050;height:auto;width:100%;display:none;" arwindowid="1">
+<fieldset class="PageBodyVertical" arbwidth="0" arbw="0,0,0,0" aropacity="1.0" arbcolor="transparent">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 0px; background-color: transparent; height: 100%;">
+</div>
+</fieldset>
+</div>
+<div id="WIN_1_80067" arid="80067" class="StackPanel noscroll arfid80067 ardbn2_2_header" artype="Page" ardbn="2_2_header" arfillstyle="0" arvisibility="hidden" arinitsize="25" arminsize="25" armaxsize="25" arslackorder="10" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:1051;height:auto;width:100%;display:none;" arwindowid="1">
+<fieldset class="PageBodyVertical" arcolor="ffffff" arradius="7,10,0,0" arbwidth="0,0,0,0" aropacity="1.0" arbcolor="#ffffff">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 7px 10px 0px 0px; background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)); border-width: 0px; border-style: solid; border-color: rgb(255, 255, 255); height: 100%;">
+<div id="WIN_1_80168" arid="80168" artype="Trim" arsubtype="3" ardbn="2_2Panel" arcolor="transparent" class="arfid80168 ardbn2_2Panel trimdiv" style="z-index:1000;top:5px; left:5px; width:1px; height:1px;background-color:transparent;" arwindowid="1">
+<table style="top:0px; left:0px; width:1px; height:1px;" class="trimTable" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="middle" artcolor="#000000" style="color:#000000;" class="f4 trimJustc"></td>
+</tr>
+</tbody></table>
+</div>
+<div id="WIN_1_80071" arid="80071" artype="Page" ardbn="2_2_header_right" arfillstyle="0" arvspace="0" arcolor="ffffff" arbcolor="#757371" style="top: 1px; right: 0px; width: 100px; height: 24px; z-index: 999; border-width: 0px; border-radius: 0px 7px 0px 0px; background: linear-gradient(to top, rgb(223, 223, 223), rgb(255, 255, 255)); border-style: solid; border-color: rgb(117, 115, 113);" class="Panel arfid80071 ardbn2_2_header_right rl" argcolor="LHffffffdfdfdf" arbwidth="0,0,0,0" arradius="0,7,0,0" arwindowid="1">
+<fieldset class=" pnl " style="z-index:999;">
+<legend class="hidden acc"></legend>
+<div id="WIN_1_80070" arid="80070" artype="Page" ardbn="2_2_s_curve_panel" arfillstyle="0" arvspace="0" arcolor="f5f5f5" arbcolor="#f5f5f5" style="top:0px; left:0px; width:10px; height:24px;z-index:1169;border-width:0px;border-radius: 0px 0px 0px 0px ;-moz-border-radius: 0px 0px 0px 0px ;-webkit-border-radius: 0px 0px 0px 0px ;  background: -moz-linear-gradient(top, rgba(245,245,245,0.0), rgba(245,245,245,0.0)) repeat scroll 0 0 transparent;  background: -webkit-gradient(linear, center center, center center, from(rgba(245,245,245,0.0)),to(rgba(245,245,245,0.0)));  background: -ms-linear-gradient(top, rgba(245,245,245,0.0), rgba(245,245,245,0.0));background: linear-gradient(rgba(245,245,245,0.0), rgba(245,245,245,0.0));" class="Panel arfid80070 ardbn2_2_s_curve_panel" arbwidth="0" arbw="0,0,0,0" aropacity="0.0" arwindowid="1">
+<div class="FormContainerBackground" style="width:100%;height:100%;background-image:url(../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1);background-position:top left;background-repeat:no-repeat;">
+</div>
+<fieldset class=" pnl " style="z-index:1169;">
+<legend class="hidden acc"></legend>
+</fieldset>
+</div>
+<a href="javascript:" id="WIN_1_80064" arid="80064" artype="Control" ardbn="2_2_edit_glyph" title="Edit" artcolor="null" class="btnflt  pointerCursor arfid80064 ardbn2_2_edit_glyph" style="top:1px; left:15px; width:25px; height:21px;z-index:1067;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80064" aralttxt="1" artxt="Edit" arimgcenter="1" alt="Edit" title="Edit" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_1_80065" arid="80065" artype="Control" ardbn="2_2_expand_glyph" title="Expand" artcolor="null" class="btnflt  pointerCursor arfid80065 ardbn2_2_expand_glyph" style="top:1px; left:41px; width:25px; height:21px;visibility:hidden;z-index:1072;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80065" aralttxt="1" artxt="Expand" arimgcenter="1" alt="Expand" title="Expand" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_1_80062" arid="80062" artype="Control" ardbn="2_2_collapse_glyph" title="Collapse" artcolor="null" class="btnflt  pointerCursor arfid80062 ardbn2_2_collapse_glyph" style="top:1px; left:41px; width:25px; height:21px;z-index:1073;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80062" aralttxt="1" artxt="Collapse" arimgcenter="1" alt="Collapse" title="Collapse" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+<a href="javascript:" id="WIN_1_80061" arid="80061" artype="Control" ardbn="2_2_close_glyph" title="Close" artcolor="null" class="btnflt  pointerCursor arfid80061 ardbn2_2_close_glyph" style="top:1px; left:67px; width:25px; height:21px;z-index:1068;" arwindowid="1"><div class="btnimgdiv" style="top:0px; left:0px; width:25px; height:21px;">
+<img src="../../../../imagepool/Home+Page+Sprite%21onbmc-s?cid=1" id="reg_img_80061" aralttxt="1" artxt="Close" arimgcenter="1" alt="Close" title="Close" class="btnimg" style="top:-218px; left:2px; width:21px; height:457px;">
+</div>
+</a>
+</fieldset>
+</div>
+<div id="WIN_1_80069" arid="80069" artype="Char" ardbn="Panel 2_2" arlbox="0,4,4,17" class="df arfid80069 ardbnPanel2_2 Char" style="z-index:998;top:0px; left:3px; width:1000px; height:21px;" arwindowid="1">
+<label id="label80069" class="label f9 do" for="arid_WIN_1_80069" style="top:4px; left:0px; width:4px; height:17px;"></label><textarea class="text sr f9 dat" wrap="off" id="arid_WIN_1_80069" cols="20" maxlen="255" style="top:0px; left:9px; width:991px; height:21px;" readonly="" arautocak="0" arautoctt="400" arencryptdataatrest="0" rows="1" field_signature="1684557363" form_signature="12249101121965938366" alternative_form_signature="9695849752885046652" visibility_annotation="false" autofill-information="overall type: UNKNOWN_TYPE
+html type: HTML_TYPE_UNSPECIFIED
+server type: SERVER_RESPONSE_PENDING
+heuristic type: UNKNOWN_TYPE
+pwm ml type: NO_SERVER_DATA
+label: 
+parseable name: arid_WIN_1_80069
+section: -default
+field signature: 1684557363
+form signature: 12249101121965938366
+form signature in host form: 12249101121965938366
+alternative form signature: 9695849752885046652
+structural form signature: 9695849752885046652
+form name: 
+form id: 
+form button titles: 
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
+form renderer id: 0
+field renderer id: 669
+visible: false
+focusable: false
+field rank: 19
+field rank in signature group: 0
+field rank in host form: 19
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"></textarea>
+</div>
+</div>
+</fieldset>
+</div>
+<div id="WIN_1_80072" arid="80072" class="StackPanel arfid80072 ardbn2_2_shell" artype="Page" ardbn="2_2_shell" arfillstyle="1" arvisibility="hidden" arinitsize="50" arminsize="30" armaxsize="2000" arslackorder="0" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:1054;height:auto;width:100%;display:none;" arwindowid="1">
+<fieldset class="PageBodyVertical" arbwidth="0" arbw="0,0,0,0" aropacity="1.0" arbcolor="transparent">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 0px 0px 0px 0px ;-moz-border-radius: 0px 0px 0px 0px ;-webkit-border-radius: 0px 0px 0px 0px ;background: -moz-linear-gradient(top, rgba(), rgba());background: -webkit-gradient(linear, center center, center center, from(rgba()),to(rgba()));background: linear-gradient(rgba(), rgba());background-color:transparent;">
+<div id="WIN_1_80073" arid="80073" artype="View" ardbn="2_2_view_field" arcontainerid="80072" arpercentwidth="100" arpercentheight="100" class="arfid80073 ardbn2_2_view_field" style="top: auto; left: auto; width: 422px; height: 140px; z-index: 1057; background-color: transparent; min-width: 20px; max-width: 32767px; min-height: 20px; max-height: 32767px; position: relative;" arvfframe="&lt;iframe style=&quot;top:0px; left:0px; width:422px; height:140px;background-color: transparent;&quot; name=&quot;VF80073&quot; frameborder=0 scrolling=&quot;auto&quot; allowtransparency=&quot;true&quot; arviewbordercolor=&quot;null&quot; title=&quot;Panel 2_2 View&quot; src=&quot;javascript:&amp;#34;&amp;lt;HTML&amp;gt;&amp;lt;/HTML&amp;gt;&amp;#34;&quot; onload=&quot;DVFol&amp;#40;&amp;#41;&quot;&gt;
+&lt;/iframe&gt;
+" arwindowid="1">
+</div>
+</div>
+</fieldset>
+</div>
+<div id="WIN_1_80007" arid="80007" class="StackPanel arfid80007 ardbn2_2_edit_panel" artype="Page" ardbn="2_2_edit_panel" arfillstyle="0" arvisibility="hidden" arinitsize="100" arminsize="100" armaxsize="2000" arslackorder="0" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:1148;height:auto;width:100%;display:none;" arwindowid="1">
+<fieldset class="PageBodyVertical" arbwidth="0" arbw="1,1,1,1" aropacity="1.0" arcolor="ffffff" arbcolor="#757371">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 0px; background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) rgb(255, 255, 255); border-width: 1px; border-style: solid; border-color: rgb(117, 115, 113); height: 100%;">
+<div id="WIN_1_80063" arid="80063" artype="Char" ardbn="2_2_content" arlbox="0,4,33,17" class="df arfid80063 ardbn2_2_content Char" style="z-index:1104;top:27px; left:25px; width:274px; height:21px;" arwindowid="1">
+<label id="label80063" class="label f1 do" for="arid_WIN_1_80063" style="top:4px; left:0px; width:33px; height:17px;">Show:</label><textarea class="text sr " wrap="off" id="arid_WIN_1_80063" cols="20" maxlen="255" style="top:0px; left:38px; width:217px; height:21px;" armenu="CHP:ContentIdMenu" mstyle="2" mdd="1" arautoc="2" arautocak="0" arautoctt="400" arencryptdataatrest="0" rows="1" field_signature="228248445" form_signature="12249101121965938366" alternative_form_signature="9695849752885046652" visibility_annotation="false" autofill-information="overall type: UNKNOWN_TYPE
+html type: HTML_TYPE_UNSPECIFIED
+server type: SERVER_RESPONSE_PENDING
+heuristic type: UNKNOWN_TYPE
+pwm ml type: NO_SERVER_DATA
+label: Show:
+parseable name: arid_WIN_1_80063
+section: -default
+field signature: 228248445
+form signature: 12249101121965938366
+form signature in host form: 12249101121965938366
+alternative form signature: 9695849752885046652
+structural form signature: 9695849752885046652
+form name: 
+form id: 
+form button titles: 
+field frame token: 703A785A5D21BFEEC3C8C92FFB8F32C1
+form renderer id: 0
+field renderer id: 670
+visible: false
+focusable: false
+field rank: 20
+field rank in signature group: 0
+field rank in host form: 20
+field rank in host form signature group: 0
+did_trigger_js_autofill: false" autofill-prediction="UNKNOWN_TYPE"></textarea>
+<a href="javascript:" class="btn btn3d menu" style="top:0px; left:253px; width:21px; height:21px;">
+<img class="btnimg" src="../../../../resources/images/mt_sprites.gif" alt="Menu for Show:" title="">
+</a>
+</div>
+<a href="javascript:" id="WIN_1_80008" arid="80008" artype="Control" ardbn="2_2_edit_cancel_btn" artcolor="null" class="btn btn3d arfid80008 ardbn2_2_edit_cancel_btn" style="top:62px; left:158px; width:48px; height:21px;z-index:1149;" arwindowid="1"><div class="btntextdiv" style="top:0px; left:0px; width:48px; height:21px;"><div class="f1" style=";width:48px">Cancel</div>
+</div>
+</a>
+</div>
+</fieldset>
+</div>
+<div id="WIN_1_80066" arid="80066" class="StackPanel arfid80066 ardbn2_2_footer" artype="Page" ardbn="2_2_footer" arfillstyle="0" arvisibility="hidden" arinitsize="25" arminsize="25" armaxsize="25" arslackorder="10" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:1055;height:auto;width:100%;display:none;" arwindowid="1">
+<fieldset class="PageBodyVertical" arbwidth="0" arbw="0,0,0,0" aropacity="1.0" arbcolor="transparent">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 0px; background-color: transparent; height: 100%;">
+</div>
+</fieldset>
+</div>
+</div>
+</div>
+</div>
+</div>
+</fieldset>
+</div>
+<div id="WIN_1_80163" arid="80163" class="StackPanel arfid80163 ardbnDummyRightMarginPanel" artype="Page" ardbn="DummyRightMarginPanel" arfillstyle="0" arvisibility="visible" arinitsize="25" arminsize="25" armaxsize="25" arslackorder="12" arwhitespace="0" arvspace="0" arstate="1" style="position:relative;z-index:1000;width:auto;float:left;height:100%;" arwindowid="1">
+<fieldset class="PageBodyHorizontal" arbwidth="0" arbw="0,0,0,0" aropacity="1.0" arbcolor="transparent" style="width: 25px;">
+<legend class="hidden acc"></legend>
+<div class="PageBody pbChrome" style="border-radius: 0px; background-color: transparent; height: 100%;">
+</div>
+</fieldset>
+</div>
+</div>
+</div>
+</div>
+</div>
+</fieldset>
+</div>
 </div>
 </div>
 </div>
