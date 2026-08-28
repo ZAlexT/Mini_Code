@@ -468,6 +468,7 @@ let blinkIntervaloFavicon = null;
 // INICIAR CICLO GLOBAL
 //-------------------------------------------------------------
 
+function activarParpadeoFavicon() {
 function iniciarCicloBlink() {
 
     //---------------------------------------------------------
@@ -482,8 +483,7 @@ function iniciarCicloBlink() {
         )
     ) {
 
-        const elementos =
-            document.querySelectorAll(".Lx-blink");
+        const elementos = document.querySelectorAll(".Lx-blink");
 
         if (elementos.length) {
 
@@ -503,8 +503,8 @@ function iniciarCicloBlink() {
     // FAVICON
     //---------------------------------------------------------
 
-    if (BLINK_FAVICON_ACTIVO) {
-        iniciarCicloFavicon();
+    if (BLINK_FAVICON_ACTIVO && hayAssigned()) {
+        activarParpadeoFavicon();
     }
 
     //---------------------------------------------------------
@@ -515,11 +515,10 @@ function iniciarCicloBlink() {
 
     blinkTimeoutFin = setTimeout(() => {
 
-        finalizarCicloFavicon();
+        desactivarParpadeoFavicon();
 
     }, BLINK_DURACION * BLINK_REPETICIONES);
 }
-
 
 //-------------------------------------------------------------
 // CICLO AUTOMÁTICO CADA 90 SEGUNDOS
