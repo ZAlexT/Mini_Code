@@ -14,8 +14,8 @@
     // CONFIGURACIÓN
     // =========================================================
 
-    const ANCHO_SUPERIOR = 970;
-    const ANCHO_INFERIOR = 500;
+    const ANCHO_SUPERIOR = 1000;
+    const ANCHO_INFERIOR = 1000;
 
 
     // =========================================================
