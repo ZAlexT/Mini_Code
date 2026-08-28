@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         02. ATOM Index | V7.9 108 V003 ** SALTO EDITION **
+// @name         02. ATOM Index | V7.9 108 V003
 // @namespace    http://tampermonkey.net/
 // @version      V7.9 108 V003
-// @description  ATOM | Colorize + Blink + Favicon + Bold + Glow
+// @description  ATOM | Colorize + Blink + Favicon + Normal y ECO + Bold + Glow
 // @match        https://atomgencat.onbmc.com/*
 // @run-at       document-end
 // @grant        none
@@ -93,7 +93,7 @@ console.log("[Helix V7.9 107] Iniciado…");
 
 	const MODO_PARPADEO = "independiente";
 
-    const BLINK_TEXTO_ACTIVO = true;     // true = texto parpadea
+    const BLINK_TEXTO_ACTIVO = true;     // true = texto parpadea // false = ** SALTO EDITION **
     const BLINK_FAVICON_ACTIVO = true;   // true = favicon parpadea
 
 	const CONFIG = {
@@ -211,7 +211,7 @@ console.log("[Helix V7.9 107] Iniciado…");
         /*{ texto: 'Assigned', color: 'white', fondo: '#0078d4', padding: '7px 37px', borderRadius: '7px' },//  Códgo pinta fondo in pastilla || // #fcccc */
         { texto: 'Assigned', 											color: 'white', fondo: 'red'}, // #fcccc
         { texto: 'In Progress', 										color: 'Green', fondo: '#ccffcc' }, // #ccffcc
-        { texto: 'High', 												color: 'Red', bold: 'true', glow2: 'false' },  // Eliminamos fondo: '#d13438' para evitar el espacio extra #d13438
+        { texto: 'High', 												color: 'Red', bold: true, glow2: true },  // Eliminamos fondo: '#d13438' para evitar el espacio extra #d13438
         { texto: '2-High', 												color: 'Red' }, // Eliminamos fondo: '#d13438' para evitar el espacio extra #d13438
 
 /*   //------------------- Texto Blanco Fondo Color -------------------------
@@ -413,9 +413,9 @@ function colorearTabla() {
 
         });
 }
-/*
+
 //-------------------------------------------------------------
-// 7. PARPADEO GLOBAL SINCRONIZADO // ORIGINAL
+// 7. PARPADEO GLOBAL SINCRONIZADO
 //
 // Protección doble proceso:
 // - Texto: animación CSS.
@@ -426,37 +426,24 @@ function colorearTabla() {
 // Nuevo ciclo cada 90 segundos.
 //-------------------------------------------------------------
 
-const BLINK_ACTIVO = true;   // true = blink / false = sin blink
+/*
 
+// Parpadeo Normal
 		const BLINK_DURACION = 1200;		// 1,2 s
 		const BLINK_REPETICIONES = 12;		// 12 repeticiones
 		const BLINK_CICLO = 90000;			// 90 s
 
 
-
-let blinkTimeoutFin = null;
-let blinkIntervaloFavicon = null;
-
-*/
-
-		//-------------------------------------------------------------
-		// 7. PARPADEO GLOBAL SINCRONIZADO ** SALTO EDITION **
-		//
-		// Protección doble proceso:
-		// - Texto: animación CSS.
-		// - Favicon: mismo ciclo temporal.
-		// - Ambos empiezan y terminan simultáneamente.
-		//
-		// 1,2 s × 12 = 14,4 segundos de parpadeo
-		// Nuevo ciclo cada 90 segundos.
-		//-------------------------------------------------------------
-
-    const BLINK_TEXTO_ACTIVO = false;    // texto NO parpadea
-    const BLINK_FAVICON_ACTIVO = true;   // favicon SÍ parpadea
-
+// Parpadeo ECO / Bajo consumo
 		const BLINK_DURACION = 1600;       // 1,6 s
 		const BLINK_REPETICIONES = 4;     // 4 repeticiones
 		const BLINK_CICLO = 190000;       // 190 s ≈ 3 min 10 s
+
+*/
+// Parpadeo Normal
+		const BLINK_DURACION = 1200;		// 1,2 s
+		const BLINK_REPETICIONES = 12;		// 12 repeticiones
+		const BLINK_CICLO = 90000;			// 90 s
 
 
 
@@ -468,7 +455,6 @@ let blinkIntervaloFavicon = null;
 // INICIAR CICLO GLOBAL
 //-------------------------------------------------------------
 
-function activarParpadeoFavicon() {
 function iniciarCicloBlink() {
 
     //---------------------------------------------------------
