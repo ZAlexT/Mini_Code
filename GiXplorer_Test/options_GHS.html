@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Simplicity Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <header>
+        <h1>GitHub Simplicity Settings</h1>
+    </header>
+    <main>
+        <div class="settings-container">
+            <section id="access-token-section">
+                <h2>GitHub Access Token</h2>
+                <p>For the extension to function on your behalf on GitHub, please provide your access token.</p>
+                <ol>
+                    <li>Go to <a href="https://github.com/settings/tokens" target="_blank" rel="noopener" color="blue">GitHub Personal Access Tokens page</a> while logged in to your GitHub account.</li>
+                    <li>Click on the "Generate new token" button located at the top-right corner of the page.</li>
+                    <li>Select the "Classic" option when prompted.</li>
+                    <li>GitHub will ask you to log in again using your password.</li>
+                    <li>In the "Note" field, enter a name for your token and set an expiration time (note: the extension will stop working once the token expires, but the token can always be renewed).</li>
+                    <li>Under "Select scopes", check the boxes for the "repo" scope (the first 6 checkboxes) as these are the only permissions needed for the extension to function properly.</li>
+                </ol>
+                <form id="settings-form" class="form-style">
+                    <label for="access-token"><strong>Access Token:</strong></label>
+                    <input type="text" id="access-token" name="access-token" required>
+                    <button type="submit" id="save-options-button">Save</button>
+                    <div id="message"></div>
+                </form>
+            </section>
+            
+            <section id="preferences-section">
+                <h2>Confirmation Preferences</h2>
+                <p>Toggle the confirmation dialogs for the following actions:</p>
+                <div class="toggle-group">
+                    <div class="toggle-item">
+                        <label for="toggle-multi-delete">Multi-Delete:</label>
+                        <input type="checkbox" id="toggle-multi-delete" class="toggle-switch">
+                    </div>
+                    <div class="toggle-item">
+                        <label for="toggle-move">Move:</label>
+                        <input type="checkbox" id="toggle-move" class="toggle-switch">
+                    </div>
+                    <div class="toggle-item">
+                        <label for="toggle-duplicate">Duplicate:</label>
+                        <input type="checkbox" id="toggle-duplicate" class="toggle-switch">
+                    </div>
+                    <div class="toggle-item">
+                        <label for="toggle-rename">Rename:</label>
+                        <input type="checkbox" id="toggle-rename" class="toggle-switch">
+                    </div>
+                    <div class="toggle-item">
+                        <label for="toggle-create-folder">Create Folder:</label>
+                        <input type="checkbox" id="toggle-create-folder" class="toggle-switch">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 GitHub Simplicity</p>
+    </footer>
+    <script src="options.js"></script>
+</body>
+</html>
