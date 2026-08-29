@@ -1,0 +1,631 @@
+/* GiXplorer_main.css */
+
+:root {
+    --background: #ffffff;
+    --panel: #f6f7f8;
+    --panel-alt: #ffffff;
+
+    --text: #202124;
+    --text-secondary: #6b7075;
+
+    --border: #d5d8dc;
+
+    --hover: #e9edf1;
+    --selected: #dce8f5;
+
+    --accent: #0969da;
+
+    --header-height: 48px;
+    --search-height: 42px;
+    --footer-height: 26px;
+}
+
+
+[data-theme="dark"] {
+
+    --background: #181a1b;
+    --panel: #202324;
+    --panel-alt: #181a1b;
+
+    --text: #e6e8ea;
+    --text-secondary: #9da3a8;
+
+    --border: #383d40;
+
+    --hover: #2b3033;
+    --selected: #263d55;
+
+    --accent: #58a6ff;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* ─────────────────────────────
+   TOP BAR
+   ───────────────────────────── */
+
+.topbar {
+
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: var(--panel);
+}
+
+
+.title {
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.title-icon {
+
+    font-size: 18px;
+
+    color: var(--accent);
+}
+
+
+.top-actions {
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.top-actions select,
+.top-actions button {
+
+    height: 30px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    background: var(--panel-alt);
+    color: var(--text);
+
+    cursor: pointer;
+}
+
+
+.top-actions select {
+
+    padding: 0 8px;
+}
+
+
+.top-actions button {
+
+    width: 32px;
+
+    font-size: 15px;
+}
+
+
+.top-actions button:hover {
+
+    background: var(--hover);
+}
+
+
+/* ─────────────────────────────
+   SEARCH
+   ───────────────────────────── */
+
+.searchbar {
+
+    height: var(--search-height);
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 5px 10px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: var(--background);
+}
+
+
+.search-icon {
+
+    font-size: 20px;
+
+    color: var(--text-secondary);
+}
+
+
+.searchbar input {
+
+    width: 100%;
+    height: 30px;
+
+    padding: 0 8px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background: var(--panel-alt);
+    color: var(--text);
+}
+
+
+.searchbar input:focus {
+
+    border-color: var(--accent);
+}
+
+
+/* ─────────────────────────────
+   WORKSPACE
+   ───────────────────────────── */
+
+#workspace {
+
+    display: flex;
+
+    width: 100%;
+    height: calc(
+        100vh
+        - var(--header-height)
+        - var(--search-height)
+        - var(--footer-height)
+    );
+}
+
+
+/* ─────────────────────────────
+   TREE
+   ───────────────────────────── */
+
+#treePanel {
+
+    width: 190px;
+
+    min-width: 160px;
+    max-width: 70%;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--panel);
+}
+
+
+.panel-header {
+
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 10px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+
+.panel-header button {
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--text-secondary);
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+
+#tree {
+
+    flex: 1;
+
+    overflow: auto;
+
+    padding: 6px 4px;
+}
+
+
+/* TREE ITEMS */
+
+.tree-item {
+
+    display: flex;
+    align-items: center;
+
+    min-height: 28px;
+
+    padding: 3px 7px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    font-size: 13px;
+}
+
+
+.tree-item:hover {
+
+    background: var(--hover);
+}
+
+
+.tree-item.selected {
+
+    background: var(--selected);
+
+    color: var(--accent);
+}
+
+
+.tree-icon {
+
+    width: 20px;
+
+    flex: 0 0 20px;
+
+    text-align: center;
+}
+
+
+.tree-name {
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.tree-children {
+
+    margin-left: 18px;
+}
+
+
+/* ─────────────────────────────
+   SPLITTER
+   ───────────────────────────── */
+
+#splitter {
+
+    width: 5px;
+
+    flex: 0 0 5px;
+
+    cursor: col-resize;
+
+    background: var(--border);
+}
+
+
+#splitter:hover {
+
+    background: var(--accent);
+}
+
+
+/* ─────────────────────────────
+   DETAIL
+   ───────────────────────────── */
+
+#detailPanel {
+
+    flex: 1;
+
+    min-width: 0;
+
+    overflow: auto;
+
+    background: var(--background);
+}
+
+
+.empty-detail {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--text-secondary);
+}
+
+
+.empty-icon {
+
+    margin-bottom: 12px;
+
+    font-size: 42px;
+
+    color: var(--accent);
+}
+
+
+.empty-detail h2 {
+
+    margin: 0 0 8px;
+
+    color: var(--text);
+}
+
+
+.empty-detail p {
+
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* ─────────────────────────────
+   FOOTER
+   ───────────────────────────── */
+
+footer {
+
+    height: var(--footer-height);
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 10px;
+
+    border-top: 1px solid var(--border);
+
+    background: var(--panel);
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+}
+
+/* GiXplorer_settings.css */
+
+/* Panel de configuración */
+
+.settings-panel {
+
+    position: fixed;
+
+    top: var(--header-height);
+    right: 0;
+
+    width: 320px;
+    height: calc(100vh - var(--header-height));
+
+    display: none;
+    flex-direction: column;
+
+    z-index: 1000;
+
+    border-left: 1px solid var(--border);
+
+    background: var(--panel);
+
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Cabecera */
+
+.settings-header {
+
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.settings-header button {
+
+    border: 0;
+
+    background: transparent;
+    color: var(--text-secondary);
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+.settings-header button:hover {
+
+    color: var(--text);
+}
+
+
+/* Contenido */
+
+.settings-content {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 16px;
+}
+
+
+.settings-content h3 {
+
+    margin: 0 0 7px;
+
+    font-size: 12px;
+
+    color: var(--text-secondary);
+}
+
+
+.settings-content input[type="text"],
+.settings-content input[type="password"],
+.settings-content select {
+
+    width: 100%;
+    height: 32px;
+
+    margin-bottom: 14px;
+
+    padding: 0 8px;
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    outline: none;
+
+    background: var(--panel-alt);
+    color: var(--text);
+}
+
+
+.settings-content input:focus,
+.settings-content select:focus {
+
+    border-color: var(--accent);
+}
+
+
+/* Botones */
+
+.settings-content button {
+
+    width: 100%;
+    min-height: 32px;
+
+    margin-bottom: 8px;
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    background: var(--panel-alt);
+    color: var(--text);
+
+    cursor: pointer;
+}
+
+
+.settings-content button:hover {
+
+    background: var(--hover);
+}
+
+
+.settings-content button.danger {
+
+    color: #d13438;
+}
+
+
+/* Confirmaciones */
+
+.settings-content label {
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 9px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+/* Estado conexión */
+
+#connectionStatus {
+
+    margin: 3px 0 14px;
+
+    font-size: 12px;
+
+    color: var(--text-secondary);
+}
+
+
+.settings-content hr {
+
+    margin: 18px 0;
+
+    border: 0;
+
+    border-top: 1px solid var(--border);
+}

@@ -1,0 +1,467 @@
+<!-- GiXplorer_index.html -->
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GiXplorer</title>
+
+    <link
+        rel="stylesheet"
+        href="css/main.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     CABECERA
+     ============================================================ -->
+
+<header class="topbar">
+
+    <div class="title">
+
+        <span class="title-icon">◈</span>
+
+        <span>Git Repo Explorer</span>
+
+    </div>
+
+
+    <div class="top-actions">
+
+
+        <!-- Proveedor rápido -->
+
+        <select id="provider">
+
+            <option value="github">
+                GitHub
+            </option>
+
+            <option value="codeberg">
+                Codeberg
+            </option>
+
+        </select>
+
+
+        <!-- Cambio rápido de tema -->
+
+        <button
+            id="themeToggle"
+            title="Cambiar tema"
+        >
+            ☀️
+        </button>
+
+
+        <!-- Abrir configuración -->
+
+        <button
+            id="settings"
+            title="Configuración"
+        >
+            ⚙
+        </button>
+
+
+        <!-- ====================================================
+             PANEL DE CONFIGURACIÓN
+             ==================================================== -->
+
+        <div
+            id="settingsPanel"
+            class="settings-panel"
+        >
+
+
+            <div class="settings-header">
+
+                <span data-i18n="settings">
+                    Configuración
+                </span>
+
+                <button
+                    id="closeSettings"
+                    title="Cerrar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="settings-content">
+
+
+                <!-- ============================
+                     PROVEEDOR
+                     ============================ -->
+
+                <h3 data-i18n="provider">
+                    Proveedor
+                </h3>
+
+                <select id="settingsProvider">
+
+                    <option value="github">
+                        GitHub
+                    </option>
+
+                    <option value="codeberg">
+                        Codeberg
+                    </option>
+
+                </select>
+
+
+                <!-- ============================
+                     USUARIO
+                     ============================ -->
+
+                <h3 data-i18n="user">
+                    Usuario
+                </h3>
+
+					<input
+					id="providerUser"
+					type="text"
+					autocomplete="off"
+					data-i18n-placeholder="user"
+					placeholder="Usuario"
+				>
+
+
+                <!-- ============================
+                     TOKEN
+                     ============================ -->
+
+                <h3 data-i18n="token">
+                    Token
+                </h3>
+
+                <input
+                    id="providerToken"
+                    type="password"
+                    autocomplete="off"
+                    placeholder="Token"
+                >
+
+
+                <!-- Conexión -->
+
+                <button
+                    id="connectProvider"
+                    data-i18n="testConnection"
+                >
+                    Probar conexión
+                </button>
+
+
+                <div
+					id="connectionStatus"
+					data-i18n="notConfigured"
+				>
+					Sin configurar
+				</div>
+
+
+                <hr>
+
+
+                <!-- ============================
+                     CONFIRMACIONES
+                     ============================ -->
+
+                <h3 data-i18n="confirmations">
+                    Confirmaciones
+                </h3>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="confirmDelete"
+                    >
+
+                    <span data-i18n="confirmDelete">
+                        Confirmar eliminar
+                    </span>
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="confirmMove"
+                    >
+
+                    <span data-i18n="confirmMove">
+                        Confirmar mover
+                    </span>
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="confirmOverwrite"
+                    >
+
+                    <span data-i18n="confirmOverwrite">
+                        Confirmar sobrescribir
+                    </span>
+
+                </label>
+
+
+                <hr>
+
+
+                <!-- ============================
+                     INTERFAZ
+                     ============================ -->
+
+                <h3 data-i18n="interface">
+                    Interfaz
+                </h3>
+
+
+                <!-- Tema -->
+
+                <label
+				for="settingsTheme"
+				data-i18n="theme"
+				>
+					Tema
+				</label>
+
+                <select id="settingsTheme">
+
+                   <option value="dark" data-i18n="dark">
+						Oscuro
+					</option>
+
+					<option value="light" data-i18n="light">
+						Claro
+					</option>
+
+					<option value="system" data-i18n="system">
+						Sistema
+					</option>
+
+                </select>
+
+
+                <!-- Idioma -->
+
+                <label
+                    for="settingsLanguage"
+                    data-i18n="language"
+                >
+                    Idioma
+                </label>
+
+                <select id="settingsLanguage">
+
+                    <option value="es">
+                        Español
+                    </option>
+
+                    <option value="en">
+                        English
+                    </option>
+
+                </select>
+
+
+                <!-- Restaurar confirmaciones -->
+
+                <button
+                    id="resetConfirmations"
+                    data-i18n="restoreConfirmations"
+                >
+                    Restaurar confirmaciones
+                </button>
+
+
+                <!-- Restablecer datos de usuario -->
+
+                <button
+                    id="resetData"
+                    class="danger"
+                    data-i18n="resetData"
+                >
+                    Restablecer datos
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ============================================================
+     BUSCADOR
+     ============================================================ -->
+
+<div class="searchbar">
+
+    <span class="search-icon">
+        ⌕
+    </span>
+
+	<input
+		id="search"
+		type="search"
+		data-i18n-placeholder="search"
+		placeholder="Buscar repositorio, carpeta o archivo..."
+	>
+
+</div>
+
+
+<!-- ============================================================
+     ÁREA PRINCIPAL
+     ============================================================ -->
+
+<main id="workspace">
+
+
+    <!-- ============================
+         ÁRBOL
+         ============================ -->
+
+    <section id="treePanel">
+
+        <div class="panel-header">
+
+            <span data-i18n="repositories">
+			Repositorios
+			</span>
+
+           <button
+			id="refreshTree"
+			title="Actualizar"
+		>
+			↻
+		</button>
+
+        </div>
+
+
+        <div id="tree">
+
+            <!-- El árbol se genera desde JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================
+         SEPARADOR REDIMENSIONABLE
+         ============================ -->
+
+    <div
+        id="splitter"
+        title="Arrastrar para cambiar tamaño"
+    ></div>
+
+
+    <!-- ============================
+         DETALLE
+         ============================ -->
+
+    <section id="detailPanel">
+
+        <div class="empty-detail">
+
+            <div class="empty-icon">
+                ◈
+            </div>
+
+            <h2>
+                Git Repo Explorer
+            </h2>
+
+			<p data-i18n="selectItem">
+				Selecciona un repositorio,
+				carpeta o archivo.
+			</p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- ============================================================
+     PIE
+     ============================================================ -->
+
+<footer>
+
+	<span id="status">
+		V0.1 · <span data-i18n="offline">Sin conexión</span>
+	</span>
+
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+     
+     El orden es importante:
+     
+     1. Storage
+     2. Idioma
+     3. Contrato de proveedores
+     4. Proveedores
+     5. Gestor de proveedores
+     6. Aplicación
+     ============================================================ -->
+
+<script src="js/storage.js"></script>
+
+<script src="js/i18n.js"></script>
+
+<script src="js/providers/provider-interface.js"></script>
+
+<script src="js/providers/github-provider.js"></script>
+
+<script src="js/providers/codeberg-provider.js"></script>
+
+<script src="js/provider-manager.js"></script>
+
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>
