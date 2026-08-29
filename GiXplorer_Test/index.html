@@ -48,7 +48,7 @@
 
     <div class="settings-content">
 
-        <h3>Proveedor</h3>
+        <h3 data-i18n="provider">Proveedor</h3>
 
         <select id="settingsProvider">
             <option value="github">GitHub</option>
@@ -56,7 +56,7 @@
         </select>
 
 
-        <h3>Usuario</h3>
+        <h3 data-i18n="user">Usuario</h3>
 
         <input
             id="providerUser"
@@ -66,7 +66,7 @@
         >
 
 
-        <h3>Token</h3>
+        <h3 data-i18n="token">Token</h3>
 
         <input
             id="providerToken"
@@ -76,9 +76,9 @@
         >
 
 
-        <button id="connectProvider">
-            Probar conexión
-        </button>
+        <button id="connectProvider" data-i18n="testConnection">
+    Probar conexión
+</button>
 
         <div id="connectionStatus">
             Sin configurar
@@ -88,7 +88,7 @@
         <hr>
 
 
-        <h3>Confirmaciones</h3>
+        <h3 data-i18n="confirmations">Confirmaciones</h3>
 
         <label>
             <input type="checkbox" id="confirmDelete">
@@ -109,15 +109,40 @@
         <hr>
 
 
-        <h3>Interfaz</h3>
+        <h3 data-i18n="interface">Interfaz</h3>
 
         <button id="resetConfirmations">
             Restaurar confirmaciones
         </button>
+		
+		
+		<!-- GiXplorer_tema -->
+		<label for="settingsTheme">
+			Tema
+		</label>
 
-        <button id="resetData" class="danger">
-            Restablecer datos
-        </button>
+		<select id="settingsTheme">
+			<option value="dark">Oscuro</option>
+			<option value="light">Claro</option>
+			<option value="system">Sistema</option>
+		</select>
+		
+				<!-- GiXplorer_idioma -->	
+			<label for="settingsLanguage">
+			Idioma
+		</label>
+
+		<select id="settingsLanguage">
+			<option value="es">Español</option>
+			<option value="en">English</option>
+		</select>
+
+				<!-- GiXplorer_reset -->	
+        <button id="resetData" class="danger" data-i18n="resetData">
+    Restablecer datos
+</button>
+		
+		
 
     </div>
 
@@ -203,6 +228,11 @@
 
 
 <script src="js/storage.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/providers/provider-interface.js"></script>
+<script src="js/providers/github-provider.js"></script>
+<script src="js/providers/codeberg-provider.js"></script>
+<script src="js/provider-manager.js"></script>
 <script src="js/app.js"></script>
 
 </body>
