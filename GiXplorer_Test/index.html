@@ -1,0 +1,209 @@
+<!-- GiXplorer_index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GiXplorer</title>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="title">
+        <span class="title-icon">◈</span>
+        <span>Git Repo Explorer</span>
+    </div>
+
+    <div class="top-actions">
+
+        <select id="provider">
+            <option value="github">GitHub</option>
+            <option value="codeberg">Codeberg</option>
+        </select>
+
+        <button id="themeToggle" title="Cambiar tema">
+            ☀️
+        </button>
+
+        <button id="settings" title="Configuración">
+            ⚙
+        </button>
+		
+		<!-- GiXplorer_configuración -->
+
+<div id="settingsPanel" class="settings-panel">
+
+    <div class="settings-header">
+        <span>Configuración</span>
+
+        <button id="closeSettings" title="Cerrar">
+            ×
+        </button>
+    </div>
+
+    <div class="settings-content">
+
+        <h3>Proveedor</h3>
+
+        <select id="settingsProvider">
+            <option value="github">GitHub</option>
+            <option value="codeberg">Codeberg</option>
+        </select>
+
+
+        <h3>Usuario</h3>
+
+        <input
+            id="providerUser"
+            type="text"
+            autocomplete="off"
+            placeholder="Usuario"
+        >
+
+
+        <h3>Token</h3>
+
+        <input
+            id="providerToken"
+            type="password"
+            autocomplete="off"
+            placeholder="Token"
+        >
+
+
+        <button id="connectProvider">
+            Probar conexión
+        </button>
+
+        <div id="connectionStatus">
+            Sin configurar
+        </div>
+
+
+        <hr>
+
+
+        <h3>Confirmaciones</h3>
+
+        <label>
+            <input type="checkbox" id="confirmDelete">
+            Confirmar eliminar
+        </label>
+
+        <label>
+            <input type="checkbox" id="confirmMove">
+            Confirmar mover
+        </label>
+
+        <label>
+            <input type="checkbox" id="confirmOverwrite">
+            Confirmar sobrescribir
+        </label>
+
+
+        <hr>
+
+
+        <h3>Interfaz</h3>
+
+        <button id="resetConfirmations">
+            Restaurar confirmaciones
+        </button>
+
+        <button id="resetData" class="danger">
+            Restablecer datos
+        </button>
+
+    </div>
+
+</div>
+
+    </div>
+
+</header>
+
+
+<div class="searchbar">
+
+    <span class="search-icon">⌕</span>
+
+    <input
+        id="search"
+        type="search"
+        placeholder="Buscar repositorio, carpeta o archivo..."
+    >
+
+</div>
+
+
+<main id="workspace">
+
+    <!-- ÁRBOL -->
+
+    <section id="treePanel">
+
+        <div class="panel-header">
+
+            <span>Repositorios</span>
+
+            <button id="refreshTree" title="Actualizar">
+                ↻
+            </button>
+
+        </div>
+
+        <div id="tree">
+
+            <!-- El árbol se genera desde JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- SEPARADOR REDIMENSIONABLE -->
+
+    <div id="splitter" title="Arrastrar para cambiar tamaño"></div>
+
+
+    <!-- DETALLE -->
+
+    <section id="detailPanel">
+
+        <div class="empty-detail">
+
+            <div class="empty-icon">◈</div>
+
+            <h2>Git Repo Explorer</h2>
+
+            <p>
+                Selecciona un repositorio, carpeta o archivo
+                en el árbol.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <span id="status">
+        V0.1 · Sin conexión
+    </span>
+
+</footer>
+
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
