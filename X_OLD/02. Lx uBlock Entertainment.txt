@@ -41,6 +41,93 @@ atomgencat.onbmc.com###WIN_3_304255210 > .PageBodyHorizontal
 
 
 
+! ================= Daddy Live =================
+
+! 7 Mar 2026 https://dlstreams.st
+dlstreams.st##.watch__notice
+dlstreams.st##.sidebar__inner
+dlstreams.st##.footer
+dlstreams.st##.watch__side
+dlstreams.st##h2
+dlstreams.st##.navbar__links > [href="/webmasters.php"]
+dlstreams.st##.navbar__links > [href="/contact.php"]
+dlstreams.st##.navbar__links > [href="./api.php"]
+dlstreams.st##.navbar__links > [href="https://discord.gg/7Ku4cBeTpA"]
+dlstreams.st##.navbar__links > [href="https://t.me/daddylive2"]
+dlstreams.st###toggleChatBtn
+dlstreams.st##.mobileBottomNav__top
+dlstreams.st###drawer > [href="https://t.me/daddylive2"]
+dlstreams.st###drawer > [href="https://discord.gg/7Ku4cBeTpA"]
+dlstreams.st###drawer > [href="./api.php"]
+dlstreams.st###drawer > [href="/contact.php"]
+dlstreams.st###drawer > [href="/webmasters.php"]
+dlstreams.st##.drawer
+dlstreams.st##.site-ad--top.site-ad
+dlstreams.st##.sidebar
+dlstreams.st##.is-marquee.upcoming-slider
+
+
+! DLHD - Bloqueo por nombre de categoría
+! Fuente: DLHD.ini
+
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Big Brother))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Scottish Premiership))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(England - Championship))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(All Soccer Events))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Major League Soccer))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(USL Championship))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(USL League One))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(USL W League))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(NWSL Soccer))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(College Soccer))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Cricket))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Field Hockey))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Tennis US OPEN [Grand Slam]))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Tennis))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Motorsport))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Boxing))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(MMA))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(UFC Fight Night))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Wrestling (AEW)))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Combat sports))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Golf))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Snooker))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Snooker (US Open)))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Am. Football))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Am. Football (CFL)))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Am. Football (NFL)))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(NCAA Football))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(High School Football))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Athletics))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Aussie rules (AFL)))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Baseball))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Little League Baseball))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Minor League Baseball))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Baseball League))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Softball))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Baseball (MLB)))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Basketball))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(WNBA))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Beach Soccer))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Sailing))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Boating))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Bowling))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Cycling))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Darts))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Futsal))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Handball))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Horse Racing))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Ice Hockey OHL))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Lacrosse PLL))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Rugby League))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Rugby Union))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Squash))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Triathlon))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Beach Volleyball))
+dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Volleyball))
+! dlstreams.st##.schedule__category:has(> .schedule__catHeader > .card__meta:has-text(Water Sports))
+
+! ================= Daddy Live =================
 
 
 
