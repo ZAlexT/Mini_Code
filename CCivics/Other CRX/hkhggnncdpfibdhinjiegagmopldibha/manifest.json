@@ -1,0 +1,90 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+	"name": "Checker Plus for Google Calendar™",
+	"description": "__MSG_description__",
+	"version": "46.1.1",
+	"homepage_url": "https://jasonsavard.com?ref=homepage_url&ext=calendar",
+	"omnibox": {
+		"keyword": "cal"
+	},
+	"background": {
+		"service_worker": "js/background.js"
+	},
+	"action": {
+		"default_icon": {
+			"19": "/images/icons/icon-19_default.png",
+			"38": "/images/icons/icon-38_default.png"
+		},
+		"default_title": "Checker Plus for Google Calendar™",
+		"default_popup": "popup.html?source=toolbar"
+	},
+	"commands": {
+		"dismissEvent": {
+			"description": "__MSG_dismissAllInNotificationWindow__"
+		},
+		"quickAddSelection": {
+			"description": "__MSG_quickAdd__"
+		}
+	},
+	"icons": {
+		"16": "/images/icons/icon-16.png",
+		"32": "/images/icons/icon-32_default.png",
+		"48": "/images/icons/icon-48.png",
+		"128": "/images/icons/icon-128.png"
+	},
+	"options_page": "options.html",
+	"default_locale": "en",
+	"side_panel": {
+		"default_path": "popup.html"
+	},
+	"permissions": [
+		"alarms",
+		"storage",
+		"tts",
+		"idle",
+		"contextMenus",
+		"notifications",
+		"activeTab",
+		"gcm",
+		"identity",
+		"unlimitedStorage",
+		"system.display",
+		"offscreen",
+		"scripting",
+		"sidePanel"
+	],
+	"optional_permissions": [
+		"background"
+	],
+	"optional_host_permissions": [
+		"https://calendar.google.com/"
+	],
+	"storage": {
+		"managed_schema": "schema.json"
+	},
+	"oauth2": {
+		"client_id": "74919836968-ube40emj4vdiujk6q2h12l0n5sgblkvu.apps.googleusercontent.com",
+		"scopes": [
+			"https://www.googleapis.com/auth/calendar",
+			"https://www.googleapis.com/auth/calendar.readonly",
+			"https://www.googleapis.com/auth/calendar.events",
+			"https://www.googleapis.com/auth/tasks"
+		]
+	},
+	"manifest_version": 3,
+	"web_accessible_resources": [
+		{
+			"resources": [
+				"options.html",
+				"contribute.html"
+			],
+			"matches": [
+				"https://jasonsavard.com/*",
+				"https://checkout.stripe.com/*",
+				"https://www.paypal.com/*",
+				"https://nowpayments.io/*"
+			]
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"reducedDonationAd_popup_line1": {"message": "Гарні новини для давніх користувачів!"},
+	"reducedDonationAd_popup_line2": {"message": "Отримайте $1 лише за $2"},
+	"deduplicateSharedEvents": {"message": "Видаляти дублікати спільних подій"},
+	"addedForTimeFromNow": {"message": "Added $1 $2"},
+	"whenEventStarts": {"message": "Коли починається подія"},
+	"onTheSameDay": {"message": "Того ж дня"},
+	"onTheSameDayAt": {"message": "Того ж дня о $1"},
+	"last": {"message": "Останній"},
+	"eventRescheduledTo": {"message": "Подію перенесено на $1"},
+	"contextMenuFirstHourOfDay": {"message": "Перша година для часу контекстного меню"}
+}
