@@ -1,0 +1,26 @@
+{
+  "extensionName": {
+    "message": "Text a Google Calendar",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Creeu fàcilment un esdeveniment de Google Calendar a partir de qualsevol text ressaltat",
+    "description": "Extension description"
+  },
+  "createCalendarEvent": {
+    "message": "Crea un Esdeveniment del Calendari",
+    "description": "Title for the context menu item to create a calendar event"
+  },
+  "errorTitle": {
+    "message": "Hi ha hagut un error en crear l'esdeveniment del calendari",
+    "description": "Title for the error notification"
+  },
+  "errorMessage": {
+    "message": "Ho sentim, hi ha hagut un error en crear l'esdeveniment del calendari. Si us plau, intenteu contactar amb support@betteraiapps.com i ens assegurarem que això no torni a passar.",
+    "description": "Message for the error notification"
+  },
+  "options": {
+    "message": "Opcions",
+    "description": "Title for the context menu item to open the options page"
+  }
+}

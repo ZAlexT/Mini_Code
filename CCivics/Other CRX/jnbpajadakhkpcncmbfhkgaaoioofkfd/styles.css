@@ -1,0 +1,23 @@
+.add2calendar_icon {
+	display: inline-block;
+	position: relative;
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.add2calendar_icon::before {
+	content: '\1F4C5';
+	color: darkblue;
+}
+.add2calendar_icon::after {
+	position: absolute;
+	content: '+';
+	left: 45%;
+	top: -8%;
+	color: cyan;
+	text-shadow: 1px 2px 3px green;
+	font-weight: bold;
+}
+.add2calendar_icon span {
+	position: absolute;
+}
+

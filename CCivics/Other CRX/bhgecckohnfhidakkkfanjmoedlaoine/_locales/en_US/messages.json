@@ -1,0 +1,26 @@
+{
+  "extensionName": {
+    "message": "Text to Google Calendar",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Easily create a Google Calendar event from any highlighted piece of text",
+    "description": "Extension description"
+  },
+  "createCalendarEvent": {
+    "message": "Create Calendar Event",
+    "description": "Title for the context menu item to create a calendar event"
+  },
+  "errorTitle": {
+    "message": "There was an error creating the calendar event",
+    "description": "Title for the error notification"
+  },
+  "errorMessage": {
+    "message": "We're sorry, there was an error creating the calendar event. Please try contact support@betteraiapps.com and we'll make sure this doesn't happen again.",
+    "description": "Message for the error notification"
+  },
+  "options": {
+    "message": "Options",
+    "description": "Title for the context menu item to open the options page"
+  }
+}

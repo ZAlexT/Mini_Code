@@ -1,0 +1,26 @@
+{
+  "extensionName": {
+    "message": "Текст до Google Календаря",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Легко створіть подію в Google Календарі з будь-якого виділеного тексту",
+    "description": "Extension description"
+  },
+  "createCalendarEvent": {
+    "message": "Створити Подію в Календарі",
+    "description": "Title for the context menu item to create a calendar event"
+  },
+  "errorTitle": {
+    "message": "Виникла помилка при створенні події календаря",
+    "description": "Title for the error notification"
+  },
+  "errorMessage": {
+    "message": "Вибачте, виникла помилка при створенні події календаря. Будь ласка, спробуйте зв'язатися з support@betteraiapps.com, і ми переконаємось, що це не повториться.",
+    "description": "Message for the error notification"
+  },
+  "options": {
+    "message": "Опції",
+    "description": "Title for the context menu item to open the options page"
+  }
+}

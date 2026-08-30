@@ -1,0 +1,29 @@
+{
+  "extensionName": {
+    "message": "Google Календар Швидке Додавання"
+  },
+  "extensionDescription": {
+    "message": "Створити подію в Google Календарі з виділеного тексту."
+  },
+  "contextMenusTitle": {
+    "message": "Додати до Google Календаря"
+  },
+  "popupHeading": {
+    "message": "Додати подію"
+  },
+  "popupEventTextPlaceholder": {
+    "message": "приклад: Зустріч о 15:00 15 березня"
+  },
+  "popupAddButton": {
+    "message": "Додати"
+  },
+  "popupStatusEmptyText":{
+    "message": "Будь ласка, введіть текст."
+  },
+  "popupStatusCommonError":{
+    "message": "Сталася помилка."
+  },
+  "popupStatusProgress":{
+    "message": "Відкриття Google Календаря..."
+  }
+}

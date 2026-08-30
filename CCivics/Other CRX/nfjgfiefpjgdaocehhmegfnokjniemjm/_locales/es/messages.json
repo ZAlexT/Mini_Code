@@ -1,0 +1,29 @@
+{
+  "extensionName": {
+    "message": "Google Calendar Agregar Rápido"
+  },
+  "extensionDescription": {
+    "message": "Crear evento en Google Calendar desde el texto seleccionado."
+  },
+  "contextMenusTitle": {
+    "message": "Agregar a Google Calendar"
+  },
+  "popupHeading": {
+    "message": "Agregar evento"
+  },
+  "popupEventTextPlaceholder": {
+    "message": "ejemplo: Reunión a las 3 PM el 15 de marzo"
+  },
+  "popupAddButton": {
+    "message": "Agregar"
+  },
+  "popupStatusEmptyText":{
+    "message": "Por favor ingrese texto."
+  },
+  "popupStatusCommonError":{
+    "message": "Se produjo un error."
+  },
+  "popupStatusProgress":{
+    "message": "Abriendo Google Calendar..."
+  }
+}

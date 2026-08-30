@@ -1,0 +1,42 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "name": "Google Calendar Bulk Edit",
+  "description": "A Chrome extension to bulk move or bulk delete Google Calendar events. Feedback/Bug reports are welcome! Link in popup.",
+  "version": "6.1.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6w0m6AjVg27W11LKrQirseZeZztmgJd+Z6LIugC9A+B7OGyW3MpBw8rFghS1KxZPcLUW5Qp4zZUQXQetxdp4VrTBrcPqF1pOWRu1/OnGRMCQlEEZL5IfIFtNgdqCNXWE7mT0rQQDoSNff5aPy0BtoTUmp4+M18eiqyKniQ+GoEbqsJUYB/Hi0KMBhPTgyuh8FzVRxFLsStYcGeV1gyh4iPL3UVpw4VoEoW1hCTrBvviT1Ql/4VBYcQGUt7QEOpNq5KBbsnbMQZ9no8vGoMTFdJeXrvrg9W2cSMJ0xwzETUufZ733s6lfKmeAysLrwzV+YkVTRFXNlO0wK4Jem0DjpwIDAQAB",
+  "permissions": ["identity", "storage", "scripting"],
+  "host_permissions": [
+    "https://www.googleapis.com/*",
+    "https://accounts.google.com/*",
+    "https://calendar.google.com/*",
+    "https://www.google.com/calendar/*"
+  ],
+   "icons": {
+    "16": "/icons/icon16.png",
+    "32": "/icons/icon32.png",
+    "48": "/icons/icon48.png",
+    "128": "/icons/icon128.png"
+  },
+  "oauth2": {
+    "client_id": "359286724728-7527l947gaopfa3k13tov694qtmq7qgm.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/calendar", "email"]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://calendar.google.com/*",
+        "https://calendar.google.com/calendar/*",
+        "https://www.google.com/calendar/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

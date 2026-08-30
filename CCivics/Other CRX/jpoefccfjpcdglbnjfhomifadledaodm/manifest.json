@@ -1,0 +1,17 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "name": "Save to Google Calendar",
+    "version": "2.0",
+    "manifest_version": 3,
+    "description": "Send selected date on a webpage to Google Calendar",
+    "background": {
+        "service_worker": "eventPage.js"
+    },
+    "icons": {
+        "128": "icon128.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+    },
+    "permissions": ["contextMenus"]
+}

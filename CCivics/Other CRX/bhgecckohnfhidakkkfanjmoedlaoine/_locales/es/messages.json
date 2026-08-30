@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "Text to Google Calendar: eventos con IA",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Extensión de Google Calendar: selecciona texto y crea un evento. La IA detecta fecha, hora y lugar automáticamente.",
+    "description": "Extension description"
+  },
+  "createCalendarEvent": {
+    "message": "Crear evento",
+    "description": "Title for the context menu item to create a calendar event"
+  },
+  "errorTitle": {
+    "message": "Se produjo un error al crear el evento",
+    "description": "Title for the error notification"
+  },
+  "errorMessage": {
+    "message": "Lo sentimos, se produjo un error al crear el evento. Escribe a support@betteraiapps.com y nos aseguraremos de que no vuelva a ocurrir.",
+    "description": "Message for the error notification"
+  },
+  "options": {
+    "message": "Opciones",
+    "description": "Title for the context menu item to open the options page"
+  },
+  "reviewPromptTitle": {
+    "message": "¡Has creado 5 eventos! ¿Te gusta la extensión?",
+    "description": "Title for the post-success review prompt toast"
+  },
+  "reviewPromptRate": {
+    "message": "Valórala en Chrome Web Store",
+    "description": "Button label that opens the store review page"
+  },
+  "reviewPromptDismiss": {
+    "message": "No, gracias",
+    "description": "Button label that dismisses the review prompt"
+  }
+}

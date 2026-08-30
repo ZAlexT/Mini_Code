@@ -1,0 +1,61 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+	"manifest_version": 3,
+	"name": "Add To Calendar", 
+	"short_name" : "Add2Calendar", 
+	"author": "Jeff Baker",
+	"version": "1.0.9",
+	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq5ZtauQzuKe7fyPU3qFld4iU/KccuMVn1r3M2w59O20IAQu8pYMo7z4rNfmffcn2vsnRFN11vtJSwP/IJSAbf5hr3he2EYIDo64G3Z1FIPYrO5XDQRIjcMhWoRSm7UlEwIjZvjaQc1J4VnA/wQ0aIhJ+goIVsPWyP/XX3mJIRU7br5wsIsc8sD1jAPBUs1lae++Pt0hUjSQ+kP9vyOvjiawxl5YfIaT2L4bWQDZFu7s3EqgIv2xN9RMhDrnim+wAtYHnkvpSy0IPQiKUT4eCN4Vz+KTwgFIltisFN+YGwZGpIkUAfRbnl0flbu1Zlx+x768SqOezoQ7eAYyk5bN9zwIDAQAB",
+	"description": "Instantly add events to your Calendar with the click of a button without retyping the title, date, time or location of an event.", 
+	"icons": {
+		"16": "images/add2calendar16.png", 
+		"48": "images/add2calendar48.png", 
+		"128": "images/add2calendar128.png" 
+	},
+	"permissions": [ 
+		"identity",
+		"identity.email",
+		"tabs", 
+		"storage",
+		"activeTab",
+		"scripting"
+		], 
+	"oauth2": {
+    	"client_id": "714998570643-897cn1l7dqesr3fldjt1mksa290rhpiv.apps.googleusercontent.com",
+    	"scopes": ["https://www.googleapis.com/auth/chromewebstore.readonly"]
+    },
+	"host_permissions": [
+		"*://www.seabreezecomputers.com/*",
+		"*://seabreezecomputers.com/*",
+		"*://192.168.1.5/*",
+		"<all_urls>"
+	],
+	"action": {
+		"default_icon": "images/add2calendar38.png", 
+		"default_title": "Add To Calendar",      
+		"default_popup": "popup.html"
+	},
+	"commands": {
+		"_execute_action": {
+            "suggested_key": {
+				"default": "Alt+2"
+			}
+		}
+	},
+	"background": {
+  		"service_worker": "background.js"
+	},
+	"externally_connectable": {
+		"matches": ["*://*.seabreezecomputers.com/*"]
+	},
+	"content_scripts": [
+    {
+		"matches": ["*://*.seabreezecomputers.com/*", "*://seabreezecomputers.com/*"], 
+		"js": ["storage.js", "a2c.js", "license2020.js"], 
+		"css": [],
+		"all_frames": false, 
+		"run_at": "document_start" 
+	} ]
+
+}

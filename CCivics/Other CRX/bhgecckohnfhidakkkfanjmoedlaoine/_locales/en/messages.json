@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "Text to Google Calendar: AI Events",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Highlight text on any page to create a Google Calendar event. AI reads dates, times & locations. Add to calendar in one click.",
+    "description": "Extension description"
+  },
+  "createCalendarEvent": {
+    "message": "Create Calendar Event",
+    "description": "Title for the context menu item to create a calendar event"
+  },
+  "errorTitle": {
+    "message": "There was an error creating the calendar event",
+    "description": "Title for the error notification"
+  },
+  "errorMessage": {
+    "message": "We're sorry, there was an error creating the calendar event. Please try contact support@betteraiapps.com and we'll make sure this doesn't happen again.",
+    "description": "Message for the error notification"
+  },
+  "options": {
+    "message": "Options",
+    "description": "Title for the context menu item to open the options page"
+  },
+  "reviewPromptTitle": {
+    "message": "You've created 5 events! Enjoying the extension?",
+    "description": "Title for the post-success review prompt toast"
+  },
+  "reviewPromptRate": {
+    "message": "Rate it on the Chrome Web Store",
+    "description": "Button label that opens the store review page"
+  },
+  "reviewPromptDismiss": {
+    "message": "No thanks",
+    "description": "Button label that dismisses the review prompt"
+  }
+}

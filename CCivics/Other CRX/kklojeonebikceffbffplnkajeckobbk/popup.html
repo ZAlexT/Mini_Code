@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>GC Bulk Edit</title>
+    <style>
+      body {
+        width: 300px;
+        padding: 15px;
+        font-family: Arial, sans-serif;
+      }
+      h3 {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+      }
+      .status {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+      .status.signed-in {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+      .status.signed-out {
+        background: #ffebee;
+        color: #c62828;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 8px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      #signin {
+        background: #4285f4;
+        color: white;
+      }
+      #signin:hover {
+        background: #3367d6;
+      }
+      #signout {
+        background: #f1f1f1;
+        color: #333;
+      }
+      #signout:hover {
+        background: #e0e0e0;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .account-info {
+        font-size: 12px;
+        color: #666;
+        margin-top: 5px;
+      }
+      .color-picker-container {
+        margin-top: 10px;
+      }
+      label {
+        font-size: 13px;
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 6px;
+        margin-bottom: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+      input[type="color"] {
+        width: 100%;
+        height: 40px;
+        border: none;
+        padding: 0;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      #subscription-status {
+        margin-top: 10px;
+        padding: 8px;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+      .keybind-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        gap: 8px;
+      }
+      .keybind-row label {
+        flex: 1;
+        margin: 0;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+      }
+      .keybind-input {
+        width: 100px;
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 12px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .keybind-input:focus {
+        border-color: #4285f4;
+        outline: none;
+        background: #e3f2fd;
+      }
+      .keybind-input.recording {
+        background: #fff3e0;
+        border-color: #ff9800;
+      }
+      #reset-keybinds {
+        background: #f1f1f1;
+        color: #333;
+        font-size: 12px;
+        padding: 6px;
+        margin-top: 5px;
+      }
+      #reset-keybinds:hover {
+        background: #e0e0e0;
+      }
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 10px 0;
+        padding: 8px;
+        background: #f5f5f5;
+        border-radius: 4px;
+      }
+      .checkbox-container input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+      .checkbox-container label {
+        margin: 0;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      /* Help icon tooltip */
+      .help-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #9e9e9e;
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+        cursor: help;
+        position: relative;
+        margin-left: 4px;
+      }
+      .help-icon:hover {
+        background: #757575;
+      }
+      .help-tooltip {
+        display: none;
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        padding: 8px 10px;
+        background: #333;
+        color: #fff;
+        font-size: 11px;
+        font-weight: normal;
+        line-height: 1.4;
+        border-radius: 4px;
+        z-index: 1000;
+        text-align: left;
+      }
+      .help-tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: #333;
+      }
+      .help-icon:hover .help-tooltip {
+        display: block;
+      }
+      .view-icons {
+        display: inline-flex;
+        gap: 2px;
+        margin-left: 4px;
+        position: relative;
+      }
+      .view-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 14px;
+        height: 14px;
+        border-radius: 3px;
+        font-size: 9px;
+        font-weight: bold;
+        cursor: help;
+      }
+      .view-icon.week {
+        background: #4285f4;
+        color: white;
+      }
+      .view-icon.month {
+        background: #34a853;
+        color: white;
+      }
+      .view-icon.disabled {
+        background: #e0e0e0;
+        color: #999;
+      }
+      .view-icons .view-tooltip {
+        display: none;
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140px;
+        padding: 6px 8px;
+        background: #333;
+        color: #fff;
+        font-size: 10px;
+        font-weight: normal;
+        line-height: 1.3;
+        border-radius: 4px;
+        z-index: 1000;
+        text-align: center;
+      }
+      .view-icons .view-tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-top-color: #333;
+      }
+      .view-icons:hover .view-tooltip {
+        display: block;
+      }
+      .action-cost {
+        font-size: 12px;
+        vertical-align: middle;
+        display: inline;
+        margin-right: 2px;
+      }
+      #subscribe {
+        background: #34a853;
+        color: white;
+        margin-top: 10px;
+      }
+      #subscribe:hover {
+        background: #2d8e47;
+      }
+      #unsubscribe {
+        background: #dc3545;
+        color: white;
+        margin-top: 15px;
+        font-size: 12px;
+        padding: 8px;
+      }
+      #unsubscribe:hover {
+        background: #c82333;
+      }
+      .link-email-container {
+        margin-top: 10px;
+        margin-bottom: 15px;
+        font-size: 12px;
+      }
+      .link-email-container.hidden {
+        display: none;
+      }
+      .link-email-toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        font-size: 12px;
+        color: #e65100;
+        user-select: none;
+        padding: 4px 0;
+      }
+      .link-email-toggle:hover {
+        color: #bf360c;
+      }
+      .link-email-toggle .arrow {
+        font-size: 10px;
+        transition: transform 0.2s ease;
+      }
+      .link-email-container.expanded .link-email-toggle .arrow {
+        transform: rotate(90deg);
+      }
+      .link-email-content {
+        display: none;
+        padding: 8px 10px 10px 10px;
+        background: #fff3e0;
+        border: 1px solid #ffcc80;
+        border-radius: 6px;
+        margin-top: 6px;
+      }
+      .link-email-container.expanded .link-email-content {
+        display: block;
+      }
+      .link-email-content p {
+        color: #666;
+        margin: 0 0 8px 0;
+        line-height: 1.4;
+      }
+      .link-email-row {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .link-email-row.hidden {
+        display: none;
+      }
+      .link-email-row input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 12px;
+        margin-bottom: 0;
+        box-sizing: border-box;
+      }
+      .link-email-row button {
+        width: 100%;
+        padding: 10px 12px;
+        background: #4285f4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .link-email-row button:hover {
+        background: #3367d6;
+      }
+      .link-confirm {
+        margin-top: 8px;
+      }
+      .link-confirm.hidden {
+        display: none;
+      }
+      .confirm-message {
+        background: #fff3e0;
+        border: 1px solid #ffb74d;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 12px;
+        margin-bottom: 8px;
+        color: #e65100;
+      }
+      .confirm-buttons {
+        display: flex;
+        gap: 8px;
+      }
+      .confirm-buttons button {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .confirm-yes {
+        background: #4caf50;
+        color: white;
+      }
+      .confirm-yes:hover {
+        background: #43a047;
+      }
+      .confirm-no {
+        background: #f1f1f1;
+        color: #333;
+      }
+      .confirm-no:hover {
+        background: #e0e0e0;
+      }
+      .linked-status-container {
+        margin: 10px 0;
+        padding: 10px 12px;
+        background: #e3f2fd;
+        border: 1px solid #90caf9;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .linked-status-container.hidden {
+        display: none;
+      }
+      .linked-status-info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: #1565c0;
+      }
+      .linked-icon {
+        font-size: 14px;
+      }
+      .unlink-btn {
+        width: 100%;
+        padding: 8px 12px;
+        background: #ef5350;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 11px;
+        cursor: pointer;
+      }
+      .unlink-btn:hover {
+        background: #e53935;
+      }
+      .unlink-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .link-email-result {
+        margin-top: 6px;
+        padding: 6px;
+        border-radius: 4px;
+        font-size: 11px;
+      }
+      .link-email-result.success {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+      .link-email-result.error {
+        background: #ffebee;
+        color: #c62828;
+      }
+      .hour-range-container {
+        margin: 10px 0;
+        padding: 12px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+      }
+      .hour-range-container > .section-title {
+        font-weight: 600;
+        font-size: 13px;
+        color: #333;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .hour-range-container > .section-title::before {
+        content: "\23F0";
+        font-size: 14px;
+      }
+      .advanced-section {
+        margin-top: 12px;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 8px;
+      }
+      .advanced-toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        font-size: 12px;
+        color: #666;
+        user-select: none;
+        padding: 4px 0;
+      }
+      .advanced-toggle:hover {
+        color: #333;
+      }
+      .advanced-toggle .arrow {
+        font-size: 10px;
+        transition: transform 0.2s ease;
+      }
+      .advanced-toggle.expanded .arrow {
+        transform: rotate(90deg);
+      }
+      .advanced-content {
+        display: none;
+        padding-top: 8px;
+      }
+      .advanced-content.visible {
+        display: block;
+      }
+      .hour-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .hour-inputs.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      .hour-slider-container {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        margin-top: 5px;
+      }
+      .hour-slider-track {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 6px;
+        background: #ddd;
+        border-radius: 3px;
+      }
+      .hour-slider-range {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 6px;
+        background: #4285f4;
+        border-radius: 3px;
+      }
+      .hour-slider-container input[type="range"] {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        pointer-events: none;
+        z-index: 2;
+        margin: 0;
+      }
+      .hour-slider-container input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        background: #4285f4;
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: auto;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+      .hour-slider-container input[type="range"]::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        background: #4285f4;
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: auto;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      }
+      .hour-slider-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        color: #666;
+        margin-top: 2px;
+        padding: 0 2px;
+      }
+      .hour-slider-values {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+      .hour-slider-values span {
+        color: #4285f4;
+      }
+      .hour-range-warning {
+        color: #c62828;
+        font-size: 11px;
+        margin-top: 5px;
+        display: none;
+      }
+      .hour-range-warning.visible {
+        display: block;
+      }
+      /* Requirements block for extension usage instructions */
+      .requirements {
+        margin: 10px 0;
+        padding: 10px;
+        background: #fff8e1;
+        border: 1px solid #ffecb3;
+        border-radius: 6px;
+        font-size: 13px;
+        color: #444;
+      }
+      .requirements h4 {
+        margin: 0 0 8px 0;
+        font-size: 14px;
+        color: #333;
+      }
+      .requirements ol {
+        margin: 0;
+        padding-left: 20px;
+      }
+      .requirements li {
+        margin-bottom: 6px;
+        line-height: 1.35;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>GC Bulk Edit</h3>
+    <div id="status" class="status">Checking authentication...</div>
+    <div id="accountInfo" class="account-info"></div>
+    <button id="signin">Sign in with Google</button>
+    <button id="signout">Sign out</button>
+    <div class="requirements" aria-live="polite">
+      <h4>To use this extension</h4>
+      <ol>
+        <li>
+          Grant GC Bulk Edit access to "See, edit, share..." during sign-in by
+          checking the permission box.
+        </li>
+        <li>
+          Be signed into the same Google account in your Google Calendar tab.
+        </li>
+      </ol>
+    </div>
+
+
+
+
+
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="hideAllDayTasks" />
+      <label for="hideAllDayTasks"
+        >Hide All-Day Tasks
+        <span class="view-icons"
+          ><span class="view-icon week">W</span
+          ><span class="view-icon disabled">M</span
+          ><span class="view-tooltip">Week/Day view only</span></span
+        ></label
+      >
+    </div>
+
+    <!-- Hour Range Features -->
+    <div class="hour-range-container">
+      <div class="section-title">
+        Hour Range Filter
+        <span class="view-icons"
+          ><span class="view-icon week">W</span
+          ><span class="view-icon disabled">M</span
+          ><span class="view-tooltip">Week/Day view only</span></span
+        >
+      </div>
+      <div class="checkbox-container" style="margin-bottom: 5px">
+        <input type="checkbox" id="enableHourRange" />
+        <label for="enableHourRange">Only Show These Hours</label>
+      </div>
+      <div class="hour-inputs" id="hourInputsWrapper">
+        <div class="hour-slider-values">
+          <span id="startHourDisplay">6 AM</span>
+          <span>&ndash;</span>
+          <span id="endHourDisplay">10 PM</span>
+        </div>
+        <div class="hour-slider-container">
+          <div class="hour-slider-track"></div>
+          <div class="hour-slider-range" id="sliderRange"></div>
+          <input
+            type="range"
+            id="startHourSlider"
+            min="0"
+            max="96"
+            value="24"
+            step="1"
+          />
+          <input
+            type="range"
+            id="endHourSlider"
+            min="0"
+            max="96"
+            value="88"
+            step="1"
+          />
+        </div>
+        <div class="hour-slider-labels">
+          <span>12a</span>
+          <span>6a</span>
+          <span>12p</span>
+          <span>6p</span>
+          <span>12a</span>
+        </div>
+        <div class="checkbox-container" style="margin-top: 8px">
+          <input type="checkbox" id="hourRangeStrictMode" />
+          <label for="hourRangeStrictMode">Strict Mode</label>
+          <span class="help-icon"
+            >?
+            <span class="help-tooltip"
+              >When enabled, events must start AND end within the hour range.
+              When disabled, events are shown if they overlap with the range at
+              all. Note that enabling "Hide Previous Hours" takes
+              priority.</span
+            >
+          </span>
+        </div>
+      </div>
+      <div class="checkbox-container" style="margin-top: 8px">
+        <input type="checkbox" id="onlyAffectToday" />
+        <label for="onlyAffectToday">Only Affect Today</label>
+        <span class="help-icon"
+          >?
+          <span class="help-tooltip"
+            >When enabled, all hour range features (filtering, clipping, hiding
+            previous hours) only apply to today's column. Other days remain
+            unaffected.</span
+          >
+        </span>
+      </div>
+      <div class="advanced-section">
+        <div class="advanced-toggle" id="advancedToggle">
+          <span class="arrow">&#9654;</span>
+          <span>Advanced Options</span>
+        </div>
+        <div class="advanced-content" id="advancedContent">
+          <div class="checkbox-container" style="margin-top: 8px">
+            <input type="checkbox" id="superStrictMode" />
+            <label for="superStrictMode">Clip Events at Boundaries</label>
+            <span class="help-icon"
+              >?
+              <span class="help-tooltip"
+                >Clips events at range boundaries instead of hiding them. Events
+                crossing the start or end time will be visually cut off. Clipped
+                portions cannot be selected.</span
+              >
+            </span>
+          </div>
+          <div class="checkbox-container" style="margin-top: 8px">
+            <input type="checkbox" id="hidePreviousHours" />
+            <label for="hidePreviousHours">Hide Previous Hours</label>
+            <span class="help-icon"
+              >?
+              <span class="help-tooltip"
+                >Clips events above the current time marker, showing only
+                upcoming events. The clipping updates as time progresses. Works
+                independently of the hour range filter.</span
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="hour-range-warning" id="hourRangeWarning">
+        ⚠️ End time is before start time
+      </div>
+    </div>
+
+    <div class="color-picker-container">
+      <label for="colorInput">Select Highlight Color:</label>
+      <input type="color" id="colorPicker" value="#ff0000" />
+      <input
+        type="text"
+        id="colorInput"
+        value="#ff0000"
+        placeholder="#hexcode"
+      />
+    </div>
+
+    <div>
+      <h4>Keybinds (click to change):</h4>
+      <p style="font-size: 11px; color: #666; margin: 0 0 8px 0">
+        Mouse select: Hold Alt + Middle Mouse Button
+      </p>
+      <div class="keybind-row">
+        <label
+          >Action Menu:
+          <span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-contextmenu"
+          data-action="contextmenu"
+          readonly
+          placeholder="Alt + Right Click"
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Select (Keyboard):
+          <span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-select"
+          data-action="select"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Unselect All:
+          <span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-deselect"
+          data-action="deselect"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Move Events:<span class=""
+          ><span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-move"
+          data-action="move"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Delete Events:<span class=""
+          ><span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-delete"
+          data-action="delete"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Undo Last Action:<span class=""
+          ><span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-undo"
+          data-action="undo"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Change Color:<span class=""
+          ><span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-color"
+          data-action="color"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Rename Events:<span class=""
+          ><span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-rename"
+          data-action="rename"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Swap Events:<span class=""
+          ><span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-swap"
+          data-action="swap"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Copy Events:
+          <span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-copy"
+          data-action="copy"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Paste Events:<span class=""
+          ><span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-paste"
+          data-action="paste"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <div class="keybind-row">
+        <label
+          >Edit Times:<span class=""
+          ><span class="view-icons"
+            ><span class="view-icon week">W</span
+            ><span class="view-icon month">M</span
+            ><span class="view-tooltip">Works in all views</span></span
+          ></label
+        >
+        <input
+          type="text"
+          class="keybind-input"
+          id="keybind-edit"
+          data-action="edit"
+          readonly
+          placeholder="Press keys..."
+        />
+      </div>
+      <p style="font-size: 11px; color: #666; margin-top: 5px">
+        <span class="view-icon week" style="cursor: default">W</span> = Week/Day
+        view
+        <span class="view-icon month" style="cursor: default; margin-left: 4px"
+          >M</span
+        >
+        = Month view
+      </p>
+      <button id="reset-keybinds">Reset to Defaults</button>
+    </div>
+
+
+
+    <a
+      href="https://forms.gle/2ChNW343VCfkC9Ho7"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="display: block; margin-top: 15px; font-size: 12px"
+      >Feedback/Bug Report</a
+    >
+    <a
+      href="https://forms.gle/u6zVcJoor7i5Q1Gd9"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="display: block; margin-top: 15px; font-size: 12px"
+      >Support Form</a
+    >
+
+    <a
+      href="https://discord.gg/mnwzrVFqkz"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 15px;
+        font-size: 12px;
+        color: #5865f2;
+        text-decoration: none;
+      "
+      ><svg viewBox="0 0 24 24" width="16" height="16" style="flex-shrink: 0">
+        <path
+          fill="currentColor"
+          d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"
+        /></svg
+      >Join our Discord</a
+    >
+    <script src="popup.js"></script>
+  </body>
+</html>

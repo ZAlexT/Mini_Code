@@ -1,0 +1,228 @@
+﻿<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Add To Calendar Extension</title>
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <!--<link href="styles.css" rel="stylesheet" type="text/css">-->
+    
+	<!--<link href="social.css" rel="stylesheet" type="text/css">--> <!-- Version 0.9.7 - Removed - file was never included -->
+    
+    <style>
+    	body
+    	{
+    		width: 400px;
+    		min-width: 300px;
+    	}
+    	h1
+    	{
+    		font-size: 1.2em;
+    		-webkit-margin-before:0em;
+			-webkit-margin-after:0em;
+    		margin: 0px;
+    		border: 1px solid black;
+    		text-align: center;
+    		vertical-align: middle;
+    	}
+    	#title
+		{
+    		vertical-align: middle;
+    		display: table-cell;
+    		color: #000000;
+    		text-decoration: none;
+    		padding: 1em;
+    	}
+    	p
+    	{
+    		margin: .3em;
+    	}
+    	.button
+    	{
+    		font-size: 1em;
+    		border: 1px solid black;
+			border-radius: 3px;
+			padding: 2px;
+			margin: 2px;
+			/* font-family: "Courier New", Courier, monospace; */
+			cursor: pointer;
+			color: white;
+			background-color: #326CD8;
+    	}
+		input[type=button] 
+		{
+			padding: 1px;
+		}
+    	.error
+    	{
+    		color: red;
+    		font-weight: bold;
+    	}
+    	.textbox
+    	{
+    		/* max-width: 425px; */
+			width: 100%;
+    		height: 4em;
+			overflow: auto;
+			tab-size: 4; 
+			background-color: #dddddd;	
+    	}
+    	input[type=text] {
+    		width: 100%;
+    	}
+    	input[type=text],input[type=date],input[type=time] {
+    		background-color: #dddddd;
+    	}
+    	.word_wrap
+    	{
+    		white-space: pre-wrap; 
+    	}
+    	.options_table td
+    	{
+    		vertical-align: top;
+    		border: 1px solid black;
+    	}
+    	.footer
+    	{
+    		margin-top:1em;
+			height: 3em;
+    		text-align: center;
+    		background-color: #808080;
+    	}
+    	.footer span
+    	{
+    		display: inline-block;
+			min-width: 25em;
+    		line-height:3em; 
+    	}
+    	.element {
+    		cursor: default;
+    		display: inline-block;
+    		width: 90%;
+    	}
+		.element span
+    	{
+    		display: inline-block;
+    		min-width: 25em;
+    	}
+		details {
+			/* border: 1px solid black; */
+			background-color: buttonface;
+			margin: 0.3em;
+		}
+		summary {
+			border: 1px solid black;
+			border-radius: 2px;
+			font-weight: bold;
+		}
+			
+		@media (prefers-color-scheme: dark) { 	/* Version 0.9.7 */
+			body, input, select, #title {
+				background-color: black;
+				color: white;
+			}
+			.textbox {
+				background-color: #111111;
+				color: white;
+			}
+			.options_table td {
+				border: 1px solid gray;
+			}
+			a:link { color: #0055ff; }
+			a:visited { color: #aa00aa; }
+			a:hover { color: #ff5555; }
+			.button:link, .button:visited { color: white; } 
+			input[type=text], input[type=date], input[type=time], details {
+				background-color: #111111;
+			}
+		}
+		#spinner { /* Version 1.0.0n */
+			height: 1em;
+			visibility: hidden;
+		}
+    
+    </style>
+  </head>
+  <body>
+		<h1><a target="_blank" href="https://chrome.google.com/webstore/detail/add-to-calendar/jnbpajadakhkpcncmbfhkgaaoioofkfd">
+		<img src="images/add2calendar48.png" width="48" height="48"><span class="title" id="title">Add To Calendar</span></a>
+		<span class="free_trial_msg"><a href="https://seabreezecomputers.com/extensions/purchase/add2calendar/" target="_blank">Upgrade</a></span> <!-- Version 0.9.7 -->
+		</h1>
+	<div class="error" id="error"></div>
+		<p class="description" id="description">Chrome Extension to add events and appointments to your online calendar.
+		The Add To Calendar extension uses Intelligent Technology to scan the website for event information.
+		<img id="spinner" src="images/spinner-ani.gif" title="Scanning for events. Please Wait..." 
+		alt="Scanning for events. Please Wait..."></p> <!-- Version 1.0.4 - Added title and alt tag -->
+	<!--<iframe id="news_iframe" width="100%" height="50px" frameborder="0" src="" 
+		marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="yes" allowfullscreen="true"></iframe>-->
+
+	
+	<form name="event_form">
+		<p><input type="text" size="100" name="title" placeholder="Event Title" title="Event Title">
+		<p>Start: <input type="date" name="date_start"> <input type="time" name="time_start"> 
+		<p>End: <input type="date" name="date_end"> <input type="time" name="time_end">
+		<input name="timezone_offset" type="text" size="7" style="width:4em;" title="TimeZone Offset(+00:00)"> <!-- Version 0.9.10 -->
+		<input name="timezone_type" type="hidden"> <!-- Version 0.9.10 -->
+		<p><input type="text" size="100" name="address" placeholder="Location" title="Location">
+		<p><textarea name="description" placeholder="Description" class="textbox" title="description"></textarea>
+		<p><span id="event_count"></span> <input type="button" name="prev" value="Previous Event">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="next" value="Next Event">
+		<p><input type="button" name="add2google" value="Add to Google Calendar">
+		<input type="button" name="ics" value="Download iCal / ICS file">
+		<details>
+		<summary>Settings</summary>
+			<div style="border: 1px solid gray">
+			<p>Date Format (On next run): <select name="date_format">
+				<option value="Auto Detect">Auto Detect</option>
+				<option value="mm/dd/yyyy">mm/dd/yyyy</option>
+				<option value="dd/mm/yyyy">dd/mm/yyyy</option>
+				<option value="yyyy/mm/dd">yyyy/mm/dd</option>
+			</select> <!-- Version 1.0.7 - Bug fix: Added / to close the tag. -->
+			<p><label><input type="checkbox" name="highlight_event_info"> Highlight found event info (On next run)</label>
+			<!--<p><label><input type="checkbox" name="detect_event_timezones"> Try to detect event timezones</label>-->
+			<p>Keyboard shortcut: <div id="shortcuts"></div> <!-- Version 1.0.0 // Version 1.0.9 - Added words: Keyboard shortcut:"-->
+			</div>
+		</details>
+	</form>
+	
+	<div class="free_trial_msg">
+	<a href="https://seabreezecomputers.com/extensions/purchase/add2calendar/" target="_blank">Upgrade to <!-- Version 0.9.7 -->
+	<span class="title"></span> FULL</a></b>
+	<p><b>Full Features:</b>
+	<ul> 
+		<li>Detect more than 1 event per webpage.
+		<li>Detect event information from highlighted text.
+		<li>Edit event information before adding it to calendar.
+	</ul>
+	<p>(Note: If you recently purchased "<span class="title"></span> FULL" then you may need to restart Chrome.)
+	</div>
+	<form name="settings_form"> <!-- Version 0.9.7 -->
+		<p>License Key or Order ID: <br><input type="text" name="order_id"> 
+		<button type="button" name="check_order">Check</button> <br> 
+		Status: <input type="text" name="status" class="status" readonly>
+	</form>
+	
+	
+    <script src="popup.js"></script>
+	<script src="timezones.js"></script> <!-- Version 0.9.10 -->
+    <script src="storage.js" type="text/javascript"></script>
+
+	<script src="license2020.js"></script>	<!-- Version 0.9.7 -->
+	<script src="license.js"></script>	<!-- Version 0.9.7 --> <!-- Version 1.0.3 - Removed because Google no longer gets the CWS license -->
+	<!-- Version 1.0.4 - Put above license.js back in because someone purchased A2C but it didn't update license. -->
+	
+	<div class='footer'>
+		<span>Copyright 2018 <a href="http://www.seabreezecomputers.com" target="_blank">Sea Breeze Computers</a></span>
+		<span><a href="https://www.seabreezecomputers.com/fontsize#faq" target="_blank">Support</a></span> <!-- Version 0.9.7 -->
+		<span><a href="https://chrome.google.com/webstore/detail/speech-recognition-anywhe/kdnnmhpmcakdilnofmllgcigkibjonof" target="_blank">Speech Recognition Anywhere Chrome Extension</a></span>
+	</div>
+  </body>
+</html>
+
