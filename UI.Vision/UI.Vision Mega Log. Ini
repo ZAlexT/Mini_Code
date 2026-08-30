@@ -1,0 +1,164 @@
+// MEGA - Login / Logout automático desde CSV
+// UI.Vision RPA 10.0.105 - JS View
+
+const rows = uiv.csv.read('mega.csv');
+
+const t = uiv.browser;
+
+// ==============================
+// TIEMPOS - modificar aquí
+// ==============================
+
+const WAIT_LOGIN   = '15s';
+const WAIT_REFRESH = '40s';
+const WAIT_NAVBAR  = '7s';
+const WAIT_LOGOUT  = '25s';
+
+// ==============================
+// SELECTOR LOGOUT
+// ==============================
+
+const logoutXPath =
+    'xpath=/html/body/div[6]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[6]/button[4]';
+
+uiv.log(`CSV cargado: ${rows.length} filas`, 'green');
+
+// ==========================================
+// RECORRER CUENTAS
+// ==========================================
+
+for (let i = 1; i < rows.length; i++) {
+
+    const row = rows[i];
+
+    const accountName = row[0];
+    const email = row[1];
+    const password = row[2];
+
+    uiv.log(
+        `========== CUENTA ${i} / ${rows.length - 1} ==========`,
+        'blue'
+    );
+
+    uiv.log(`Cuenta: ${accountName}`, 'blue');
+
+    // Comprobar datos
+    if (!email || !password) {
+        uiv.log(
+            `FALTA EMAIL O PASSWORD - se omite: ${accountName}`,
+            'orange'
+        );
+        continue;
+    }
+
+    // ======================================
+    // LOGIN
+    // ======================================
+
+    uiv.open('https://mega.nz/login');
+
+    uiv.sleep('2s');
+
+    t.click('css=#login-name3');
+    t.type(email);
+
+    t.click('css=#login-password3');
+    t.type(password);
+
+    uiv.log('Credenciales introducidas', 'blue');
+
+    // ENTER REAL
+    t.type('${KEY_ENTER}');
+
+    uiv.log(
+        `Login enviado - esperando ${WAIT_LOGIN}`,
+        'blue'
+    );
+
+    uiv.sleep(WAIT_LOGIN);
+
+    // ======================================
+    // REFRESH
+    // ======================================
+
+    uiv.log(
+        'Login cargado - ejecutando F5',
+        'blue'
+    );
+
+    t.type('${KEY_F5}');
+
+    uiv.log(
+        `F5 realizado - esperando ${WAIT_REFRESH}`,
+        'blue'
+    );
+
+    uiv.sleep(WAIT_REFRESH);
+
+    // ======================================
+    // NAVBAR
+    // ======================================
+
+    uiv.log(
+        'Intentando abrir Navbar',
+        'blue'
+    );
+
+    t.click('css=button.avatar');
+
+    uiv.log(
+        `Navbar abierto - esperando ${WAIT_NAVBAR}`,
+        'green'
+    );
+
+    uiv.sleep(WAIT_NAVBAR);
+
+    // ======================================
+    // LOGOUT
+    // ======================================
+
+    const logout = uiv.findElements(
+        logoutXPath,
+        {
+            required: false,
+            timeout: 2
+        }
+    );
+
+    uiv.log(
+        `Botón Logout encontrado: ${logout.length}`,
+        'blue'
+    );
+
+    if (logout.length === 0) {
+
+        uiv.log(
+            `ERROR: No aparece Logout en ${accountName}`,
+            'red'
+        );
+
+        continue;
+    }
+
+    t.click(logoutXPath);
+
+    uiv.log(
+        `Logout realizado: ${accountName}`,
+        'green'
+    );
+
+    // ======================================
+    // ESPERA ANTES DE SIGUIENTE CUENTA
+    // ======================================
+
+    uiv.sleep(WAIT_LOGOUT);
+
+    uiv.log(
+        `Cuenta completada: ${accountName}`,
+        'green'
+    );
+}
+
+uiv.log('========================================', 'green');
+uiv.log('TODAS LAS CUENTAS PROCESADAS', 'green');
+uiv.log('========================================', 'green');
