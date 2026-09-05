@@ -1,0 +1,3303 @@
+! Title: Lx Cleaner
+! T2: VE_VAdBlock_Lx_Current.txt
+! Expires: Never
+! Description: Filters for used sites (supports less sites than the extension/add-on)
+! Homepage: http://u.pc.cd/ObF7
+! Last modified: 
+! Version: 7
+
+! General 
+
+youtube.com##.style-scope.ytd-rich-shelf-renderer
+m.youtube.com##.style-scope.ytd-rich-shelf-renderer
+
+!--------------------------------------------
+
+m.youtube.com###[tab-identifier="FEsubscriptions"] ytm-item-section-renderer:has(ytm-thumbnail-overlay-time-status-renderer [aria-label="Shorts"])
+
+!--------------------------------------------
+
+! YT Mobile Subscriptions - Hide Videos under 50secs (non-shorts)
+m.youtube.com##[tab-identifier="FEsubscriptions"] ytm-item-section-renderer ytm-thumbnail-overlay-time-status-renderer [aria-label*="second"]:not([aria-label*="hour"],[aria-label*="minute"],[aria-label*="59"],[aria-label*="58"],[aria-label*="57"],[aria-label*="56"],[aria-label*="55"],[aria-label*="54"],[aria-label*="53"],[aria-label*="52"],[aria-label*="51"],[aria-label*="50"]):upward(ytm-item-section-renderer)
+
+! YT Mobile Subscriptions - Hide Shorts
+m.youtube.com###[tab-identifier="FEsubscriptions"] ytm-item-section-renderer ytm-thumbnail-overlay-time-status-renderer [aria-label="Shorts"]:upward(ytm-item-section-renderer)
+
+!--------------------------------------------
+
+m.youtube.com##ytm-reel-shelf-renderer
+m.youtube.com##ytm-pivot-bar-renderer div.pivot-shorts:upward(ytm-pivot-bar-item-renderer)
+m.youtube.com##ytm-browse ytm-item-section-renderer ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"]:upward(ytm-video-with-context-renderer)
+m.youtube.com##ytm-browse ytm-item-section-renderer ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"]:upward(ytm-compact-video-renderer)
+m.youtube.com##ytm-search ytm-thumbnail-overlay-time-status-renderer[data-style="SHORTS"]:upward(ytm-compact-video-renderer)
+m.youtube.com##ytm-single-column-watch-next-results-renderer ytm-thumbnail-overlay-time-status-renderer span:has-text(/^(0:\d\d|1:0\d)$/):upward(ytm-video-with-context-renderer)
+
+
+!--------------------------------------------
+
+
+! 2022-04-22 https://pomvideo.cc
+@@||pomvideo.cc/js/dpu3/pu3.min.js?v=2.9.2v$script,1p
+
+!Youtube Annotations
+!youtube.*#@#.ytp-ce-element
+
+!*$font,third-party
+
+*###videooverlay
+*##.videoadsoverdiv
+*###videoadsoverdiv
+
+*/ads/adss.html
+*###html > body >  div.drts
+*##html > body >  div.drts
+*##.ad-overlay2
+*##.ban468
+*##.banr
+*div#35674s.ban468
+*###ads
+*###kre2
+*##a.fakeplayer
+*##ad-overlay2
+*##ads
+*##aware
+*div#48320s.banr
+*div#5674s.ban468
+*##ban468 > div#kre2.krs
+*##html > body > div#amsb
+*##html > body#yes > script
+*##html > div.atlbovg
+*##snackbar
+
+||abundance-and-happiness.*/images/banner4.gif$image
+
+||alantv.*/adgabx1.php$subdocument
+||alantv.*/adole.php?s=300x250a$subdocument
+||alantv.*/adole.php?s=728x90a$subdocument
+||alantv.*/oleoletvcom_pa1vft3vlVWytVvhO.php$subdocument
+
+||1079020916.rsc.cdn77.*/images/joker.jpg$image
+
+||cablegratis.*/anuncios/poanunc.js$script
+||cablegratis.*/anuncios/poanunc.js$script,1p
+
+||cdn.livetvcdn.*/cache/links/en.637840.html?15205047$subdocument
+
+||chatwing.*/chatbox/$subdocument
+
+||cinestrenostv.*/cabecera.html$subdocument
+
+||desmix.*/a.php?img=41706$subdocument
+
+||disqus.*/embed/comments/$subdocument
+||disqus.*/embed/comments/?base=default&f=elitestream&t_u=https%3A%2F%2Felitestream.*%2Fpeliculas%2Fhostiles%2F&t_d=Ver%20Hostiles%20Online%20en%20Espa%C3%B1ol%20%7C%20EliteStream&t_t=Ver%20Hostiles%20Online%20en%20Espa%C3%B1ol%20%7C%20EliteStream&s_o=default$subdocument
+||disqus.*/embed/comments/?base=default&f=https-www-seriesgato-com&t_i=https%3A%2F%2Fseriesgato.*%2Fver%2F18-2-afro-samurai-1x01-79755.html&t_u=https%3A%2F%2Fseriesgato.*%2Fver%2Fafro-samurai-1x01-79755.html&t_d=Afro%20Samurai%201x01%20Online%20HD%20~%20SeriesGato.*&t_t=Afro%20Samurai%201x01%20Online%20HD%20~%20SeriesGato.*&s_o=default$subdocument
+||disqus.*/embed/comments/?base=default&f=netu-tv&t_i=video15775502&t_u=https%3A%2F%2Fwaaw.*%2Fwatch_video.php%3Fv%3DXKG0tP7MJnEv&t_d=&t_t=&s_o=default$subdocument
+||disqus.*/embed/comments/?base=default&f=pelispedia&t_i=lost-in-space&t_u=https%3A%2F%2Fpelispedia.*%2Fserie%2Flost-in-space%2F&t_d=%E2%9C%85%20Ver%20Serie%20Lost%20in%20Space%20HD%20(2018)%20Subtitulada%20Online%20Free%20PelisPedia.*&t_t=%E2%9C%85%20Ver%20Serie%20Lost%20in%20Space%20HD%20(2018)%20Subtitulada%20Online%20Free%20PelisPedia.*&s_o=default$subdocument
+||disqus.*/embed/comments/?base=default&f=thewindowsclub&t_i=47570%20https%3A%2F%2Fthewindowsclub.*%2F%3Fp%3D47570&t_u=https%3A%2F%2Fthewindowsclub.*%2Fsoft2base-update-software-windows&t_e=Install%20and%20Update%20Multiple%20Software%20In%20One%20Click%20with%20Soft2Base&t_d=Install%20and%20Update%20Multiple%20Software%20In%20One%20Click%20with%20Soft2Base&t_t=Install%20and%20Update%20Multiple%20Software%20In%20One%20Click%20with%20Soft2Base&s_o=default&l=$subdocument
+
+||dle.rae.es/images/logos/151x184xdle151x184.jpg.pagespeed.ic.hy18q1eIBQ.jpg$image
+||dle.rae.es/images/logos/250x100xrae.png.pagespeed.ic.kZJVdxEhPo.png$image
+||dle.rae.es/images/logos/250x172xLogoASALE.jpg.pagespeed.ic.8i6ebxG9br.jpg$image
+
+||eontent.streamplay.to/apu.hh?n=&direct=1&zoneid=50$subdocument
+||eontent.streamplay.to/apu.hh?n=&direct=1&zoneid=50$subdocument
+
+||eu.static.mega.co.nz/3/images/mega/bottom-page/start_img1-4@2x.png$image
+
+||gamovideo.*/popseriup.html$subdocument
+
+||htcmania.*/signaturepics/*.gif$image
+
+||i.imgur.*/rReEC5w.gif$image
+
+||i.postimg.*/C5hXWv2z/image.png$image
+
+||i155.photobucket.*/albums/s282/theviejo/recurso_1_1.jpg$image
+
+||image.tmdb.*/t/p/w780/1Q34wlK6o1YMv0a286hjD8Lxkaw.jpg$image
+
+||img.livetv.*/img/b2.gif$image
+
+||infokinonovinki.*/is/$subdocument
+
+||lacalleochotv.*/wp-content/themes/lacalleochotv/images/header.png$image
+||lacalleochotv.*/wp-content/themes/lacalleochotv/images/logo-539480678.png$image
+
+||mamahd.*/img/watchnowbutton.gif$image
+
+||media.giphy.*/media/xT4Ap45xQNOX0Abi0g/giphy.gif$image
+
+||mediafire.*/widgets/download_pro_upsell.php$subdocument
+
+||mob.benikings.ml/embedm/watch/I4ZDMwMWRkMWY4NTQ2YTY0Njc5ZmNjNzg3ODMwOjRkNTQ1NTc3NGY0NDYzNzk0ZDZhNjc3YTRkNTEzZDNk/Z3JvdW5lcmx1bmVhOmQ2NjI4YTNkYzIwZmExODc3ZWYwZjRhNGMzNGQ1YTVhOjkwZm$subdocument
+||mob.benikings.ml/embedm/watch/I4ZDMwMWRkMWY4NTQ2YTY0Njc5ZmNjNzg3ODMwOjRkNTQ1NTc3NGY0NDYzNzk0ZDZhNjc3YTRkNTEzZDNk/Z3JvdW5lcmx1bmVhOmQ2NjI4YTNkYzIwZmExODc3ZWYwZjRhNGMzNGQ1YTVhOjkwZm$subdocument
+
+||my.pcloud.*/img/invite-friends-video.html$object
+
+||nowwatchtvlive.*/matomyads728x90.php$subdocument
+
+||online-networkz.*/900/250/j383jslqpq$subdocument
+||online-networkz.*/900/500/93jsu3jslqdga$subdocument
+
+||openload.*/stream/iYNAuRUCOME~1505384896~104.131.0.0~v1_RtM4h$subdocument
+||openload.*/stream/iYNAuRUCOME~1505385530~104.131.0.0~XhzTusUv$subdocument
+
+||portadas.seriesgato.*/black-lightning-332525-cover-768x432.jpg$image
+
+||rojadirectaonlinetv.*/*.$image
+
+||s.4pda.to/lkDL8r6JBvjQdZ8z0H4yrU4ZY31ZXXgg4VgAXi4CWa4pLDJhKf7Fk3Nz2t.gif$image
+
+||seriesgato.*/assets/img/pbar.png$image
+||seriesgato.*/assets/img/pbtn.png$image
+
+||sintelevisor.*/fb.gif$image
+
+||st.chatango.*/h5/gz/r0906171242/id.html$subdocument
+||st.chatango.*/h5/gz/r0906171242/id.html$subdocument
+||st.chatango.*/h5/gz/r0925171300/id.html$subdocument
+||st.chatango.*/h5/gz/r0925171300/id.html$subdocument
+
+||static.windscribe.*/v2/img/twinkling-blue.png$image
+
+||streamcloud.eu/images_2/page_bottom.gif$image
+||streamcloud.eu/images_2/page_bottom.gif$image
+||streamplay.gdn/images/videoplayor.png$image
+||streamplay.gdn/images/videoplayor.png$image
+
+||syndication.exdynsrv.*/ads-iframe-display.php?idzone=2419045&type=728x90&p=https%3A//flashx.*/dl%3Fplaynow&dt=1505453436924&sub=&tags=&screen_resolution=1366x768$subdocument
+||syndication.exdynsrv.*/ads-iframe-display.php?idzone=2419045&type=728x90&p=https%3A//flashx.*/dl%3Fplaynow&dt=1505453436924&sub=&tags=&screen_resolution=1366x768$subdocument
+||syndication.exdynsrv.*/ads-iframe-display.php?idzone=2419045&type=728x90&p=https%3A//flashx.*/dl%3Fplaynow&dt=1505453438922&sub=&tags=&screen_resolution=1366x768$subdocument
+||syndication.exdynsrv.*/ads-iframe-display.php?idzone=2419045&type=728x90&p=https%3A//flashx.*/dl%3Fplaynow&dt=1505453438922&sub=&tags=&screen_resolution=1366x768$subdocument
+
+||telefullenvivo.*/chat/$subdocument
+
+||telegorda.*/mipo.php$subdocument,domain=vergol.*,important
+||telegorda.me/mipo.php$subdocument,domain=vergol.*
+
+||tvguia.*/sites/default/modules/tvmachine/images/social_icon_square.png$image
+
+||uploaded.*/img/e/shadow.png$image
+
+||uv9ieb2ohr.*/images/getimage-vp.gif$image
+
+||vercanalestv.*/wp-content/themes/WPTube4/images/bgr_footercont.jpg$image
+||vercanalestv.*/wp-content/themes/WPTube4/images/bgr_subcatsection.jpg$image
+
+||vergol.*/logos/adblock.png$image,first-party
+||vergol.*/logos/descargar.png$image,first-party
+||vergol.*/logos/ver-ahora.png$image,domain=telegorda.me
+||vergol.*/logos/ver-ahora.png$image,first-party
+||vergol.*/pop/interstitial.css$stylesheet,first-party
+||vergol.*/pop/interstitialu.js$script,first-party
+||vergol.*/pop/samplecontent.htm?1570145299749$xmlhttprequest,first-party
+||vergol.*/pop/vergol.php$subdocument,first-party
+
+||verplusonline.*/wp-content/themes/wtb-video-green/images/latestpartbottom.gif$image
+||verplusonline.*/wp-content/themes/wtb-video-green/images/logo.png$image
+||veseriesonline.*/media/player.html$subdocument
+
+||view.vzaar.*/6277333/player$subdocument
+
+||widget.olimpo.link/playlist/?q=Marvel%27s%20Agentes%20de%20S.H.I.E.L.D.%205x04&width=100%25&height=450&order=series&tmdb=1403&season=5&episode=4&iframe=MTnPTImYSiNyhNwjbjvZ$subdocument
+
+||xatech.*/web_gear/chat/chat.swf$object
+
+||youtube.*/embed/4kKkcIhY7Lo$subdocument
+||youtube.*/embed/qo5h1sj8wCg$subdocument
+
+10minutemail.*##.explanation
+10minutemail.*###page-footer
+
+192.168.1.1###footer
+||192.168.1.1/images/Funbox-form-horizontal.png$image,1p
+||192.168.1.1/images/Funbox-form-horizontal.png$image,1p,important
+||192.168.1.1/images/Funbox-form-horizontal.png$image,first-party
+
+1fichier.*##.center-container2.alc
+1fichier.*##[href="https://1fichier.*/abus.html"]
+1fichier.*##[style="margin:auto;width:910px;text-align:center;padding-bottom:20px"]
+1fichier.*###btn-container
+1fichier.*###footer
+1fichier.*##DIV[style="width:280px;margin:auto;text-align:left"]
+1fichier.*##IMG[src="https://1fichier.*/qr.pl?do=0.2quygwdeul&s=1"]
+
+4pda.ru##.bz2uQz2lmDsBHKtQ4fdrh1fJO > table > tbody
+4pda.ru##.m68hz1WUC1D04z2GdcsIb4392K > table
+4pda.ru##.m6z2QTIq8Jamv2HpXYqDbeFwT > table > tbody
+4pda.ru##.XSoPBK68juJZHiF9bvfsFbp > table
+4pda.ru##.yBBz032ygAcz0Z3ZABoz2xmIIw > table > tbody
+4pda.ru###logostrip
+4pda.ru##form > .ipbtable
+
+acelisting.in##.container > .row
+acelisting.in##.hidden-xs.text-right.col-sm-2
+acelisting.in##.navbar-fixed-top.navbar-default.navbar
+acelisting.in###contentContainer > .row > div.col-sm-2:nth-of-type(3)
+
+trade.aliexpress.*###J_xiaomi_dialog
+message.aliexpress.*##.footer-copywrite
+message.aliexpress.*##.site-footer
+
+es.aliexpress.*##.opened.next-overlay-wrapper
+es.aliexpress.*##.ui-newuser-layer-dialog.ui-window-transition.ui-window-normal.ui-window
+es.aliexpress.*##div:nth-of-type(3) > .cross-link
+
+aliexpress.*##.site-footer
+aliexpress.*##.site-server-box
+aliexpress.*##.user-helper-footer
+
+||ae01.alicdn.*/kf/HTB17UQ9X9tYBeNjSspa761OOFXa6/EN_725_90.png$image
+||ae01.alicdn.*/kf/HTB1Xl3NXcj_B1NjSZFH761DWpXay/EN_725_90.png$image
+
+aliez.*##.broder.grey
+aliez.*##.full.grey.null:nth-of-type(2)
+aliez.*##.full.grey.null:nth-of-type(2) > tbody > tr > td:nth-of-type(1)
+aliez.*##.full.grey.null:nth-of-type(2) > tbody > tr > td:nth-of-type(2)
+aliez.*##.full.grey.null:nth-of-type(2) > tbody > tr > td:nth-of-type(3)
+aliez.*##.full.grey.null:nth-of-type(2) > tbody > tr > td:nth-of-type(4)
+aliez.*##.full.*
+aliez.*##.full.null:nth-of-type(5) > tbody > tr > .broder
+aliez.*##body > .bottom
+aliez.*##td > b
+aliez.*##td:nth-of-type(5)
+
+allstreamshd.*##.col-xs-12.col-sm-9 > div:nth-of-type(2)
+
+amazon.*###navFooter
+
+androidpolice.*##.hidden-phone.header.band
+
+apk4all.*##div.ny-down:nth-of-type(1)
+
+apkhost.*###footer
+apkhost.*###Prem_days
+
+areapersonal.vibbo.*###footer
+
+arenavision.*##.ftimxk > div:nth-of-type(2)
+arenavision.*###footer-bottom
+arenavision.*##div._fya3yin:nth-of-type(1)
+arenavision.*##div._fya3yin:nth-of-type(2)
+
+assia.*/css/banr-adstera.html
+
+baltagy1.blogspot.*###Image1 > .widget-content
+
+bandaancha.*###adRectangle
+
+bandwidthplace.*##.entry.hentry.status-publish.type-page.page.post-5
+bandwidthplace.*##.footer-widgets.section
+bandwidthplace.*##.horizontal.da-wrapper
+bandwidthplace.*##.row > ul > li:nth-of-type(4)
+bandwidthplace.*##.shadow-border.site-footer
+bandwidthplace.*##.site-info.section
+bandwidthplace.*##.states-map-section
+bandwidthplace.*###call-button
+bandwidthplace.*##div.home.banner.section:nth-of-type(1)
+bandwidthplace.*##div.home.separator.banner.section:nth-of-type(2)
+bandwidthplace.*##div.home.separator.banner.section:nth-of-type(3)
+bandwidthplace.*##div.home.separator.banner.section:nth-of-type(4)
+bandwidthplace.*##div.home.separator.banner.section:nth-of-type(5)
+bandwidthplace.*##div.home.separator.banner.section:nth-of-type(6)
+
+batmanstream.*##.streams
+batmanstream.*##.item
+batmanstream.*##.row3.wrapper
+batmanstream.*###sub
+
+bauhaus.*##.d-print-none.footer
+bauhaus.*##.pb-lg-0.py-3.container-fluid.seo-footer
+
+bestsportstreaming.*##.entry-content > p:nth-of-type(1)
+bestsportstreaming.*##.entry-content > p:nth-of-type(2)
+bestsportstreaming.*##.entry-content > p:nth-of-type(4)
+
+bigfile.*##.days
+bigfile.*##.days.last
+bigfile.*##.footer.makemoneyfoot
+bigfile.*##.infobar
+bigfile.*##.loginbox
+bigfile.*##.menu
+bigfile.*##.note
+bigfile.*##.premium
+bigfile.*##.premium_days.box.fourplans
+bigfile.*##.premium_icons
+bigfile.*##.shareFull
+bigfile.*##.speedslider.slow
+bigfile.*##.type
+bigfile.*##[href="http://dmca.bigfile.*/"]
+bigfile.*###download_tab
+bigfile.*###freeEstTime.dl_time.grey
+bigfile.*###left_buynow
+bigfile.*##SPAN.smalltxt
+
+bitchute.*##.membership-container
+bitchute.*##.tab-scroll-inner
+
+blog.masmovil.*##.gs_mood.emolyticsModule0-axa2v994al41dt9.getsmily_start_widget
+
+cablegratishd.*##.adsb30
+cablegratishd.*##.entry-content > .alert-danger.alert
+cablegratishd.*##.entry-content > hr
+cablegratishd.*##.entry-content > ul
+cablegratishd.*##.py-5.site-footer
+cablegratishd.*##.tme
+cablegratishd.*##.tme_message
+cablegratishd.*##.wp-block-image
+cablegratishd.*##.wp-post-image.mb-2.rounded.img-fluid
+cablegratishd.*##h2
+cablegratishd.*##h3
+cablegratishd.*##hr:nth-of-type(1)
+cablegratishd.*##html > body > font#avip
+cablegratishd.*##p
+
+cachedview.*##.content-section-b
+cachedview.*##div.content-section-a:nth-of-type(3)
+cachedview.*##div.content-section-a:nth-of-type(5)
+cachedview.*##footer
+
+calculateme.*##div.section:nth-of-type(3)
+calculateme.*##div.section:nth-of-type(4)
+calculateme.*##div.section:nth-of-type(5)
+
+canal.cablegratis.*##html > body > div#tme
+canal.cablegratis.*##html > body > div#tme > div#tme_messag > button.clossalert
+canal.cablegratis.*##html > body > font#b361
+canal.cablegratis.*##html > body > script#_wau9ba
+
+cdn.freesport.*##div:nth-of-type(4)
+
+cdn.jokerplayer.*##html > body > div.oymnfuh
+cdn.jokerplayer.*##html > body > div.uxkggnqrnf
+
+cdn.livetvcdn.*###ads
+cdn.livetvcdn.*###iframe:a
+cdn.livetvcdn.*###playerblock > #ads
+cdn.livetvcdn.*###playerblock > #iframe:a
+cdn.livetvcdn.*###playerblock > ads
+cdn.livetvcdn.*###swd646
+cdn.livetvcdn.*##body > table > tbody > tr:nth-of-type(1) > td
+cdn.livetvcdn.*##body > table > tbody > tr:nth-of-type(1) > td > table > tbody > tr > td:nth-of-type(1)
+cdn.livetvcdn.*##body > table > tbody > tr:nth-of-type(1) > td > table > tbody > tr > td:nth-of-type(2)
+cdn.livetvcdn.*##center
+cdn.livetvcdn.*##DIV[ID="ads"]
+cdn.livetvcdn.*##swd646
+cdn.livetvcdn.*##tr:nth-of-type(3) > td
+cdn.livetvcdn.*##tr:nth-of-type(4) > td
+cdn.livetvcdn.*##body > table > tbody > tr:nth-of-type(1) > td
+cdn.livetvcdn.*##html>body>div#ads>table>tbody>tr>td>table
+cdn.livetvcdn.*##tr:nth-of-type(4) > td
+
+chinacupones.*###spu-bg-921
+
+chiwitv.blogspot.*##.header-wrap
+
+chollometro.*##.cept-banner-id-2.cept-banner.js-banner.hide--toBigCards1.gridLayout-item
+chollometro.*###footer
+chollometro.*###footer-description
+
+cinestrenostv.*##.sidebar1
+
+clara.es##.top.add990x90
+
+||blogger.*/comment-iframe.g?blogID=7656228947354440321&pageID=3747921071028530913&blogspotRpcToken=3746799$subdocument
+||1.bp.blogspot.*/-J4IJrqP-QPw/WgUBqAuCPOI/AAAAAAAAA1g/laEdRKqnABQoTc2j9moVkhTUc4d3dyaQgCLcBGAs/s1600/history-channel-en-vivo.png$image
+
+clicknupload.*##.footer
+clicknupload.*##.footer_link
+clicknupload.*##.result_slot
+clicknupload.*##.shadow
+clicknupload.*##.tabbernav
+clicknupload.*##.tabbertab
+clicknupload.*##.top_nav
+clicknupload.*##A[href="http://clicknupload.*/?op=change_lang&lang=english"]
+clicknupload.*##A[href="http://clicknupload.*/dmca.html"]
+clicknupload.*##LI
+
+clipwatching.*##.cover
+clipwatching.*##.navbar-static-top.navbar-default.navbar
+clipwatching.*##.navbar-static-top.navbar-default.navbar > .container-fluid
+clipwatching.*##.popup
+clipwatching.*##.video_ad2_fadein
+clipwatching.*##[href="/8el8reesrmlu.html"]
+clipwatching.*###_header
+clipwatching.*###container > div:nth-of-type(1) > div:nth-of-type(2)
+clipwatching.*###content
+clipwatching.*##footer
+clipwatching.*##footer > .container-fluid
+
+||clipwatching.*/img/logo.png$image
+
+clubescueladebonsaionline.*##.headerbar
+
+cndf104.blogspot.*##.entry-title.post-title
+cndf104.blogspot.*##.fauxcolumn-right-outer.fauxcolumn-outer
+cndf104.blogspot.*##.fauxcolumn-right-outer.fauxcolumn-outer > .fauxborder-left
+cndf104.blogspot.*##.fauxcolumn-right-outer.fauxcolumn-outer > .fauxborder-left > .fauxcolumn-inner
+cndf104.blogspot.*##.footer-inner.region-inner
+cndf104.blogspot.*##.post-footer
+cndf104.blogspot.*###blog-pager
+cndf104.blogspot.*###comments
+cndf104.blogspot.*###header-inner
+cndf104.blogspot.*##body > div:nth-of-type(6)
+cndf104.blogspot.*##body > div:nth-of-type(6) > div
+cndf104.blogspot.*##center:nth-of-type(1)
+cndf104.blogspot.*##center:nth-of-type(2)
+
+comparitech.*##.remodal-is-opened.remodal-overlay
+comparitech.*##.remodal-is-opened.remodal-wrapper
+
+crx4chrome.*##.clearfix.post-outer > div:nth-of-type(3)
+crx4chrome.*##div:nth-of-type(11)
+
+cuevana2.*##.content
+cuevana2.*###footer
+cuevana3.*##.chat
+cuevana3.*##.widget-area
+
+dailyuploads.*##.footer
+dailyuploads.*###dlink > center
+dailyuploads.*##form > table:nth-of-type(1) > tbody > tr > td:nth-of-type(1)
+dailyuploads.*##label
+
+decathlon.es##.block-footer
+
+deezer.*##.ads-bottom-alone.ads-bottom.ads
+
+dilo.*##.bg-gray-100.py-3
+dilo.*##.mb-3.mt-3.container > .row > .col-sm-12.col-lg-8.col-md-12
+dilo.*##.text-center.card-body
+
+dl-android.*##div.col-xs-12:nth-of-type(3)
+
+dle.rae.*##.o
+dle.rae.*###enclave
+dle.rae.*###patrocinio
+
+douploads.*##.mt-5.col-md-4 > .adsbygoogle
+douploads.*##.mt-5.col-md-8
+douploads.*##.py-3.col-md-12
+douploads.*##.footer
+douploads.*##.row > ul
+douploads.*###news_last
+douploads.*##div.mt-5.col-md-4:nth-of-type(4)
+
+download.cnet.*##.footWrap
+download.cnet.*##.uvpjs__btn-large-play
+download.cnet.*###controls_uvpVideoContainer
+download.cnet.*###pdl-redirect-video-container
+
+duckduckgo.*##.footer
+duckduckgo.*###links > .module-slot
+
+ecosia.*##.funnel-treedaybox.js-funnel-treedaybox
+ecosia.*##.hidden-handheld.callout-whitelist.callout-with-image.callout.js-ad-whitelist-notice
+
+!elculturista
+*##.no_ad_content
+*##.no_ad_warning
+
+elitestream.*##.mensaje
+
+eltiempo.*##.m_geoposition_loading.m_geoposition.modules
+eltiempo.*##.m_messages.modules
+
+emb.aplayer2.*##html > body > div#adb
+emb.aplayer2.*##html > body > div#ads
+emb.aplayer2.*##html > body > div#mediaspace > div > div.container.container-skin-1 > div.clappr-overlay-plugin
+emb.aplayer3.*##html>body>div#ads>table>tbody>tr>td>table
+
+emojipedia.*##.large.logo
+
+epsilontv.blogspot.*##.column-right-inner > aside
+epsilontv.blogspot.*##.fauxcolumn-right-outer.fauxcolumn-outer
+epsilontv.blogspot.*##.fauxcolumn-right-outer.fauxcolumn-outer > .fauxborder-left > .fauxcolumn-inner
+epsilontv.blogspot.*##.footer-inner.region-inner
+epsilontv.blogspot.*##.header-fauxborder-left.fauxborder-left
+epsilontv.blogspot.*###navbar
+
+es.foursquare.*##.planningATripContents
+
+*##.ad-wall-top
+*##.container-ad
+
+fcportables.*##body > div:nth-of-type(1)
+fcportables.*##body > div:nth-of-type(2)
+
+feedly.*##.modal-overlay.is-inline.is-fading
+feedly.*##.small.modal
+
+feedspot.*##.show.modal-backdrop
+feedspot.*###upgradeModal
+
+filecloud.*##.*_banner.*_container.*_container--open
+filecloud.*##A[href="https://filecloud.io/?m=help&a=copyright"]
+filecloud.*##A[href="https://filecloud.io/?m=user"]
+
+fileerrors.*##.in.fade.modal-backdrop
+fileerrors.*###myModal
+
+firime.wordpress.*###colophon
+firimeh4l.smfnew2.*##.reset
+firimeh4l.smfnew2.*##A[href="http://smfnew.*/"]
+firimeh4l.smfnew2.*##A[href="http://smfnew.*/report.php?boardurl=firimeh4l"]
+
+flashx.*###extra_buttons
+flashx.*###extra_data
+flashx.*###footer
+flashx.*##font
+flashx.*##tr:nth-of-type(2) > td
+flashx.*###header
+flashx.*###download_div2
+flashx.*###fsdgfdgfdf
+flashx.*##a[href^="https://adsrvmedia.adk2x.*/imp"]
+
+flix555.*##.flixx_ad_fadein
+flix555.*##.mastfooter
+flix555.*##.mb-auto.masthead
+flix555.*###content
+flix555.*##div.row:nth-of-type(2)
+
+forum.lowyat.*###logostrip
+
+forum.notebookreview.*##.sidebar
+
+forum.xda-developers.*##.block--similarContents.block-container
+forum.xda-developers.*##.bravetwig-top
+forum.xda-developers.*##.sponsor-dyn-banner
+forum.xda-developers.*##.tagbar
+forum.xda-developers.*##.topRankedThreadsFullWidth.box-shadow.forum-bottom-billboard-sibling.topRankedThreadsForumdisplay
+forum.xda-developers.*##.topRankedTitle > div
+forum.xda-developers.*##.xda_suggested_apps.widget
+forum.xda-developers.*##.xda-box.post-content-container
+forum.xda-developers.*##.xda-box.postbit-wrapper > .post-content-container
+forum.xda-developers.*###footer
+forum.xda-developers.*###posts > div:nth-of-type(1)
+forum.xda-developers.*###purch_Y_L_1_1
+forum.xda-developers.*###purch_Y_R_1_2
+forum.xda-developers.*###sidepanel
+forum.xda-developers.*###sidepanel > div:nth-of-type(2)
+forum.xda-developers.*###sidepanel > div:nth-of-type(3)
+forum.xda-developers.*###sidepanel > div:nth-of-type(4)
+forum.xda-developers.*###td_post_79159283 > .postbit-signature
+
+forums.guru3d.*##.sidebar
+
+forums.opera.*##.hf__footer.hf
+forums.opera.*###download-opera
+blogs.opera.*##.hf__footer.hf
+opera.*##.hf__footer.hf
+opera.*##.hf__footer.hf
+help.opera.*##.hf__footer.hf
+
+freevpn.*##.entry-content > .shorter
+freevpn.*##.entry-content > div.span4:nth-of-type(3) > .feature-box
+freevpn.*##.entry-content > h4
+freevpn.*##.entry-content > hr:nth-of-type(1)
+freevpn.*##.entry-content > p
+freevpn.*##.entry-content > ul
+freevpn.*##.lead.featured
+freevpn.*##.row > div.span4:nth-of-type(3) > .feature-box > .feature-box-info
+freevpn.*##.span12 > hr
+freevpn.*##.span4 > .row > .pricing-table
+freevpn.*###cliModalClose
+freevpn.*###menu-bottom-menu
+freevpn.*##div.cli-tab-section:nth-of-type(2) > .cli-tab-header
+freevpn.*##div.row:nth-of-type(2) > p:nth-of-type(1)
+freevpn.*##div.row:nth-of-type(2) > p:nth-of-type(2)
+freevpn.*##div.row:nth-of-type(2) > p:nth-of-type(2)
+freevpn.*##div.row:nth-of-type(6)
+freevpn.*##div.span4:nth-of-type(1) > .feature-box > .feature-box-info
+freevpn.*##div.span4:nth-of-type(2) > .feature-box > .feature-box-info
+freevpn.*##div.span4:nth-of-type(4) > .feature-box
+freevpn.*##div.span4:nth-of-type(4) > .feature-box > .feature-box-info
+freevpn.*##h1.lead
+freevpn.*##h2:nth-of-type(1)
+freevpn.*##h2:nth-of-type(2)
+freevpn.*##h2:nth-of-type(3)
+freevpn.*##h2:nth-of-type(4)
+freevpn.*##p:nth-of-type(4)
+freevpn.*##p.lead
+freevpn.*##p.lead:nth-of-type(1)
+freevpn.*##p.tall:nth-of-type(2)
+freevpn.*##p.tall:nth-of-type(5)
+freevpn.*##thead > tr
+freevpn.be##.entry-content > h4
+freevpn.be##.entry-content > p
+freevpn.be###post-6 > h4
+freevpn.be###post-6 > p
+freevpn.be###post-6 > ul
+freevpn.co.uk##.entry-content > p
+freevpn.co.uk##.entry-content > ul
+freevpn.co.uk##h4
+freevpn.co.uk##hr
+freevpn.eu##.entry-content > p
+freevpn.eu##.entry-content > ul
+freevpn.eu##h4
+freevpn.im##.entry-content > p
+freevpn.im##.entry-content > ul
+freevpn.im##h4
+freevpn.it##.entry-content > p
+freevpn.it##.entry-content > ul
+freevpn.it##div.row:nth-of-type(1) > h3:nth-of-type(1)
+freevpn.it##h2:nth-of-type(4)
+freevpn.me##.row > div.span4:nth-of-type(3) > .feature-box > .feature-box-info
+freevpn.me##div.span4:nth-of-type(1) > .feature-box > .feature-box-info
+freevpn.me##div.span4:nth-of-type(2) > .feature-box > .feature-box-info
+freevpn.se##.entry-content > p:nth-of-type(1)
+freevpn.se##.entry-content > p:nth-of-type(2)
+freevpn.se##.entry-content > ul
+freevpn.se##h4:nth-of-type(1)
+freevpn.se##h4:nth-of-type(2)
+freevpn.se##h4:nth-of-type(3)
+freevpn.se##hr:nth-of-type(1)
+freevpn.se##hr:nth-of-type(2)
+freevpn.se##p:nth-of-type(3)
+
+gaana.*##.overlay
+
+gamovideo.*##.navbar-inner
+gamovideo.*###extra_buttons
+gamovideo.*###file_title
+gamovideo.*###footer
+gamovideo.*###po-pamp
+gamovideo.*###pu-pomc
+gamovideo.*###pu-pomin
+gamovideo.*###text
+gamovideo.*##div > [href="https://gamovideo.*/contact.html"]
+gamovideo.*##iframe[src="http://gamovideo.*/popseriuc.html"]
+
+gbatemp.*##.similarThreads.sectionMain.section.discussionList
+gbatemp.*##footer
+
+gnula.*##.aside
+gnula.*##.SDQghxuOxekJ-bg
+gnula.*##.SDQghxuOxekJ-default
+gnula.*###comments
+gnula.*###top
+
+gounlimited.*##.mb-4.align-items-center.d-flex
+gounlimited.*##.mb-5.top_banner.pt-4.pb-5.align-items-center.bg-primary
+gounlimited.*###footer
+gounlimited.*###mainNav
+
+grantorrent.*###banner_publi
+grantorrent.*###GrantTelegram
+
+greasyfork.*##.ad-content
+
+hdfull.*##.breakaway-wrapper-alt
+hdfull.*##.cloud.container
+hdfull.*##.*-wrapper
+hdfull.*###footer-wrapper
+
+hdpeliculaslatino.*##.tab_ads_14032018
+
+hdzog.*##.pl_showtime1
+
+highstream.*##.cover
+highstream.*##.navbar-static-top.navbar-default.navbar
+highstream.*###container > div > .hidden-xs
+highstream.*###content
+highstream.*##footer
+
+htcmania.*##.header
+htcmania.*##.header > table > tbody > tr
+htcmania.*###td_post_30693974 > div:nth-of-type(2)
+htcmania.*##body > form
+htcmania.*##div > table.tborder:nth-of-type(2)
+htcmania.*##div:nth-of-type(2) > .page > div > form
+htcmania.*##div:nth-of-type(2) > .page > div > table.tborder:nth-of-type(2)
+htcmania.*##div:nth-of-type(2) > .page > div > table.tborder:nth-of-type(3)
+htcmania.*##div:nth-of-type(2) > .page > div > table.tborder:nth-of-type(3) > tbody > tr
+
+http://cdn.sailfish.media/lb/*.png
+
+https://ocio.leadzutw.*
+
+hugefiles.*##.btn-share
+hugefiles.*##.download-file-btn-p
+hugefiles.*##.optin-monster-saas-overlay
+hugefiles.*##.section-blue
+hugefiles.*##.tabbernav
+hugefiles.*##.tabbertab
+hugefiles.*##.top-menu
+hugefiles.*##.twin-table
+hugefiles.*##[href="http://hugefiles.*/pages/dcma.html"]
+hugefiles.*##[src="http://hugefiles.*/button.png"]
+hugefiles.*##[src="http://hugefiles.*/images/buy-premium-btn.png"]
+hugefiles.*##[src="http://hugefiles.*/images/register-now-btn.png"]
+hugefiles.*###bottom-area
+hugefiles.*###footer
+hugefiles.*###header-right
+hugefiles.*##DIV[style="position: relative; width:816px; margin:0 auto;"]
+hugefiles.*##H2
+
+imdb.*###top_ad_wrapper
+*###top_ad_wrapper
+
+imgur.*##div.Footer-slim.Footer:nth-of-type(1)
+
+infojobs.*##.slotbanner-top
+
+intercontinentalcry.*##.slideTop.center.animated.slickWindow
+
+internetculture.*##body > div.col-xs-12:nth-of-type(1)
+internetculture.*##body > div.col-xs-12:nth-of-type(2)
+internetculture.*##body > div.col-xs-12:nth-of-type(3)
+internetculture.*##body > div.col-xs-12:nth-of-type(4)
+internetculture.*##body > div.col-xs-12:nth-of-type(5)
+internetculture.*##div.col-xs-12:nth-of-type(6)
+internetculture.*##div.col-xs-12:nth-of-type(9)
+
+ip8.*##.alert-info.alert.col-lg-12
+ip8.*##.alert-light.alert.col-lg-12
+
+ipfingerprints.*##h2:nth-of-type(2)
+
+iplocation.*##.col_6_of_12.col:nth-of-type(1)
+iplocation.*##.col_6_of_12.col:nth-of-type(2) > .widget > p:nth-of-type(1)
+iplocation.*##.row:nth-of-type(5) > .col_12_of_12.col
+iplocation.*##.widget > p:nth-of-type(2)
+iplocation.*##div.col_6_of_12.col:nth-of-type(2) > .widget > p:nth-of-type(1)
+iplocation.*##div.row:nth-of-type(14) > .col_12_of_12.col
+iplocation.*##div.row:nth-of-type(15)
+
+isitdownorjust.me##.*ments
+
+jeodrive.*##.btn.btn-primary.btn-lg.importFileToMyCloud
+jeodrive.*##.party
+jeodrive.*##[href="/premium/h4l-musaigen-no-phantom-world-02-720pac41652f/"]
+jeodrive.*###newsletter
+jeodrive.*##H2
+jeodrive.*##TH
+
+jheberg.*##.debrideurAd
+jheberg.*##.download-blocks
+jheberg.*##.download-now
+jheberg.*##.fileSocial
+jheberg.*##.import-file
+jheberg.*##.register-container
+jheberg.*##.social
+jheberg.*##.social-container
+
+jokerlivestream.*##.otherads
+jokerplayer.*##html > body > div#ads
+jokerplayer.*##html > body > snackbar
+jokerplayer.*##html > body > snackbar div.snackbar.message.bottom.center.slideUp
+*###ads
+
+||thesportek.*/p/img/streamhub-white-bar.png$imag
+||thesportek.*/p/img/streamhub-white-bar.png$image
+
+||sport247.live/awrapper/6/EU$subdocument
+
+harleyquinnwidget.*##html > body > div#ads
+
+||live.harleyquinnwidget.*/images/pk2-b.png$image
+||live.harleyquinnwidget.*/images/pk3.png$image
+||live.harleyquinnwidget.*/templates/streamhunter/images/pattern-1.png$image
+||live.livewidget.*/index.php?option=com_lsh&view=lsh&layout=webmaster&tmpl=component&sections=36&livenow=0$subdocument
+||live.robinwidget.*/images/77x360.gif$image
+
+||jokerplayer.*/close.png$image,domain=.*
+||jokerplayer.*/embed.php?u=philippe&vw=640&vh=360$popup,domain=live.harleyquinnwidget.*
+||jokerplayer.*/snack/*$stylesheet,domain=*.*
+||jokerplayer.*/snack/css/snackbar.css$stylesheet,domain=*.*
+||jokerplayer.*/snack/js/snackbar.js$script,domain=*.*
+||jokerplayer.*/snack/video-hd-2-xxl.png$image,domain=*.*
+
+||ii.aliez.*/img/overlays/1x1.png$image,domain=emb.aplayer2.me
+||ii.aliez.*/img/overlays/1x2.png$image,domain=emb.aplayer2.me
+||ii.aliez.*/js/pop.js$script,domain=emb.aplayer2.me
+||ii.aliez.*/js/sandblaster.min.js$script,domain=emb.aplayer2.me
+||ii.aliez.*/js/uppodhtml5.js$script,domain=emb.aplayer2.me
+||ii.aliez.*/js/uppodhtml5live.js?2$script,domain=emb.aplayer2.me
+||ii.aliez.*/js/uppodhtml5video.js$script,domain=emb.aplayer2.me
+
+||i.aliez.*/img/tmp/wl2.gif$image,domain=emb.aplayer2.me
+
+||batmanstream.*/images/Batman-banner-referrals-2.gif$image
+||batmanstream.*/images/batmanstreamlivewidget-01.gif$image
+
+||1079020916.rsc.cdn77.*/images/joker.jpg$image
+
+kisscartoon.*##.alert-info.alert
+kisscartoon.*##.clear2:nth-of-type(13)
+kisscartoon.*##.clear2:nth-of-type(17)
+kisscartoon.*##.clear2:nth-of-type(5)
+kisscartoon.*##.closeVideoAd
+kisscartoon.*##.h20.clear2
+kisscartoon.*##.mb15.full
+kisscartoon.*##.note_top_watch
+kisscartoon.*##.watch_container.full > div:nth-of-type(11)
+kisscartoon.*###bar-player
+kisscartoon.*###divBookmark
+kisscartoon.*###divDownload
+kisscartoon.*###divFileName > .clear2
+kisscartoon.*###divTextQua
+kisscartoon.*###footer
+kisscartoon.*###videoAd
+kisscartoon.*##div:nth-of-type(15)
+kisscartoon.*##.alert-info.alert
+kisscartoon.*##.clear2:nth-of-type(17)
+kisscartoon.*##.h20.clear2
+kisscartoon.*##.mb15.full
+kisscartoon.*##.note_top_watch
+kisscartoon.*##.watch_title
+kisscartoon.*###divBookmark
+kisscartoon.*###divDownload
+kisscartoon.*###divFileName > .clear2
+kisscartoon.*###divTextQua
+kisscartoon.*###footcontainer > p:nth-of-type(1)
+kisscartoon.*###footer
+kisscartoon.*##div:nth-of-type(15)
+kisscartoon.*##iframe[src="about:blank"]
+kisscartoon.*##.h20.clear2
+kisscartoon.*##.mb15.full
+kisscartoon.*###divBookmark
+kisscartoon.*###divComments > div
+kisscartoon.*###divDownload
+kisscartoon.*###divFileName > .clear2
+kisscartoon.*###divTextQua
+kisscartoon.*###footer
+kisscartoon.*##div.clear2:nth-of-type(10)
+
+||ad.kisscartoon.*/cartoon/videoAd.html$subdocument
+
+||kisscartoon.*/themes/v3/images/tpl_footer_bg.png?v=3$image
+
+lacalleochotv.*##.art-content-layout:nth-of-type(1) > .responsive-layout-row-2.art-content-layout-row
+lacalleochotv.*##.art-footer
+lacalleochotv.*##.art-footer-text > p:nth-of-type(1)
+lacalleochotv.*##.art-header
+lacalleochotv.*##.art-logo-539480678.art-logo
+lacalleochotv.*##.art-shapes
+lacalleochotv.*##.desktop-nav.art-nav
+lacalleochotv.*##.layout-item-0.art-layout-cell > .art-article > tbody > tr > td:nth-of-type(1)
+lacalleochotv.*##.layout-item-0.art-layout-cell > .art-article > tbody > tr > td:nth-of-type(2)
+lacalleochotv.*##.layout-item-2.art-content-layout:nth-of-type(2) > .responsive-layout-row-2.art-content-layout-row > .layout-item-0.art-layout-cell
+lacalleochotv.*##.layout-item-2.art-content-layout:nth-of-type(5) > .responsive-layout-row-3.art-content-layout-row > .layout-item-0.art-layout-cell
+lacalleochotv.*##.layout-item-2.art-content-layout:nth-of-type(5) > .responsive-layout-row-3.art-content-layout-row > .layout-item-6.art-layout-cell
+lacalleochotv.*##.layout-item-2.art-content-layout:nth-of-type(5) > .responsive-layout-row-3.art-content-layout-row > .layout-item-7.art-layout-cell
+lacalleochotv.*##.layout-item-4.art-content-layout-wrapper:nth-of-type(6) > .layout-item-2.art-content-layout > .responsive-layout-row-3.art-content-layout-row > .layout-item-0.art-layout-cell
+lacalleochotv.*##.layout-item-4.art-content-layout-wrapper:nth-of-type(6) > .layout-item-2.art-content-layout > .responsive-layout-row-3.art-content-layout-row > .layout-item-6.art-layout-cell
+lacalleochotv.*##.layout-item-4.art-content-layout-wrapper:nth-of-type(6) > .layout-item-2.art-content-layout > .responsive-layout-row-3.art-content-layout-row > .layout-item-7.art-layout-cell
+lacalleochotv.*##.layout-item-4.art-content-layout-wrapper:nth-of-type(6) > .layout-item-2.art-content-layout > .responsive-layout-row-3.art-content-layout-row > .layout-item-7.art-layout-cell > p
+lacalleochotv.*##div.layout-item-2.art-content-layout:nth-of-type(4) > .responsive-layout-row-3.art-content-layout-row > .layout-item-6.art-layout-cell
+lacalleochotv.*##div.layout-item-4.art-content-layout-wrapper:nth-of-type(3) > .layout-item-2.art-content-layout > .responsive-layout-row-3.art-content-layout-row > .layout-item-6.art-layout-cell
+
+last.fm##.footer
+last.fm##li.js-link-block.features-footer-item
+
+*##.ads__claim-item
+
+link.karanpc.*##.content > p:nth-of-type(1)
+link.karanpc.*##h4
+link.karanpc.*##p:nth-of-type(2)
+link.karanpc.*##p:nth-of-type(3)
+link.karanpc.*##p:nth-of-type(4)
+
+live-nba.*##.embed.form-control
+live-nba.*##.pr-xl-3.pr-lg-0.pl-lg-3.px-xs-0.col-lg-8 > div.box:nth-of-type(5)
+live-nba.*###fcnbox
+live-nba.*###iframe_preview
+live-nba.*###main > .text-center
+live-nba.*###secondary
+live-nba.*###secondary-widget
+live-nba.*###secondary-widget > div.box:nth-of-type(6)
+live-nba.*##div.box:nth-of-type(4)
+
+live-streamhd.me##center
+
+live.harleyquinnwidget.*###otherads699297
+live.harleyquinnwidget.*##.banner-3 > div
+live.harleyquinnwidget.*##.entry
+live.harleyquinnwidget.*##.pattern-1
+live.harleyquinnwidget.*##.sectiontable > tbody
+live.harleyquinnwidget.*###mobileLogo
+live.harleyquinnwidget.*###otherads706548
+live.harleyquinnwidget.*##html > body > div#ads
+
+*[@id="ads"]
+
+live.jokerswidget.*##.ad_stream_hd
+live.jokerswidget.*##ad_overlay
+live.jokerswidget.*##ads
+
+play.doalsm.*##ads
+play.doalsm.*##ad_overlay
+play.doalsm.*##.ad_stream_hd
+
+live.livewidget.*##.entry
+live.livewidget.*##.left-block > div:nth-of-type(2)
+live.livewidget.*##.social-container
+live.livewidget.*###mobileLogo
+live.livewidget.*###mobileMenu
+
+live.robinwidget.*##.banner-1 > div
+live.robinwidget.*##.entry
+live.robinwidget.*##.left-block > div:nth-of-type(2)
+live.robinwidget.*##.social-container
+live.robinwidget.*###no_flash
+
+livestreamz.*##.clearfix.entry-content > p:nth-of-type(1)
+livestreamz.*##.clearfix.header-main
+livestreamz.*##.embed_code
+livestreamz.*##.entry-footer-meta
+livestreamz.*##.entry-header
+livestreamz.*##[src="http://livestreamz.*/wp-content/uploads/2018/03/TORONTO-RAPTORS.png"]
+livestreamz.*###iframe_preview
+livestreamz.*###taplay
+livestreamz.*##center
+livestreamz.*##h2:nth-of-type(2)
+livestreamz.*##p:nth-of-type(3)
+livestreamz.*##p:nth-of-type(4)
+livestreamz.*##p:nth-of-type(5)
+livestreamz.*##p:nth-of-type(6)
+livestreamz.*##p:nth-of-type(7)
+livestreamz.*##p:nth-of-type(8)
+livestreamz.*##p:nth-of-type(9)
+livestreamz.*##strong
+
+livetv.*##.main > tbody > tr > td > table > tbody > tr:nth-of-type(2) > td > table > tbody > tr > td > table > tbody > tr > td > table:nth-of-type(1) > tbody > tr > td:nth-of-type(1)
+livetv.*##.main > tbody > tr > td > table > tbody > tr:nth-of-type(2) > td > table > tbody > tr > td > table > tbody > tr > td > table:nth-of-type(1) > tbody > tr > td:nth-of-type(1) > table
+livetv.*##.main > tbody > tr > td > table > tbody > tr:nth-of-type(3) > td > table > tbody > tr > td:nth-of-type(2)
+livetv.*##body > table > tbody > tr > td:nth-of-type(2) > table > tbody > tr:nth-of-type(1) > td
+livetv.*##body > table > tbody > tr > td:nth-of-type(2) > table > tbody > tr:nth-of-type(1) > td > table > tbody > tr
+livetv.*##body > table > tbody > tr > td:nth-of-type(2) > table > tbody > tr:nth-of-type(2) > td > table
+
+mamahd.*##.ad_stream_hd
+mamahd.*##.col-sm-12:nth-of-type(3)
+mamahd.*##.col-sm-12:nth-of-type(3) > .widget-header
+mamahd.*##.col-sm-12:nth-of-type(4) > .widget-conte
+mamahd.*##.col-sm-12:nth-of-type(4) > .widget-content > table > tbody > tr >
+mamahd.*##.col-sm-12:nth-of-type(4) > .widget-head
+mamahd.*##.col-sm-5 > .widget-content
+mamahd.*##.col-sm-5 > .widget-header
+mamahd.*##.col-sm-7 > .widget-content
+mamahd.*##.col-sm-7 > .widget-content > div
+mamahd.*##.col-sm-7 > .widget-header
+mamahd.*##.matches.widget-content > div:nth-of-type(3)
+mamahd.*##.matches.widget-content > p:nth-of-type(1)
+mamahd.*##.otherads
+mamahd.*##.right.cell
+mamahd.*##.row.navigation
+mamahd.*##.row.top
+mamahd.*##.socialW
+mamahd.*##.style1.widget-conte
+mamahd.*##.widget-content:nth-of-type(4)
+mamahd.*##.widget-content:nth-of-type(4) > center
+mamahd.*###footer > .navbar-inner > .container
+mamahd.*###key
+mamahd.*###kopa-page-footer
+mamahd.*###sidebar > .widget-header
+mamahd.*###taplay
+mamahd.*###text
+mamahd.*##$0
+mamahd.*##a[href="https://mamahd.*/la-liga-streams.html"]
+mamahd.*##div:nth-of-type(2) > span
+mamahd.*##font
+mamahd.*##P
+mamahd.*##p:nth-of-type(3)
+mamahd.*##.clearfix.header-top
+mamahd.*##.container > .row > .col-md-3
+mamahd.*##.no-right-padding.transparent-background.f1-color--carbonBlack.fixtures.f1-podium
+mamahd.*##.row.on-shoping-box
+
+maspeliculas.*##.reproductorads > div
+maspeliculas.*###respond
+maspeliculas.*###sidebar-post3
+maspeliculas.*###sidebar-post4
+maspeliculas.*###single-2 > div > iframe
+maspeliculas.*##h1
+maspeliculas.*##h2:nth-of-type(4)
+maspeliculas.*##h2:nth-of-type(5)
+maspeliculas.*##h3 > b
+
+mediafire.*##.description
+mediafire.*##.dl-utility-nav
+mediafire.*##.DLExtraInfo-column.DLExtraInfo-upload
+mediafire.*##.DLExtraInfo-wrap
+mediafire.*##.dlInfo
+mediafire.*##.dlInfo-Body
+mediafire.*##.dlInfo-Speed
+mediafire.*##.dlPromo1Content.dlPromoContent[href="/upgrade/"]
+mediafire.*##.header
+mediafire.*##.nopop.dl-promo-cont
+mediafire.*##.sidebar
+mediafire.*##.social-fb-cont
+mediafire.*###div-gpt-ad-1376107698761-0
+mediafire.*###div-gpt-ad-1376108171730-0
+mediafire.*###div-gpt-ad-1376108334082-0
+mediafire.*###div-gpt-ad-1376108444357-0
+mediafire.*###footer
+mediafire.*###footer.footer
+mediafire.*###login_signup
+
+mega.*##.big-bott-pad.ultra-huge-top-pad.bottom-page
+mega.*##.big-icons-bl.bottom-page.counters.startpage
+mega.*##.body.bottom-menu
+mega.*##.bott-pad.angle-pad.grey-graident.bottom-page
+mega.*##.counter.bott-pad.top-pad.white-block.bottom-page
+mega.*##.dark-slider-wrap.dark-blue-gradient.bott-pad.top-pad.bottom-page
+mega.*##.grey-angle-bg.bottom-page
+mega.*##.huge-bott-pad.ultra-huge-top-pad.grey-block.bottom-page
+mega.*##.pages-nav-wrap
+mega.*##.top-notice.startpage
+mega.*##.visible.huge-bott-pad.inverted.light-grey-gradient.bott-pad.huge-top-pad.bottom-page
+mega.*##.wide.centered-txt.horizontal-centered-bl.bottom-page
+mega.*##div.huge-bott-pad.bott-pad.huge-top-pad.bottom-page:nth-of-type(9)
+mega.*##div.huge-bott-pad.light-grey-gradient.bott-pad.huge-top-pad.bottom-page:nth-of-type(8)
+mega.*##div.huge-bott-pad.ultra-huge-top-pad.bottom-page:nth-of-type(4)
+mega.*##div.ultra-huge-top-pad.bottom-page:nth-of-type(1)
+
+megadede.*##.content > div.row:nth-of-type(2)
+megadede.*##.dooplay_player
+
+mejortorrent.website###M289447ScriptRootC176353
+
+mi-globe.*##.close-IihhIxXmGKGC.close-modal
+mi-globe.*##.IihhIxXmGKGC-bg
+mi-globe.*##.IihhIxXmGKGC-default
+
+michollo.*##.mc-banner-wrapper
+michollo.*##.wpb_content_element.post > .wpb_wrapper
+
+milanuncios.*##.contenidoPie
+milanuncios.*##.has-advertisement.ma-AdvertisementPageLayout-up
+milanuncios.*##.ma-ContentAdDetailCrossLinks
+milanuncios.*##.ma-LayoutBasicFooter
+milanuncios.*##.ma-ListingCrosslinks
+milanuncios.*##div.ma-AdvertisementPageLayout-item:nth-of-type(1)
+
+mio.to###abmsg
+*###ad-perm-right1
+*###ad-perm-right2
+
+mirrorace.*##.uk-text-center.uk-margin-bottom.uk-width-1-1:nth-of-type(2)
+mirrorace.*##.uk-text-muted.uk-text-truncate.uk-margin-small
+
+mirrored.to###_rb2qqw > div
+mirrored.to##footer
+
+mitele.es##.ads__adContainer-3VpA
+mitele.es##.col-ms-12-3.col-ms-1365-14.ad-wrapper
+mitele.es##.corporativeBlock__container-12P6
+mitele.es##.corporativeBlock__groupMediasetBrandIcon-2hqu
+mitele.es##.menuBlock__centerBlock-30Gs
+mitele.es##.opacity_layer_consent
+
+mixdrop.co##.download-embed
+mixdrop.co##.footer.panel
+mixdrop.co##.wrapper > div:nth-of-type(4)
+
+mixtoon.*###html > body > div#mediaspace_wrapper > div.videocontainer > div#videooverlay
+mixtoon.*##footer
+mixtoon.*##header
+mixtoon.*##nav
+
+mobile.softpedia.*##div.brd-1-grey1.mgtop_20.grid_48:nth-of-type(7)
+
+mundobonsai.*###fa_ticker_block > .forumline
+
+mundooculto.*##.kipSSIooxGJx-bg
+mundooculto.*###text-3 > .widget-content
+mundooculto.*###WfjutLOPTaIw
+
+muyinteresante.*##.show.fade.modal-backdrop
+muyinteresante.*###jsLoginModal
+
+my.pcloud.*##.ZaCPd.PlansAd__Wrap-jztgpW
+my.pcloud.*##.ZaCPd.PlansAd__Wrap-jztgpW
+
+mycinema.*##.f0d.TLD
+mycinema.*##.K
+mycinema.*##.NE62.w9.z7o
+mycinema.*##.p
+mycinema.*##.q9I.TLD
+mycinema.*##.QZ
+mycinema.*##.sqh.Ye7
+mycinema.*##.T
+mycinema.*##.z7o.D
+mycinema.*##.z7o.Kszo
+mycinema.*##footer
+mycinema.*##h2
+mycinema.*##h2.sqh:nth-of-type(1)
+mycinema.*##h2.sqh:nth-of-type(2)
+mycinema.*##h2.sqh:nth-of-type(4)
+mycinema.*##h2.sqh:nth-of-type(5)
+mycinema.*##h2.TLD:nth-of-type(1)
+mycinema.*##h2.TLD:nth-of-type(2)
+mycinema.*##h2.TLD:nth-of-type(4)
+mycinema.*##h2.TLD:nth-of-type(5)
+mycinema.*##p
+mycinema.*##p.sqh
+mycinema.*##p.TLD:nth-of-type(1)
+mycinema.*##p.TLD:nth-of-type(2)
+mycinema.*##p.TLD:nth-of-type(3)
+mycinema.*##p.TLD:nth-of-type(4)
+mycinema.*##p.TLD:nth-of-type(5)
+
+nbahd.*##.cf.inner
+nbahd.*##.rich-content.page-content > center:nth-of-type(1)
+nbahd.*###details > .entry-meta
+nbahd.*###post-54042 > center
+nbahd.*###sidebar
+nbahd.*##iframe[src^="data:text/html;charset=utf-8,%3Cscript%3E%28function%28%29%7B%22use%20strict%22%3Bfunction%20getWrappedCode%28removeSelf%29%20%7B%20var%20text%20%3D%20getWrappedCode.toString%28%29+WSI.toString%28%29%3B%20text%20%3D%20%28%20%27%28function%28%29%7B%22use%20strict%22%3B%27+%20text.replace%28/%5C/%5C/%5B%5E%5Cr%5Cn%5D*/g%2C%27%27%29.replace%28/%5B%5Cs%5Cr%5Cn%5D+/g%2C%27%20%27%29+%20%27%28new%20WSI%28self%7C%7Cwindow%29%29.init%28%29%3B%27+%20%27%7D%29%28%29%3B%27+%20%28removeSelf%3F%27var%20s%20%3D%20document.currentScript%3B%20if%20%28s%29%20%7Bs.parentNode.removeChild%28s%29%3B%7D%27%3A%27%27%29%20%29%3B%20return%20text%3B%20%7Dfunction%20WSI%28win%2C%20safeWin%29%20%7B%20safeWin%20%3D%20safeWin%20%7C%7C%20win%3B%20var%20masks%20%3D%20%5B%5D%2C%20filter%3B%20for%20%28filter%20of%20%5B%20%27%7C%7C24video.xxx%5E%27%2C%20%27%7C%7Cadlabs.ru%5E%27%2C%20%27%7C%7Cbgrndi.*%5E%27%2C%20%27%7C%7Cbrokeloy.*%5E%27%2C%20%27%7C%7Ccnamerutor.ru%5E%27%2C%20%27%7C%7Cdocfilms.info%5E%27%2C%20%27%7C%7Cdreadfula.ru%5E%27%2C%2"]
+
+nbastream.*###fcnbox
+nbastream.*###iframe_preview
+nbastream.*###kopa-page-content > center
+nbastream.*###kopa-page-content > h1:nth-of-type(1)
+nbastream.*###kopa-page-content > p:nth-of-type(1)
+nbastream.*###kopa-page-footer
+nbastream.*###sidebar
+nbastream.*###taplay
+nbastream.*##body > center
+nbastream.*##button3
+nbastream.*##h1:nth-of-type(2)
+nbastream.*##h1:nth-of-type(3)
+nbastream.*##h1:nth-of-type(4)
+nbastream.*##h1:nth-of-type(5)
+nbastream.*##h1:nth-of-type(6)
+nbastream.*##html3
+nbastream.*##p:nth-of-type(10)
+nbastream.*##p:nth-of-type(11)
+nbastream.*##p:nth-of-type(12)
+nbastream.*##p:nth-of-type(13)
+nbastream.*##p:nth-of-type(14)
+nbastream.*##p:nth-of-type(15)
+nbastream.*##p:nth-of-type(16)
+nbastream.*##p:nth-of-type(17)
+nbastream.*##p:nth-of-type(2)
+nbastream.*##p:nth-of-type(3)
+nbastream.*##p:nth-of-type(4)
+nbastream.*##p:nth-of-type(5)
+nbastream.*##p:nth-of-type(6)
+nbastream.*##p:nth-of-type(7)
+nbastream.*##p:nth-of-type(8)
+nbastream.*##p:nth-of-type(9)
+
+newpelis.*###summary-under-wrapper
+newpelis.*##tbody > tr > td
+
+nitroflare.*##.noticeMessage
+nitroflare.*##.purchaseNoWaiting
+nitroflare.*##.table2.bad
+nitroflare.*##.table2.good
+nitroflare.*##[href="DMCA"]
+nitroflare.*##[src="img/welcome2purchase.png?v=1.0.0"]
+nitroflare.*##[style="background: #ebebeb;padding: 4px;border-radius: 7px;margin: 6px 0px;font-size: 13px;"]
+nitroflare.*##[type="application/x-shockwave-flash"][style="text-align: center; vertical-align: bottom;"]
+nitroflare.*###fast-download
+nitroflare.*###footer
+nitroflare.*###footerCredits
+nitroflare.*###report[href="report/4B2488FDD1B2F11"]
+nitroflare.*###superbox-container
+nitroflare.*###superbox-overlay
+nitroflare.*###superbox-wrapper
+nitroflare.*###watch-online
+
+nowwatchtvlive.*##.entry > center:nth-of-type(2)
+nowwatchtvlive.*##.entry > iframe:nth-of-type(1)
+nowwatchtvlive.*##.fullwidthtopleft > iframe
+nowwatchtvlive.*##.fullwidthtopright > iframe
+nowwatchtvlive.*##blockquote
+nowwatchtvlive.*##h5:nth-of-type(2) > em > strong
+nowwatchtvlive.*##iframe:nth-of-type(2)
+
+ojomovies.*###btnsuperfiltro
+
+oload.stream###footer > .container > .row
+oload.xyz###footer
+oload.xyz###header
+oload.xyz###M162831ScriptRootC221782
+
+onlinetv.planetfools.*##.columns-7.rig
+onlinetv.planetfools.*##.trending
+onlinetv.planetfools.*###footer
+onlinetv.planetfools.*##center > center > div
+onlinetv.planetfools.*##h4
+
+onlystream.*##.mv_menu.bg-white.navbar-white.navbar-expand-md.navbar
+onlystream.*##.taberContent.mt-3.col-md-12
+onlystream.*##.videoContent
+onlystream.*###menu
+onlystream.*##footer
+
+openload.co##.file-details.container
+openload.co###footer > .container > .row
+openload.co###header
+openload.co###realdl > .dlbutton.main-button
+
+outlook.live.*##._1j7WZ-n7dxhS9AQV-FL8U7 > ._2qPmszDwBfYpF7PO9Mn3KN
+outlook.live.*##._1j7WZ-n7dxhS9AQV-FL8U7 > ._2qPmszDwBfYpF7PO9Mn3KN > .stQe7wknhnXCAAroiyvBY
+
+panoramicadesconocida.blogspot.*###g207
+
+papahd.ml###g207
+
+passeidireto.*##.register-pop-up.login-sticky-footer-item
+
+peliculas.plus###contenidobloqueado
+peliculas.plus###contenidobloqueado_fondo
+
+peliculasgaston.blogspot.*##.chatbro_opacity.chatbro_movable_chat.chatbro_chat
+
+pelis123.*##.film-description-content > div:nth-of-type(3)
+pelis123.*##div.pull-left:nth-of-type(2)
+
+pelis28.me##.*ments-area
+pelis28.me##.owl-theme.owl-carousel.galeria
+pelis28.me###embed-es > ul
+pelis28.me###playcontainer
+pelis28.me##footer.main
+
+pelispedia.*###mainContent > .container
+pelispedia.*###mainContent > .mb40.pt20.containerFluid > .bpM100.bpS100
+
+pelisplay.*##.movie-comment
+pelisplay.*##.row.information
+pelisplay.*##footer
+
+pepecine.*##.header-overlay
+pepecine.*##.p1tp8nzy2wnf
+pepecine.*##.pub1
+pepecine.*###kdxlt0j
+pepecine.*###lk64
+pepecine.*###lklw6
+pepecine.*###p2kd340
+pepecine.*###social
+pepecine.*##body > .hidden-xs
+pepecine.*##section.row:nth-of-type(2)
+pepecine.*###oGqna1YNcTrIllsLXNh8ujRejHcbY7kdWXHf > .container
+pepecine.*##footer
+pepecine.*##.footer-bar > div
+pepecine.*##.footer-content
+pepecine.*##.mensaje.alert-dismissable.alert-success.alert
+pepecine.*###bienvenida > .alert-success.alert
+pepecine.*###commentfb
+pepecine.*###commentform
+pepecine.*##center
+pepecine.*##footer
+pepecine.*##.col-sm-9 > .s3
+pepecine.*##.flip-container > .s3
+pepecine.*##h1 > b
+pepecine.*##.pub1
+pepecine.*###\34 1Vlm5cSeDhvfrRcdj5fr73cMOBd7T6XmwiD > .container
+pepecine.*###\34 oDHEO9MlHwIlsbdcRwTJWoQ0fIcXuIa3IMt > .container
+pepecine.*###content > div:nth-of-type(1) > div:nth-of-type(1)
+pepecine.*###iESddLW74DsrzWTpJQMg5EzXh7UCVhYDKUSI > .container
+pepecine.*##footer > div
+pepecine.*##p:nth-of-type(1)
+pepecinehd.*###social
+
+pinterest.*##body > div:nth-of-type(1) > div > div > div:nth-of-type(2) > .Hsu.iyn.zI7 > div.Hsu.iyn.zI7:nth-of-type(1) > div
+pinterest.*##div:nth-of-type(2) > div > div > div:nth-of-type(2) > .Hsu.iyn.zI7 > div.Hsu.iyn.zI7:nth-of-type(1) > div
+pinterest.*##div:nth-of-type(2) > div > div > div:nth-of-type(2) > .Hsu.iyn.zI7 > div.Hsu.iyn.zI7:nth-of-type(2) > div
+pinterest.*##div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div
+
+pirlotvhd.*##div:nth-of-type(4)
+pirlotvhd.*##div.encabezados:nth-of-type(1)
+pirlotvhd.*##div.texto
+pirlotvhd.*##footer
+pirlotvhd.*##h4
+pirlotvhd.*##header
+pirlotvonline.*##.sidebar
+pirlotvonline.*##.texto
+pirlotvonline.*##footer
+pirlotvonline.*##header
+
+pl.allsportsflix.best
+
+play.google.*##.XDXaGc
+
+player.jokehd.*##html>body>div#ads
+player.lshjoker.*##html > body > div#ads
+
+portableapps.*###block-block-39
+portableapps.*###block-block-41 > .content
+
+poseidonhd2.*##.autoHeight.owl-wrapper-outer
+poseidonhd2.*##.*entarios
+poseidonhd2.*##.top-content
+poseidonhd2.*##footer
+
+puntodete.*##.fancybox-overlay-fixed.fancybox-overlay
+
+quora.*###__w2_uN6XRkq_wgkniqqelxbpktqxvyfl
+quora.*##div.cXjXFI.CssComponent-sc-1oskqb9-0:nth-of-type(4)
+quora.*##div.cXjXFI.CssComponent-sc-1oskqb9-0:nth-of-type(7)
+
+rafapal.*##.ads
+rafapal.*###obi_random_banners_posts
+rafapal.*##div#banner
+
+repelis.*###footer
+repelis.*##center > div
+
+reverso.*##.clearfix.reason-block.content-block
+reverso.*##.footer
+
+rojadirecta.*##.mainwindow > tbody > tr > td > table > tbody > tr > td > table:nth-of-type(1) > tbody
+rojadirecta.*##.mainwindow > tbody > tr > td > table > tbody > tr > td > table:nth-of-type(2) > tbody > tr:nth-of-type(2) > td
+rojadirecta.*##.subtitle > div
+rojadirecta.*###table1 > tbody > tr > td:nth-of-type(2)
+rojadirecta.*###table1 > tbody > tr > td:nth-of-type(3)
+rojadirecta.*##table:nth-of-type(2) > tbody > tr > .subtitle
+rojadirecta.*##table:nth-of-type(2) > tbody > tr:nth-of-type(2) > td > table:nth-of-type(1)
+rojadirectaonlinetv.*##.title
+rojadirectaonlinetv.*##footer
+rojadirectaonlinetv.*##header
+rojadirectaonlinetv.*##p
+
+rtve.es##.be_on.trasBox.blindBox
+rtve.es##.textBox
+
+rugbyfree.*##.column_x-12.column_s-12 > div:nth-of-type(2)
+
+savefile.*##.footer-bottom
+savefile.*##.footer-top
+savefile.*##.pull-right
+savefile.*##.tabbernav
+savefile.*##.tabbertab
+savefile.*##.tbl1
+savefile.*###lang
+savefile.*###np_vid
+savefile.*###np_vid[pluginspage="http://go.divx.*/plugin/download/"]
+savefile.*###np_vid[width="640"][height="360"]
+savefile.*###showcmt
+savefile.*##A[href="http://savefile.*/premium.html"]
+savefile.*##CENTER#s141
+savefile.*##EMBED#np_vid[width="640"][height="360"][pluginspage="http://go.divx.*/plugin/download/"][previewmessage="Play"][bannerenabled="false"][autoplay="false"][type="video/divx"]
+savefile.*##IMG[alt="PayPal"][src="http://savefile.*/images/buy_paypal.gif"]
+savefile.*##TBODY
+savefile.*##TD
+
+series.*##div.wrapper:nth-of-type(4)
+series24.*###rn_ad_native_esrb6
+series24.*##.TPlayer
+
+seriesblanco.*##.cover-photo
+seriesblanco.*##.name-desg
+
+seriescube.*##.avisoadsplayer
+seriescube.*##.avisoadsplayer2
+seriescube.*##.avisoadsplayer3
+seriescube.*##.caja2
+seriescube.*##.content-box
+seriescube.*##[href="https://seriescube.*"] > font
+seriescube.*###container > hr
+seriescube.*###logo
+seriescube.*##b > b
+seriescube.*##body > hr
+seriescube.*##center
+
+seriesdanko.*##p:nth-of-type(1)
+seriesdanko.*##p:nth-of-type(2)
+seriesdanko.*##p:nth-of-type(3)
+
+seriesflv.*###MarketGidC163536Popup-wrapper
+
+seriesgato.*##.activo
+seriesgato.*##.TPlayer
+seriesgato.*##.TPlayerNv
+seriesgato.*###M294214PreloadC180122
+seriesgato.*##header > p
+
+miradetodo2.*##footer.main
+miradetodo2.*##.module_single_ads
+miradetodo2.*##.comments-area
+miradetodo2.*##.content > header
+miradetodo2.*##.dooplay_player
+miradetodo2.*##.linktabs
+miradetodo2.*##.owl-wrapper
+miradetodo2.*##.wp-content
+miradetodo2.*##div.sbox:nth-of-type(3)
+miradetodo2.*##header > h2
+
+snackbar
+
+sofascore.*##.dddEtM.Carousel__Wrapper-k3vez3-1
+sofascore.*##.featured-container--apps.featured-container
+sofascore.*##.featured-container:nth-of-type(1)
+sofascore.*##.footer.l__cont
+sofascore.*##.hidden-mobile.featured-container
+sofascore.*##.jEzrzo.FooterStyles__Wrapper-wq844q-0
+sofascore.*##.js-page-mobile-ad.card.dlapp
+sofascore.*##.knmMhW.Cell-decync-0
+
+softpedia.*##.adwblue.ad-970x250.ad.mgtop_30
+softpedia.*##.legible.storybox1
+softpedia.*##.mgtop_10.prefix_2.grid_31
+softpedia.*##.mgtop_30.fsz26
+softpedia.*###_wltsdl
+softpedia.*###alternatives_postdl
+softpedia.*###swipebox-right
+softpedia.*##div.grid_48:nth-of-type(7)
+softpedia.*##div.grid_48:nth-of-type(8)
+
+solidfiles.*##.btn.btn-success.btn-sm
+solidfiles.*##.container-fluid
+solidfiles.*##.navbar.navbar-site.navbar-fixed-top
+solidfiles.*##.remove
+solidfiles.*##.twitter-follow-button
+
+sourceforge.*##.align-justify.row.white-bt.hasShadowImg
+sourceforge.*##.l-nav-top
+sourceforge.*##.wide.container.small-12.column > .show-for-medium.hide-for-small
+sourceforge.*##.wide.container.small-12.column > p:nth-of-type(2)
+sourceforge.*###banner-sterling
+sourceforge.*###SF_ProjectFiles_300x250_A_wrapped
+sourceforge.*##section.align-justify.row:nth-of-type(4)
+sourceforge.*##section.align-justify.row:nth-of-type(6)
+sourceforge.*##section.align-justify.row.white-bt:nth-of-type(3)
+
+soycomocomo.*##.modal-sm.vertical-align-center.modal-dialog
+soycomocomo.*##.vertical-alignment-helper
+
+soydechollos.*###footer
+
+streamango.*###footer
+streamango.*###header
+
+streamcloud.*##.bottom
+streamcloud.*###footer
+streamcloud.*###header
+streamcloud.*###login > div:nth-of-type(1)
+streamcloud.*###M273275PreloadC151762
+
+streamplay.*##.text-center.footer
+streamplay.*###header
+streamplay.*##.row
+streamplay.*##.text-center.footer
+streamplay.*##.text-center.footer > .container
+streamplay.*##.list-inline
+
+slreamplay.*##.text-center.footer
+slreamplay.*###header
+slreamplay.*##.row
+slreamplay.*##.text-center.footer
+slreamplay.*##.text-center.footer > .container
+slreamplay.*##.list-inline
+
+streamwoop.*##.card.col-md-12
+streamwoop.*###blkdtc
+streamwoop.*##div.card.mobile:nth-of-type(6) > .card-body
+streamwoop.*##div.card.mobile:nth-of-type(6) > .card-header
+
+suprafiles.*##div:nth-of-type(7)
+
+techradar.*###sidebar
+
+techspot.*##.clearfix.download-wrapper > .clearfix
+techspot.*###download_open_options
+
+telefivegb.*##.content-widget
+telefivegb.*###footer
+telefivegb.*###sidebar
+telefivegb.*###video-ad
+telefivegb.*###video-code > p
+telefivegb.*###video-infos
+telefivegb.*###video-top
+telefivegb.*##p:nth-of-type(1) > b
+telefivegb.*##p:nth-of-type(4)
+telefivegb.*##p:nth-of-type(5)
+telefivegb.*##p:nth-of-type(6)
+
+telefullenvivo.*##.footer
+telefullenvivo.*##.imagenes2
+telefullenvivo.*##.MuiGrid-grid-md-4.MuiGrid-grid-sm-12.MuiGrid-grid-xs-12.MuiGrid-item.MuiGrid-root
+telefullenvivo.*##.opciones
+telefullenvivo.*##.selector
+telefullenvivo.*##div.relacionadostag:nth-of-type(1)
+telefullenvivo.*##div.relacionadostag:nth-of-type(2)
+telefullenvivo.*##div#container.container:nth-of-type(4)
+telefullenvivo.*##hr:nth-of-type(1)
+telefullenvivo.*##hr:nth-of-type(2)
+telefullenvivo.*##spam
+
+televisiongaston.blogspot.*##.chatbro_body
+televisiongaston.blogspot.*##.chatbro_header_table
+televisiongaston.blogspot.*##.chatbro_header_table > tbody
+televisiongaston.blogspot.*##.chatbro_maximized_header.chatbro_header
+
+televisiongratisenvivo.*##.alert-success.alert-dismissible.alert
+televisiongratisenvivo.*##.aligncenter.wp-caption
+televisiongratisenvivo.*##.bg-primary.navbar-dark.site-footer
+televisiongratisenvivo.*##.entry-content > footer
+televisiongratisenvivo.*##.wp-block-image
+televisiongratisenvivo.*###footer-widget
+televisiongratisenvivo.*##blockquote
+televisiongratisenvivo.*##h2
+televisiongratisenvivo.*##h6
+televisiongratisenvivo.*##p
+
+televisionlibre.*##.filter.cta
+televisionlibre.*##h2
+
+thesportek.*##.matches.table-bordered.table-striped.table > tbody > tr > td
+thesportek.*##.matches.widget-content > div > span
+thesportek.*##.socialW
+thesportek.*##.style4 > span
+thesportek.*###footer > .navbar-inner > .container
+thesportek.*###sidebar > .widget-header
+thesportek.*##center
+thesportek.*##h1
+thesportek.*##td:nth-of-type(1) > div
+
+thevideo.*##.footer-distributed
+thevideo.*##.p-a-0.m-a-0.col-xs-12:nth-of-type(3) > .text-center
+thevideo.*##.p-b-0.panel-body
+thevideo.*##.p-l-0.col-md-4 > .m-a-0.p-a-0.col-xs-12 > .panel > .panel-heading > h1
+thevideo.*##.sponsored-content.panel
+thevideo.*##DIV[class="col-xs-12 premium-plans m-b-3"],DIV#page-content>DIV.row>FORM>DIV.row
+thevideo.*##.col-md-8
+thevideo.*##.footer-distributed
+thevideo.*##.m-b-3.premium-plans.col-xs-12
+thevideo.*##.m-t-2.player-options-section
+thevideo.*##.notification-adblock
+thevideo.*##form > .row:nth-of-type(1)
+
+thewindowsclub.*##.ad-widget.widget
+thewindowsclub.*##.entry-content > div:nth-of-type(5)
+thewindowsclub.*###\30 f8f20db-19f2-4701-baa7-9f366d012c07
+thewindowsclub.*###\30 f8f20db-19f2-4701-baa7-9f366d012c07 > .adsbygoogle
+thewindowsclub.*###\32 ba5c1b4-a200-4118-9f38-f4683177ae16
+thewindowsclub.*###\32 ba5c1b4-a200-4118-9f38-f4683177ae16 > .adsbygoogle
+thewindowsclub.*###single-ad-2
+thewindowsclub.*###text-422067538
+
+thumb.oloadcdn.*###html > body > div#mediaspace_wrapper > div.videocontainer > div#videooverlay
+
+tierrapura.*###tpbr_topbar
+
+timeout.*##.xs-fill-charcoal.xs-text-white.site-footer--sticky-ad.site-footer
+timeout.*###footer-nav
+
+to.xrivonet.*##.entry-title.post-title
+to.xrivonet.*##.fauxcolumn-right-outer.fauxcolumn-outer
+to.xrivonet.*##.fauxcolumn-right-outer.fauxcolumn-outer > .fauxborder-left
+to.xrivonet.*##.fauxcolumn-right-outer.fauxcolumn-outer > .fauxborder-left > .fauxcolumn-inner
+to.xrivonet.*##.footer-inner.region-inner
+to.xrivonet.*##.tabs-fauxborder-left.fauxborder-left
+to.xrivonet.*###header-inner
+to.xrivonet.*###HTML1
+to.xrivonet.*###navbar
+to.xrivonet.*##center
+
+tododeportes.*##body > div:nth-of-type(1)
+tododeportes.*##center > center > center
+
+tomalo.fandeligas.*##avip
+tomalo.fandeligas.*##div#tme > div#tme_message
+tomalo.fandeligas.*##html > body > div#tme
+tomalo.fandeligas.*##html > body > div#tme > div#tme_messag > button.clossalert
+tomalo.fandeligas.*##html > body > script#_wau9ba
+tomalo.fansdeligas.*##html > body > font#avip
+
+transip.nl##.consent-popup
+
+turbobit.*##.col-2
+turbobit.*##.max-speed-time
+turbobit.*##.min-speed-time
+turbobit.*##.minus-ok-cell
+turbobit.*##.payment-block
+turbobit.*##.row.wrap
+turbobit.*##.title-cell
+turbobit.*##[href="/abuse"]
+turbobit.*##[href="/turbo?gaid=free_head"]
+turbobit.*##[href="/turbo?gaid=gate_downquick"]
+turbobit.*##[href="http://facebook.*/pages/Turbobitnet-Hitfilenet-file-hostings/176528982428409"]
+turbobit.*##[href="http://support.turbobit.*"]
+turbobit.*##[src="http://turbobit.*/fd1/img/main/rocketship.png"]
+turbobit.*##[src="http://turbobit.*/fd1/img/main/whatdoesitmean.png"]
+turbobit.*###banner-place
+turbobit.*###download-top-note
+turbobit.*##IMG[src="http://turbobit.*/pmbzqa/zx_new_gate_en.png"]
+
+tusfiles.*###cookiescript_injected
+tusfiles.*###GO\ Premium\![href="https://tusfiles.*/premium.html"]
+tusfiles.*###header_redesign
+tusfiles.*##EMBED#np_vid[type="video/divx"]
+tusfiles.*##IMG[src="//tusfiles.*/i/icon/fb.png"]
+tusfiles.*##IMG[src="images/523523523.png"]
+
+tutv-gratis.*##.entry-content.post-body > span:nth-of-type(1), span:nth-of-type(1), span:nth-of-type(3), span:nth-of-type(4), span:nth-of-type(5)
+tutv-gratis.*##.entry-content.post-body > span:nth-of-type(2)
+tutv-gratis.*##.hentry.post > table
+tutv-gratis.*##.postmeta-primary
+tutv-gratis.*##.separator
+tutv-gratis.*###blog-pager
+tutv-gratis.*###comments
+tutv-gratis.*###content-wrapper > .clear
+tutv-gratis.*###copyrights
+tutv-gratis.*###credits
+tutv-gratis.*###footer-widgets
+tutv-gratis.*###header-wrapper
+tutv-gratis.*###HTML4 > .widget-content
+tutv-gratis.*###M294699PreloadC180012
+tutv-gratis.*###M294699ScriptRootC197890
+tutv-gratis.*###M294699ScriptRootC197890
+tutv-gratis.*##div.span-24:nth-of-type(1)
+tutv-gratis.*##p.menu_head:nth-of-type(1)
+tutv-gratis.*##p.menu_head:nth-of-type(2)
+tutv-gratis.*##p.menu_head:nth-of-type(3)
+tutv-gratis.*##p.menu_head:nth-of-type(6), P.menu_head:nth-of-type(5), p.menu_head:nth-of-type(4)
+
+tvguia.*##.content > .adsbygoogle
+tvguia.*##.even.menu-path-node-108.menu-512
+tvguia.*##.even.menu-path-node-108.menu-512 > [href="/page/sondeo-noche-tv"]
+tvguia.*##.tip-mundial
+tvguia.*##.tip-question
+tvguia.*##.tip-text-poll
+tvguia.*##.*-program-listing-right
+tvguia.*##[href="/page/sondeo-noche-tv"] > .tip-icon-poll
+tvguia.*###block-block-2
+tvguia.*###footer-wrapper
+tvguia.*###header-wrapper-up
+tvguia.*##h1
+
+tvonline.emiweb.*##.text-center
+tvonline.emiweb.*###sidebar-one
+tvonline.emiweb.*##table:nth-of-type(7) > tbody > tr > td:nth-of-type(2)
+
+tweaking.*###content > div:nth-of-type(1)
+
+ubackup.*##.promotion-box
+
+uplea.*##.alert-software.site-top
+uplea.*##.bg-page-white
+uplea.*##.btn-premium-validate[href="/premium"]
+uplea.*##.cel_tbl_step1_foot2
+uplea.*##.cel_tbl_step1_foot3
+uplea.*##.cel_tbl_step1_title
+uplea.*##.cel_tbl_step1_user
+uplea.*##.cel_tbl_step1_user2
+uplea.*##.cel_tbl_step1_user3
+uplea.*##.premium_bg
+uplea.*##.preview_1
+uplea.*##.separator-hori
+uplea.*##.title_tbl_step1_user
+uplea.*##.title_tbl_step1_user2
+uplea.*##.title_tbl_step1_user3
+uplea.*##[style="height:150px;margin:auto;text-align: center;"]
+uplea.*###announce-home.announce-container
+uplea.*###announce-signin
+uplea.*###bg-login
+uplea.*###login-container
+uplea.*##IMG[src="/img/minilogo_header.png"]
+
+uploaded.*##.aB
+uploaded.*##.aT > td:nth-of-type(6)
+uploaded.*##.border
+uploaded.*##.prem
+uploaded.*##.report-btn[href="/takedown/notice"]
+uploaded.*##[href="/takedown/notice"]
+uploaded.*##[style="width:295px"]
+uploaded.*###dl_manager_box
+uploaded.*###foot
+uploaded.*###foot > div
+uploaded.*##B
+uploaded.*##SPAN[style="position: relative; top: -4px;"]
+uploaded.*##TD[style="width:294px"]
+uploaded.*##TH
+uploaded.*##tr:nth-of-type(12) > th > .border
+uploaded.*##tr.feature
+uploaded.*##tr.feature:nth-of-type(11) > td
+uploaded.*##tr.feature:nth-of-type(13)
+uploaded.*##tr.feature:nth-of-type(5) > td
+uploaded.*##tr.feature:nth-of-type(7) > td
+uploaded.*##tr.feature:nth-of-type(9) > td
+
+uploadrocket.*##.file_slot[style="width:728px;border:none;"]
+uploadrocket.*##.footer
+uploadrocket.*##.tbl_pre
+uploadrocket.*##.topnav
+uploadrocket.*##.topnavinner
+uploadrocket.*##[style="display:inline-block;"]
+uploadrocket.*##[style="font-size:24px;z-index:2001;position:relative;"]
+uploadrocket.*##[style="z-index:2001;position:relative;"]
+uploadrocket.*##[value="Premium Download (Fastest possible download from only $2.00)"]
+uploadrocket.*##DIV[style="width:970px; margin:0px auto; height:115px;"]
+uploadrocket.*##TD[style="text-align:center;vertical-align:top"][title]
+
+uppit.*##.button
+uppit.*##P
+
+upstream.to##.py-lg-4.py-3.header
+upstream.to##.p-lg-5.card-body
+upstream.to##.mb-lg-5.mb-4.justify-content-between.align-items-center.row
+https://upstream.to/assets/images/bg-5.svg$domain=upstream.to,image
+upstream.*##.videoname
+upstream.*###headerinside
+upstream.*###wrapper
+upstream.*##footer
+
+uptobox.*##.days
+uptobox.*##.offer_col
+uptobox.*##.tos
+uptobox.*##.vjs-default-skin[style="height:360px;width:640px;"]
+uptobox.*##[color="red"]
+uptobox.*##[href="http://uptobox.*/?op=resellers_list"]
+uptobox.*##[src="//uptobox.*/images/facebook_icon.png"]
+uptobox.*##[src="//uptobox.*/images/twitter_icon.png"]
+uptobox.*###copyright
+uptobox.*###footer
+uptobox.*###header
+uptobox.*##IMG[style="max-width:100%;width:100%;height:100%;"]
+
+upvid.*##.btns.clearing.segment.basic.ui
+upvid.*###foot
+upvid.*###t
+upvid.*##.text-right.col
+upvid.*###footer
+upvid.*###top
+
+urlcero.*##.text-left
+urlcero.*##div.banner-captcha.banner:nth-of-type(1)
+urlcero.*##div.banner-captcha.banner:nth-of-type(3)
+
+userscloud.*##.footer
+userscloud.*##.navbar.navbar-main.navbar-default.navbar-fixed-top.navbar-dropdown-hover
+userscloud.*##[data-toggle="modal"]
+userscloud.*##[href="//userscloud.*"]
+userscloud.*##[href="https://userscloud.*/dmca.html"]
+userscloud.*###player_code
+
+usersdrive.*##.content
+
+uv9ieb2ohr.*##.well-sm.form-horizontal
+
+vdocuments.*##.row
+vdocuments.*##.text-center > .text-center
+vdocuments.*##.text-center.margin-top-10 > div:nth-of-type(1) > p
+vdocuments.*###render-like
+
+veoh.*###RelatedVideosContainer
+
+ver-pelis.*###copy_right
+ver-pelis.*###footer
+ver-pelis.*###info_bottom_slider
+
+verbeinlaliga.*##.*mentlist
+verbeinlaliga.*##.sidebar_right
+verbeinlaliga.*##.textwidget
+verbeinlaliga.*##.videoinfo
+verbeinlaliga.*##.videoinfo > p:nth-of-type(6)
+verbeinlaliga.*###comments
+verbeinlaliga.*###footer
+verbeinlaliga.*###recent-comments-2
+verbeinlaliga.*###respond
+verbeinlaliga.*###text-8
+verbeinlaliga.*###text-8 > li > h3
+
+vercanalestv.*##.*ments
+vercanalestv.*##.headerad
+vercanalestv.*##.headercont
+vercanalestv.*##.postcont
+vercanalestv.*##.tags
+vercanalestv.*##.textsection
+vercanalestv.*###footerbtm
+vercanalestv.*###footerbtm > p
+vercanalestv.*###footerbtm > p
+vercanalestv.*###footertop
+vercanalestv.*###maincont
+vercanalestv.*###subcatcont
+
+vercanalestv1.*##.headercont
+vercanalestv1.*##.textsection
+vercanalestv1.*##[id*=adb-enabled]
+vercanalestv1.*##[id*=capa1]
+vercanalestv1.*##[id*=capaoverlay1]
+vercanalestv1.*##[id*=closeX1]
+vercanalestv1.*###cssmenu
+vercanalestv1.*###footerbtm
+vercanalestv1.*###footertop
+vercanalestv1.*###maincont
+vercanalestv1.*###subcatcont
+
+verdirectotv.*##.adsbox
+verdirectotv.*##.favor > ul
+verdirectotv.*##.nocomments
+verdirectotv.*##.sidebar_right
+verdirectotv.*##.videoinfo
+verdirectotv.*###footer
+verdirectotv.*###gb2
+verdirectotv.*###recent-posts-2 > li > ul > li:nth-of-type(1)
+verdirectotv.*###social
+verdirectotv.*##body > h2
+verdirectotv.*##center:nth-of-type(2)
+verdirectotv.*##h1
+
+verliga1.*##.cols-n3.sdbr-cn
+verliga1.*##.ftcn-2
+verliga1.*##.hdcn-2
+verliga1.*##.hdcn-3
+verliga1.*##article > footer
+verliga1.*##h1
+
+verplusonline.*##.*mentlist
+verplusonline.*##.csbwfs-hide
+verplusonline.*##.favor > ul
+verplusonline.*##.latestvideosb
+verplusonline.*##.postviewpart
+verplusonline.*##.sidebar_right
+verplusonline.*##.videoinfo > p:nth-of-type(1)
+verplusonline.*##.videoinfo > p:nth-of-type(3), p:nth-of-type(4), p:nth-of-type(5), p:nth-of-type(6), p:nth-of-type(7), p:nth-of-type(8), p:nth-of-type(9), p:nth-of-type(10)
+verplusonline.*##[id*=ads_link]
+verplusonline.*##[id*=cssmenu]
+verplusonline.*##[id*=divpubli]
+verplusonline.*###ae5c7v4
+verplusonline.*###bjws5vw
+verplusonline.*###comments
+verplusonline.*###csbwfs-social-inner
+verplusonline.*###divpubli
+verplusonline.*###exauxye
+verplusonline.*###footer
+verplusonline.*###h8tqr96
+verplusonline.*###header
+verplusonline.*###ikrehhg
+verplusonline.*###lk6me
+verplusonline.*###lkbyl
+verplusonline.*###lkdos
+verplusonline.*###lkfbk
+verplusonline.*###lkjsp
+verplusonline.*###lkpce
+verplusonline.*###lkzw
+verplusonline.*###ne1frs7
+verplusonline.*###p4jc7w5
+verplusonline.*###respond
+verplusonline.*##center > h1
+verplusonline.*##center:nth-of-type(2)
+verplusonline.*##center:nth-of-type(2)
+verplusonline.*##div.rightad:nth-of-type(1)
+verplusonline.*##p:nth-of-type(8)
+
+vertelevision.*##.ftcn-2
+vertelevision.*##.hdcn-2
+vertelevision.*##.hdcn-3
+vertelevision.*##.navtop
+vertelevision.*##[div id*="position:relative"]
+vertelevision.*##[div style="position:relative"]
+vertelevision.*##[id*=capa2]
+vertelevision.*##[id*=capaoverlay]
+vertelevision.*##[id*=closeX]
+vertelevision.*##[style="position:relative;"]
+vertelevision.*###categories-3
+vertelevision.*###categories-4
+vertelevision.*###tag_cloud-2
+vertelevision.*###tag_cloud-3
+vertelevision.*##article > footer
+vertelevision.*##h1
+vertelevision.*##html > body > table > tbody > tr > td
+vertelevision.*##position:relative
+
+vertutele.*##.latestvideosb
+vertutele.*##.sidebar_right
+vertutele.*##.videoinfo
+vertutele.*##[class=logo_overlay]
+vertutele.*##[class=timerDiv]
+vertutele.*##[id*=timerDiv]
+vertutele.*###[id*=video_ads_overdiv]
+vertutele.*###footer
+vertutele.*###gb2
+vertutele.*###header
+vertutele.*###respond
+vertutele.*###video_ads_overdiv
+vertutele.*##div.latestpart:nth-of-type(2)
+vertutele.*##video_ads_overdiv.video_ads_overdiv
+
+verystream.*##.navbar-dark.navbar-expand-lg.navbar
+verystream.*###footer
+verystream.*##div.row:nth-of-type(2)
+
+veseriesonline.*##.footer
+veseriesonline.*##.owl-stage
+veseriesonline.*##.series-container > div > div
+veseriesonline.*##.series-container > div > div > div:nth-of-type(1)
+veseriesonline.*##.series-container > div > div > div:nth-of-type(1) > div
+veseriesonline.*##.single-information > div
+veseriesonline.*##.single-information > div > div
+veseriesonline.*##.single-information > div > div > div:nth-of-type(1)
+veseriesonline.*##.single-information > div > div > div:nth-of-type(1)
+veseriesonline.*###opt0 > .container-video > .video
+
+vibbo.*##.advertisingRight
+vibbo.*###PubTop1
+
+videofiles.*###container > div
+
+vinted.*##.feed-grid__item--full-row.feed-grid__item
+
+vshare.*##.primary-header
+
+waaw.*##.ipprtcnt
+
+web.archive.*##.caroufredsel_wrapper
+web.archive.*##.container > .row
+web.archive.*##.wbs__web_footer
+web.archive.*##.web_carousel
+web.archive.*##footer
+
+wikiseriesonline.*##.ads.row > .col-lg-12:nth-of-type(1)
+wikiseriesonline.*##.ads.row > .col-lg-12:nth-of-type(2) > .embed-responsive-16by9.embed-responsive
+wikiseriesonline.*##.barraPlus1
+wikiseriesonline.*##.box-aviso.row
+wikiseriesonline.*##.box-repro-social.row
+wikiseriesonline.*##.col-md-6:nth-of-type(2) > .ads
+wikiseriesonline.*###siguenos
+wikiseriesonline.*##footer
+
+windowscentral.*##.clearfixb.clearfix.page-header
+
+windowsreport.*##.code-block-2.code-block > div
+windowsreport.*##.single-content-section--title.single-content-section.text-center > div
+
+xataka.*##.ad-cen.ad
+
+xiaomi.*##.p-footer-copyrightRow
+xiaomi.*##.uix_extendedFooter
+xiaomifirmware.*##.jconfirm-open.jconfirm-08d91d82f04bcd4c0736.jconfirm
+
+youtube.*##.video-ads
+youtube.*##.ytp-ce-element
+youtube.*###clarify-box > .ytd-watch-flexy.style-scope
+
+zalex.stackstorage.*##.mediaboard__container
+
+zmovs.*##.jgdDDUaf.b1unPja1
+zmovs.*##.js-close-banner.close-banner
+zmovs.*##.uqQjI4jk.f2nHZ0bY
+
+! 2021-10-30 http://givemenbastreams.com
+givemenbastreams.*##.lg\:w-4\/12.w-full
+givemenbastreams.*##.lg\:w-3\/12.overflow-hidden.rounded.w-full
+
+! 2021-10-30 https://www.sofascore.com
+sofascore.*##.hlKyED.Carousel__Wrapper-sc-1wpuc03-1
+sofascore.*##.klvhnU.styles__AdvertisementLabel-sc-wmffjx-0
+sofascore.*##.bAPEIo.styles__Wrapper-sc-jh4ae5-0
+sofascore.*##.bMLcxp.styles__Container-sc-7v206h-0 > .jHgtps.Cell-sc-t6h3ns-0 > div.cxVOdB.Section-sc-umtr2b-0
+sofascore.*##.hTknZO.styles__AdvertisementLabel-sc-wmffjx-0
+sofascore.*##.ceZwgr.FooterStyles__Wrapper-sc-1vdhzyg-0
+
+! 2021-10-30 https://streamplay.to
+streamplay.to##form > div
+
+! 2021-10-30 https://cloudvideo.tv
+cloudvideo.*##.slim-header
+cloudvideo.*##.row-sm.row > .col-lg-12
+cloudvideo.*##.pd-t-180
+cloudvideo.*##.slim-footer
+cloudvideo.*##.vjs-poster
+
+! 2021-10-30 https://chiwitv.blogspot.com
+chiwitv.blogspot.com##div.separator:nth-of-type(1)
+chiwitv.blogspot.com##.header-wrap
+chiwitv.blogspot.com##div.separator:nth-of-type(2)
+chiwitv.blogspot.com###post-body-4282307355730146820 > div
+chiwitv.blogspot.com##.PopularPosts.widget
+chiwitv.blogspot.com##.blog-pager
+chiwitv.blogspot.com##div.separator:nth-of-type(3)
+chiwitv.blogspot.com##div.separator:nth-of-type(4)
+chiwitv.blogspot.com###SocialShareBar
+chiwitv.blogspot.com###related-posts
+chiwitv.blogspot.com###tzy-credit
+
+! 2021-10-30 http://usfinf.net
+usfinf.net###rf
+
+! 2021-10-30 https://cuevana.pro
+cuevana.pro##div.front-content.cpa:nth-of-type(1)
+cuevana.pro##div.front-content.cpa:nth-of-type(4)
+
+! 2021-10-30 https://cuevana3.io
+cuevana3.io##section:nth-of-type(1)
+cuevana3.io##.nonok.ft
+
+! 2021-10-30 https://tny.so
+tny.so##.pt-3
+tny.so##.short-content
+
+! 2021-10-30 https://vergnula.com
+vergnula.com##.lazyloaded.size-full.wp-image-13856.aligncenter
+
+! 2021-10-31 https://hdfull.fm
+hdfull.fm##[src="https://onlystream.tv/embed-g2j30vgufsjh-920x360.html"]
+||onlystream.tv/embed-*-920x360.html$subdocument
+||vev.io/embed-OJZemQ2Y0VTZpKA-920x360.html$subdocument
+hdfull.fm##[src="https://vev.io/embed-paO80M7Ka1HxAJ-920x360.html"]
+hdfull.fm##.embed-movie
+
+! 2021-10-31 https://televisionlibre.net
+televisionlibre.net##.wp-reviews
+
+! 2021-11-04 https://sharemods.com
+sharemods.com###footer
+sharemods.com##.agreement-text
+sharemods.com##.how-to-download
+
+! 2021-11-06 https://consumer.huawei.com
+consumer.huawei.com###listBanner
+
+! 2021-11-14 https://www.ccma.cat
+www.ccma.cat###contenidor_megabanner
+www.ccma.cat##.smart_FORMAT_ROBA1.M-publicitat
+www.ccma.cat###contenidor_megabanner2
+www.ccma.cat##.smart_FORMAT_ROBA2.M-publicitat
+www.ccma.cat##.smart_FORMAT_ROBA2.M-publicitat
+
+! 2021-11-14 https://1.vecdn.pw
+||1.vecdn.pw/img/bgs.png$image
+
+! 2021-11-16 https://ustvgo.tv
+ustvgo.tv##.clearfix.entry-content > strong
+ustvgo.tv###header-text-nav-container > .inner-wrap > .clearfix
+
+! 2021-11-16 http://www.jackstream.net
+jackstream.*##.alert-success.alert
+jackstream.*##div.card-body > .panel-title
+
+! 2021-11-17 http://www.live7v.com
+www.live7v.com##.entry-header
+
+! 2021-11-18 https://megatelevisionhd.com
+megatelevisionhd.com##.card-description
+megatelevisionhd.com##.footer
+megatelevisionhd.com##h1
+
+! 2021-11-18 https://verplusonline.live
+verplusonline.live##.crp_related
+verplusonline.live##.entry-header
+verplusonline.live##.page-header
+
+! 2021-11-18 https://www.batstream.live
+www.batstream.live##.well.p
+
+! 2021-11-18 http://cdn.laola1.live
+cdn.laola1.live##div:nth-of-type(6)
+cdn.laola1.live##.post
+
+! 2021-11-18 http://live.harleyquinnwidget.live
+live.harleyquinnwidget.live###liveevent950274 > .insideslidebg > tbody > tr > td > .otherads
+
+! 2021-11-18 https://www.verseriesgratis.net
+www.verseriesgratis.net##p:nth-of-type(2)
+www.verseriesgratis.net###btop
+www.verseriesgratis.net###footer
+www.verseriesgratis.net##.info-video > p
+www.verseriesgratis.net##.info-video > h2
+www.verseriesgratis.net##.relacionados > h2
+www.verseriesgratis.net##.header-top
+www.verseriesgratis.net##.back-video.video-top
+
+! 2021-11-19 https://televisiongratisenvivo.com
+televisiongratisenvivo.com##.entry-content > ul
+televisiongratisenvivo.com##.col-lg-4.col-sm-12.widget-area
+televisiongratisenvivo.com##.entry-header
+
+! 2021-11-19 https://www.supertelevisionhd.net
+www.supertelevisionhd.net##.mh-site-logo
+www.supertelevisionhd.net##p:nth-of-type(3)
+www.supertelevisionhd.net##.mh-copyright-wrap
+www.supertelevisionhd.net##.entry-title
+www.supertelevisionhd.net##.mh-container-outer.mh-container > center
+
+! 2021-11-19 https://www.televisiongratishd.com
+televisiongratishd.*##aside#secondary.widget-area:nth-of-type(1)
+www.televisiongratishd.com##.site-footer
+www.televisiongratishd.com###chat-online
+www.televisiongratishd.com##p:nth-of-type(3)
+www.televisiongratishd.com##p:nth-of-type(4)
+www.televisiongratishd.com##a[href="https://www.televisiongratishd.com/tnt-en-vivo.html"]
+www.televisiongratishd.com##font
+www.televisiongratishd.com##.btn-block.btn-white.btn-danger.btn
+www.televisiongratishd.com##.form-control
+www.televisiongratishd.com##p:nth-of-type(5)
+www.televisiongratishd.com##.entry-content > hr
+www.televisiongratishd.com###main > hr
+www.televisiongratishd.com##.alert-danger.alert
+www.televisiongratishd.com##aside#secondary.widget-area
+www.televisiongratishd.com##.np-logo-section-wrapper
+www.televisiongratishd.com##.entry-header > center
+www.televisiongratishd.com###post-34 > hr
+www.televisiongratishd.com##.np-header-menu-block-wrap
+www.televisiongratishd.com###np-menu-wrap-sticky-wrapper
+
+! 2021-11-19 https://www.vipboxtv.se
+www.vipboxtv.se##h1
+www.vipboxtv.se##.m-1.fw-bold.btn-danger.btn
+www.vipboxtv.se##.text-warning
+www.vipboxtv.se##h2
+www.vipboxtv.se##.d-none.d-lg-block.col-lg-3
+www.vipboxtv.se##.mt-1.text-center
+www.vipboxtv.se##a.text-success.mx-1
+
+! 2021-11-19 https://www.vipbox.lc
+www.vipbox.lc##.w-100.text-center.h-100
+www.vipbox.lc##.d-none.d-lg-block.col-lg-3
+www.vipbox.lc##p
+www.vipbox.lc##h2
+www.vipbox.lc##div.text-center.row > .col-12
+www.vipbox.lc##.mt-1.text-center
+
+! 2021-11-19 http://emb.apl86.me
+emb.apl86.me###adbtm
+emb.apl86.me##.adv-player-container
+
+! 2021-11-19 http://www.sports-stream.site
+www.sports-stream.site###e11 > div
+www.sports-stream.site###e11
+
+*###floatLayer1
+*###ldhemsHtml11
+
+! 2021-11-19 https://mebystreams.xyz
+mebystreams.xyz##div
+
+! 2021-11-19 https://daddylive.me
+daddylive.me##div
+*##a.tg-button
+
+! 2021-11-19 https://s7yours.com
+
+! 2021-11-20 https://www.sofascore.com
+www.sofascore.com##.btXZgV.styles__Wrapper-sc-jh4ae5-0
+
+! 2021-11-20 https://pelis28.info
+pelis28.info##.alert
+pelis28.info##.comentarios
+pelis28.info###footer
+
+! 2021-11-21 https://1.vecdn.pw
+1.vecdn.pw###adholder
+
+! 2021-11-21 http://assia2.com
+assia2.com###\35 674s
+
+! 2021-11-21 https://pelisplus.icu
+pelisplus.icu##[href^="https://metagtx.xyz/worker/direct"]
+pelisplus.icu##[href^="https://metagle.xyz/worker/direct"]
+
+! 2021-11-22 https://disqus.com
+disqus.com###thread__wrapper
+
+! 2021-11-22 https://www.pelis28.me
+www.pelis28.me###M538685ScriptRootC820163
+
+! 2021-11-27 https://all.ive.zone
+all.ive.zone###holdon
+
+*pumolt.com
+*acacdn.com
+*overlay_video
+
+! 2021-11-27 https://1.vecdn.pw
+||1.vecdn.pw/img/bgs.png$image
+
+! 2021-11-29 https://www.solvetic.com
+www.solvetic.com###ad_strip
+
+! 2021-12-04 http://fomny.com
+||fomny.com/Menu2/Interstitial.php$subdocument
+fomny.com##td.petit
+fomny.com##.petit2 > div
+fomny.com##table:nth-of-type(12)
+||fomny.com/*.php$subdocument
+fomny.com###corporate_background3 > table > tbody > tr > td
+fomny.com###corporate_background2
+
+! 2021-12-04 https://televisiongratisenvivo.com
+televisiongratisenvivo.com##.cli-bar-popup.cli-modal-content
+televisiongratisenvivo.com###cookie-law-info-bar
+televisiongratisenvivo.com##hr
+
+! 2021-12-04 https://cablegratis.online
+cablegratis.online##h2
+
+cablegratis.online##.py-5.site-footer
+cablegratis.online##.post-navigation.navigation
+cablegratis.online##.entry-content > h1
+cablegratis.online##.entry-header
+cablegratis.online##hr:nth-of-type(2)
+cablegratis.online##hr:nth-of-type(1)
+cablegratis.online##center
+cablegratis.online##ul:nth-of-type(2)
+cablegratis.online##.entry-content > ul
+cablegratis.online##p
+cablegratis.online###menu-item-2098 > .nav-link
+
+! 2021-12-04 http://fomny.com
+
+fomny.com##.bouton1
+fomny.com##.\.\.\. > tbody > tr > td
+fomny.com##.hide-on-mobile000 > tbody > tr > td
+
+! 2021-12-04 https://lookmovie101.xyz
+lookmovie101.xyz##.ht-footer
+lookmovie101.xyz##.player-external-controls
+
+! 2021-12-04 https://diasfem.com
+diasfem.com##.hero-foot
+
+! 2021-12-05 https://forum.xda-developers.com
+forum.xda-developers.com###xdadevelopers_leaderboard_atf
+
+! 2021-12-05 http://www.sports-stream.site
+www.sports-stream.site###reklama1
+
+! 2021-12-05 http://emb.apl93.me
+emb.apl93.me###ads > table > tbody > tr > td
+emb.apl93.me###ads > table
+emb.apl93.me##.ad-1.adv-ad
+emb.apl93.me###adbtm
+emb.apl93.me##.ad-2.adv-ad
+emb.apl93.me##.ad-0.adv-ad
+emb.apl93.me##.ad-0.adv-ad > .close
+
+! 2021-12-05 http://emb.apl91.me
+emb.apl91.me###ads
+emb.apl91.me###adbtm
+emb.apl91.me##.ad-2.adv-ad
+emb.apl91.me##.ad-1.adv-ad
+emb.apl91.me##.ad-0.adv-ad
+
+! 2021-12-05 http://emb.x160624.apl93.me
+emb.x160624.apl93.me##td > table
+emb.x160624.apl93.me###ads > table > tbody > tr > td
+emb.x160624.apl93.me###ads > table
+emb.x160624.apl93.me###ads
+emb.x160624.apl93.me##.ad-2.adv-ad
+emb.x160624.apl93.me###adbtm
+emb.x160624.apl93.me##.ad-0.adv-ad
+emb.x160624.apl93.me##.ad-1.adv-ad
+
+! 2021-12-05 http://emb.apl93.me
+emb.apl93.me###ads
+
+! 2021-12-11 https://em.bedsport.live
+em.bedsport.live###adholder
+
+! 2021-12-12 http://www.live7v.com
+www.live7v.com##.col-sm-12 > .text-center
+www.live7v.com##.btn-sm.btn-success.btn
+
+! 2021-12-12 http://emb.apl95.me
+emb.apl95.me###ads > table > tbody > tr > td
+emb.apl95.me###adbtm
+emb.apl95.me##.ad-2.adv-ad
+emb.apl95.me##.ad-1.adv-ad
+emb.apl95.me##.ad-0.adv-ad
+
+! 2021-12-12 https://daddylive.click
+daddylive.click##.col-sm-3
+daddylive.click##footer
+daddylive.click##div.alert-dismissible.alert-success.alert:nth-of-type(5)
+daddylive.click##.html-marquee
+daddylive.click##center > div
+daddylive.click##div.alert-dismissible.alert-success.alert:nth-of-type(1)
+daddylive.click##div.alert-dismissible.alert-success.alert:nth-of-type(4)
+
+! 2021-12-12 http://blif.me
+blif.me##.alert-secondary.alert-dismissible.alert
+
+! 2021-12-12 https://daddylive.click
+daddylive.click##div.alert-dismissible.alert-success.alert:nth-of-type(2)
+daddylive.click##body > center
+
+! 2021-12-12 https://cricfree.live
+cricfree.live##.chat_container.col-lg-4.col-md-12.col-sm-12
+cricfree.live##.bg-dark.py-5
+cricfree.live##textarea
+
+! 2021-12-17 http://emb.apl96.me
+emb.apl96.me###ads > table > tbody > tr > td
+emb.apl96.me###adbtm
+emb.apl96.me###ads > table
+emb.apl96.me##.ad-1.adv-ad
+emb.apl96.me##.ad-2.adv-ad
+emb.apl96.me##.ad-0.adv-ad
+
+! 2021-12-17 http://www.jokersplayer.xyz
+||jokersplayer.xyz/ad1.php$subdocument
+||jokersplayer.xyz/ad1.php$subdocument
+www.jokersplayer.xyz###ads
+www.jokersplayer.xyz##snackbar
+
+emb.apl96.me###ads > table > tbody > tr > td
+emb.apl96.me###adbtm
+emb.apl96.me###ads > table
+emb.apl96.me##.ad-1.adv-ad
+emb.apl96.me##.ad-2.adv-ad
+emb.apl96.me##.ad-0.adv-ad
+
+! 2021-12-17 http://www.jokersplayer.xyz
+*ad1.php$subdocument
+*###ads
+*##snackbar
+
+! 2021-12-18 http://fomny.com
+fomny.com##.hide-on-mobile000
+
+! 2021-12-18 http://emb.apl97.me
+emb.apl97.me###ads > table > tbody > tr > td
+emb.apl97.me###adbtm
+emb.apl97.me###ads > table
+emb.apl97.me##.ad-2.adv-ad
+emb.apl97.me##.ad-0.adv-ad
+emb.apl97.me##.ad-1.adv-ad
+
+! 2021-12-18 http://emb.x161998.apl97.me
+emb.x161998.apl97.me##td > table
+emb.x161998.apl97.me###adbtm
+
+! 2021-12-18 http://blif.me
+blif.me##.alert-primary.alert-dismissible.alert
+
+! 2021-12-19 https://fbstream.tv
+fbstream.tv##.text-warning
+fbstream.tv##p:nth-of-type(1)
+fbstream.tv##h2
+fbstream.tv##a.text-info.mx-1
+fbstream.tv##.col-xl-4.col-12
+fbstream.tv##.justify-content-evenly.row > .col-lg-4.col-12
+fbstream.tv##.top-0.text-dark.bg-opacity-25.bg-light.w-100.position-absolute.h-100
+fbstream.tv##.m-1.btn-primary.btn-lg.btn
+fbstream.tv##.me-1.text-secondary
+
+! 2021-12-19 http://fomny.com
+fomny.com##.div\.fixed > table > tbody > tr > td
+
+! 2021-12-23 http://streamgo.to
+streamgo.to##div.alert-secondary.alert-dismissible.alert:nth-of-type(1)
+streamgo.to##div.alert-secondary.alert-dismissible.alert:nth-of-type(3)
+streamgo.to##.clearfix
+streamgo.to##.page-header
+
+! 2021-12-23 https://streamgoto.me
+streamgoto.me##.float-left
+
+! 2021-12-23 http://streamgo.to
+anonima.*##div.alert-secondary.alert-dismissible.alert:nth-of-type(1)
+anonima.*##div.alert-secondary.alert-dismissible.alert:nth-of-type(3)
+anonima.*##.clearfix
+anonima.to*##.page-header
+anonima.*##.float-left
+
+! 2022-02-12 http://xxxxx.to
+xxxxx.to##.page-header
+!xxxxx.*##.page-header
+xxxxx.*##div.alert-secondary.alert-dismissible.alert:nth-of-type(1)
+xxxxx.*##div.alert-secondary.alert-dismissible.alert:nth-of-type(3)
+
+! 2021-12-26 https://pelis247.org
+pelis247.org##p > b
+pelis247.org##p:nth-of-type(3)
+pelis247.org##p:nth-of-type(4)
+pelis247.org##.final
+
+! 2021-12-27 http://emb.apl99.me
+emb.apl99.me##.ad-2.adv-ad
+emb.apl99.me###adbtm
+emb.apl99.me##.ad-1.adv-ad
+emb.apl99.me##.ad-0.adv-ad
+
+! 2021-12-27 https://www.usagoals.sx
+||cdn777.*/site/roja-directa.png$image
+||cdn777.*/site/usagoals/img/logo_usagoals.jpg$image
+usagoals.*/img/logo.svg$image
+!usagoals.*##.bg-success.navbar-dark.navbar-expand-lg.navbar
+usagoals.*##.button.black
+usagoals.*##.center.black.button
+usagoals.*##.center.black.button > p:nth-of-type(1)
+usagoals.*##.center.black.button > p:nth-of-type(2)
+usagoals.*##.col-sm-3
+usagoals.*##.col-sm-9 > .text-center
+usagoals.*##.col-sm-9 > div.text-center
+usagoals.*##.content-right
+usagoals.*##.contentwrap-right
+usagoals.*##.float-right
+usagoals.*##.footer-copyright
+usagoals.*##.sidebarhd:nth-of-type(1)
+usagoals.*##.sidebarhd:nth-of-type(2)
+usagoals.*##.site-footer > .black.button
+usagoals.*##.site-footer > .black.button > p
+usagoals.*##.site-header
+usagoals.*##.site-header > .white.button
+usagoals.*##.site-title
+usagoals.*##.Titledesc
+usagoals.*##[href="#"] > span
+usagoals.*###.clappr-overlay-plugin
+usagoals.*###[id*=banner]
+usagoals.*###closebtn
+usagoals.*###container
+usagoals.*###container2
+usagoals.*###credits
+usagoals.*###div > div ad-overlay2
+usagoals.*##footer
+usagoals.*###footer
+usagoals.*###footer_overlay
+!usagoals.*###header
+usagoals.*###overlay_content
+usagoals.*###overlay_countdown
+usagoals.*###recent-ads-4
+usagoals.*###sidebar
+usagoals.*##a[href="#"] > span
+usagoals.*##center
+usagoals.*##div [id^="ltas_overlay_Player1256537976911"]
+usagoals.*##div [id^="ltas_overlay_Player1256537976911"], ##div [id^="box99890"]
+usagoals.*##em:nth-of-type(1) > strong
+usagoals.*##h5
+usagoals.*##h6
+!usagoals.*##p
+usagoals.*##p.text-center
+!usagoals.*##strong
+usagoals.*##p:nth-of-type(1)
+usagoals.*##h3
+
+||cdn777.*/site/roja-directa.png$image
+||cdn777.*/site/usagoals/img/logo_streambee.jpg$image
+streambee.*/img/logo.svg$image
+!streambee.*##.bg-success.navbar-dark.navbar-expand-lg.navbar
+streambee.*##.button.black
+streambee.*##.center.black.button
+streambee.*##.center.black.button > p:nth-of-type(1)
+streambee.*##.center.black.button > p:nth-of-type(2)
+streambee.*##.col-sm-3
+streambee.*##.col-sm-9 > .text-center
+streambee.*##.col-sm-9 > div.text-center
+streambee.*##.content-right
+streambee.*##.contentwrap-right
+streambee.*##.float-right
+streambee.*##.footer-copyright
+streambee.*##.sidebarhd:nth-of-type(1)
+streambee.*##.sidebarhd:nth-of-type(2)
+streambee.*##.site-footer > .black.button
+streambee.*##.site-footer > .black.button > p
+streambee.*##.site-header
+streambee.*##.site-header > .white.button
+streambee.*##.site-title
+streambee.*##.Titledesc
+streambee.*##[href="#"] > span
+streambee.*###.clappr-overlay-plugin
+streambee.*###[id*=banner]
+streambee.*###closebtn
+streambee.*###container
+streambee.*###container2
+streambee.*###credits
+streambee.*###div > div ad-overlay2
+streambee.*##footer
+streambee.*###footer
+streambee.*###footer_overlay
+!streambee.*###header
+streambee.*###overlay_content
+streambee.*###overlay_countdown
+streambee.*###recent-ads-4
+streambee.*###sidebar
+streambee.*##a[href="#"] > span
+streambee.*##center
+streambee.*##div [id^="ltas_overlay_Player1256537976911"]
+streambee.*##div [id^="ltas_overlay_Player1256537976911"], ##div [id^="box99890"]
+streambee.*##em:nth-of-type(1) > strong
+streambee.*##h5
+streambee.*##h6
+!streambee.*##p
+streambee.*##p.text-center
+!streambee.*##strong
+streambee.*##p:nth-of-type(1)
+streambee.*##h3
+
+live7v.*##.col-sm-3
+live7v.*##.col-sm-9 > .text-center
+live7v.*##.page-header
+live7v.*##footer
+
+! 2021-12-27 https://www.4stream.
+||cdn777.*/site/roja-directa.png$image
+||cdn777.*/site/4stream/img/logo_4stream.jpg$image
+4stream.*/img/logo.svg$image
+!4stream.*##.bg-success.navbar-dark.navbar-expand-lg.navbar
+4stream.*##.button.black
+4stream.*##.center.black.button
+4stream.*##.center.black.button > p:nth-of-type(1)
+4stream.*##.center.black.button > p:nth-of-type(2)
+4stream.*##.col-sm-3
+4stream.*##.col-sm-9 > .text-center
+4stream.*##.col-sm-9 > div.text-center
+4stream.*##.content-right
+4stream.*##.contentwrap-right
+4stream.*##.float-right
+4stream.*##.footer-copyright
+4stream.*##.sidebarhd:nth-of-type(1)
+4stream.*##.sidebarhd:nth-of-type(2)
+4stream.*##.site-footer > .black.button
+4stream.*##.site-footer > .black.button > p
+4stream.*##.site-header
+4stream.*##.site-header > .white.button
+4stream.*##.site-title
+4stream.*##.Titledesc
+4stream.*##[href="#"] > span
+4stream.*###.clappr-overlay-plugin
+4stream.*###[id*=banner]
+4stream.*###closebtn
+4stream.*###container
+4stream.*###container2
+4stream.*###credits
+4stream.*###div > div ad-overlay2
+4stream.*##footer
+4stream.*###footer
+4stream.*###footer_overlay
+!4stream.*###header
+4stream.*###overlay_content
+4stream.*###overlay_countdown
+4stream.*###recent-ads-4
+4stream.*###sidebar
+4stream.*##a[href="#"] > span
+4stream.*##center
+4stream.*##div [id^="ltas_overlay_Player1256537976911"]
+4stream.*##div [id^="ltas_overlay_Player1256537976911"], ##div [id^="box99890"]
+4stream.*##em:nth-of-type(1) > strong
+4stream.*##h5
+4stream.*##h6
+!4stream.*##p
+4stream.*##p.text-center
+!4stream.*##strong
+4stream.*##p:nth-of-type(1)
+4stream.*##h3
+4stream.*##.page-header
+
+! 2022-02-12 http://streambee.to
+streambee.to##.col-sm-12 > .text-center
+streambee.to##.container > .text-center
+streambee.to##.btn-sm.btn-success.btn
+streambee.*##.col-sm-3
+streambee.*##.col-sm-9 > .text-center
+streambee.*##.page-header
+streambee.*##footer
+
+! 2021-12-29 https://www.lavanguardia.com
+||stories.lavanguardia.com/especial/suscripciones/pti/LV_WEB_Cintillo_1366x250_05.png$image
+www.lavanguardia.com##.info-drtp-wrapper
+
+! 2022-01-01 http://emb.apl100.me
+emb.apl100.me###ads > table > tbody > tr > td
+emb.apl100.me###ads > table
+emb.apl100.me###ads
+
+! 2022-01-06 https://www.infobae.com
+www.infobae.com##.span-rail
+www.infobae.com##.ad-wrapper.exp_push_1_970x250
+www.infobae.com##.navbar-ad-container
+www.infobae.com##.right-rail
+
+! 2022-01-23 http://emb.apl105.me
+emb.apl105.me###ads
+emb.apl105.me##.ad-2.adv-ad
+emb.apl105.me###adbtm
+emb.apl105.me##.ad-1.adv-ad
+emb.apl105.me##.ad-0.adv-ad
+
+! 2022-01-23 http://var16.ru
+var16.ru##.wrap-overlay
+
+! 2022-01-23 https://www.tokyvideo.com
+www.tokyvideo.com##.ads-topbar
+www.tokyvideo.com##.wrapper__videopage.wrapper > .wrapper
+www.tokyvideo.com###overlay-video
+
+! 2022-01-30 http://emb.apl107.me
+emb.apl107.me###ads
+emb.apl107.me###adbtm
+emb.apl107.me##.ad-0.adv-ad
+emb.apl107.me##.ad-1.adv-ad
+emb.apl107.me##.ad-2.adv-ad
+
+! 2022-02-02 https://www.economiadigital.es
+www.economiadigital.es###header-ad
+
+! 2022-02-04 https://macron.xyz
+||1.bp.blogspot.com/-9yI5UQQdjLo/Wr5sIe3_KTI/AAAAAAAAACY/4ir3yjU8Gc8sPXA5LNBcAKX3VNhs7R5XwCK4BGAYYCw/s400/close.png$image
+
+! 2022-02-04 http://emb.apl108.me
+emb.apl108.me##.ad-2.adv-ad
+emb.apl108.me###adbtm
+emb.apl108.me##.ad-1.adv-ad
+emb.apl108.me##.ad-0.adv-ad
+emb.apl108.me###ads > table > tbody > tr > td
+
+! 2022-02-04 https://macron.xyz
+macron.xyz###html3
+
+! 2022-02-04 https://s7yours.com
+s7yours.com##div.js-div:nth-of-type(7)
+s7yours.com##div.js-div:nth-of-type(8)
+||static.s7yours.com/telegram.png$image
+||static.s7yours.com/telegram.png$image
+s7yours.com##[src="https://static.s7yours.com/telegram.png"]
+||static.s7yours.com/showads.js$script,1p
+
+! 2022-02-04 https://livesports4u.pw
+livesports4u.pw###localpp
+
+! 2022-02-04 https://www.jokerlivestream.xyz
+www.jokerlivestream.xyz###iframe_preview
+
+! 2022-02-04 http://live.jokerswidget.org
+live.jokerswidget.org##.f1-footer
+live.jokerswidget.org##.f1-bg--colorTheme.f1-color--white.f1-bg--carbonBlack.f1-race-hub--latest
+
+! 2022-02-04 https://play.doalsm.xyz
+||play.doalsm.xyz/ad1.php$other,domain=play.doalsm.xyz
+
+! 2022-02-04 http://play.doalsm.xyz
+play.doalsm.xyz###ads
+||play.doalsm.xyz/ad1.php$subdocument
+
+! 2022-02-04 http://live.jokerswidget.org
+live.jokerswidget.org##.sidebar-chat.no-bottom-padding.no-top-padding.no-right-padding.f1-border-color--gray6.f1-border--three-right
+live.jokerswidget.org##.content-header
+
+! 2022-02-04 https://www.jokerlivestream.xyz
+www.jokerlivestream.xyz##.f1-footer
+www.jokerlivestream.xyz##.sidebar.col-xl-3
+www.jokerlivestream.xyz##.f1-bg--colorTheme.f1-color--white.f1-bg--carbonBlack.f1-race-hub--latest
+
+! 2022-02-05 http://var16.ru
+var16.ru##div:nth-of-type(1)
+
+! 2022-02-05 http://live.jokerswidget.org
+live.jokerswidget.org##.table-header-group.nav-global
+
+! 2022-02-05 https://www.jokerlivestream.xyz
+www.jokerlivestream.xyz##.category-description.section-description
+
+! 2022-02-05 https://winaero.com
+winaero.com##.entry-content > div
+winaero.com###content > div > p
+winaero.com###content > div > .adsbygoogle
+winaero.com###custom_html-2
+winaero.com###custom_html-10
+winaero.com###dfsfsdfs-asdasd-2
+
+! 2022-02-05 https://www.tenforums.com
+||www.tenforums.com/img/2020bg1pxa.png$image
+||www.tenforums.com/img/2020bg1pxa.png$image
+www.tenforums.com##.chill.postcontainer.postbitim.postbitlegacy
+www.tenforums.com##.ft1
+www.tenforums.com###thread_info > div
+www.tenforums.com###navbar_notice_7
+
+! 2022-02-12 https://lookmovie163.xyz
+lookmovie163.xyz##.player-external-controls
+lookmovie163.xyz##.ht-footer
+
+! 2022-02-13 https://www.pelisxd.com
+www.pelisxd.com##.ocfgqxeuphza-wrapper
+www.pelisxd.com##.active.ocfgqxeuphza-blackout
+
+! 2022-02-13 https://seriesestreno.com
+seriesestreno.com##.dooplay_player > h2
+
+! 2022-02-16 https://www.mindaliatelevision.com
+www.mindaliatelevision.com##.elementor-popup-modal.dialog-type-lightbox.dialog-type-buttons.dialog-lightbox-widget.dialog-widget
+||www.mindaliatelevision.com/wp-content/themes/sahifa/images/patterns/body-bg44.png$image
+www.mindaliatelevision.com##.show-check-also.check-also-left.post-listing
+
+! 2022-02-19 http://gamovideo.com
+gamovideo.com###pu-pomu
+gamovideo.com###pu-popu
+gamovideo.com###pu-pomp
+
+! 2022-02-20 https://www.howtogeek.com
+www.howtogeek.com##.adslot970.adslot
+
+! 2022-02-20 https://forums.windowscentral.com
+forums.windowscentral.com###Leaderboard_Header_ATF-wrap
+
+! 2022-02-20 https://pendriveapps.com
+pendriveapps.com##body > .ezmob-footer-desktop.ezo_ad.ezoic-floating-bottom.ezmob-footer
+pendriveapps.com##.adtester-container-131.adtester-container.medrectangle-1131.medrectangle-1.ezoic-ad
+pendriveapps.com##.ez-sticky.adtester-container-121.adtester-container.banner-2121.banner-2.ezoic-ad
+pendriveapps.com##.adtester-container-129.adtester-container.box-2129.box-2.ezoic-ad
+pendriveapps.com##.adtester-container-107.adtester-container.medrectangle-3107.medrectangle-3.ezoic-ad
+
+! 2022-02-20 https://www.thewindowsclub.com
+www.thewindowsclub.com###ezmobfooter > center
+
+! 2022-02-20 https://uploadrar.com
+uploadrar.com##div.download0page > .blockpage
+uploadrar.com##footer
+uploadrar.com###footer2
+uploadrar.com##.menufooter
+uploadrar.com###news_last
+uploadrar.com##.blockpage > .adsbygoogle
+uploadrar.com##.txt
+uploadrar.com###commonId > .adsbygoogle
+uploadrar.com##.btn-lg.btn-info.btn
+
+! 2022-02-20 https://www.raymond.cc
+www.raymond.cc###adngin-sidebar_1-0
+www.raymond.cc###text-14 > .textwidget
+www.raymond.cc##.adsbygoogle
+www.raymond.cc##.adslot_1
+
+! 2022-02-23 https://www.winhelponline.com
+www.winhelponline.com##.ezoic-ad-adaptive.adtester-container-109.adtester-container.box-2109.box-2.ezoic-ad
+www.winhelponline.com##body > .ezmob-footer-desktop.ezo_ad.ezoic-floating-bottom.ezmob-footer
+www.winhelponline.com##.adtester-container-138.adtester-container.box-3138.box-3.ezoic-ad
+www.winhelponline.com##.adtester-container-112.adtester-container.banner-1112.banner-1.ezoic-ad
+
+! 2022-02-25 https://assia4.com
+assia4.com###\35 674s
+assia4.com##.clappr-watermark
+
+! 2022-02-26 https://www.thewindowsclub.com
+www.thewindowsclub.com##.entry-header > .widget
+www.thewindowsclub.com##.entry.tag-credential-manager.tag-batch-files.category-windows.has-post-thumbnail.format-standard.status-publish.type-post.post.post-263323 > .widget
+www.thewindowsclub.com###text-422067553
+www.thewindowsclub.com###text-422067554
+www.thewindowsclub.com##.adtester-container-195.adtester-container.medrectangle-1195.medrectangle-1.ezoic-ad
+www.thewindowsclub.com##.adtester-container-826.adtester-container.box-4826.box-4.ezoic-ad
+www.thewindowsclub.com##.entry-footer > .widget
+
+! 2022-03-06 https://cdnz.one
+cdnz.one###adholder
+
+! 2022-03-13 https://seriesly.org
+seriesly.org##.WebDescription
+
+! 2022-03-13 https://diampokusy.com
+diampokusy.com##div:nth-of-type(4)
+
+! 2022-03-26 http://www.sports-stream.click
+||www.sports-stream.click/ads/ads-stream2.html$subdocument
+www.sports-stream.click###reklama1
+
+! 2022-03-26 https://www.metx.me
+www.metx.me##a:nth-of-type(2)
+
+! 2022-03-26 http://streamgo.to
+streamgo.to##body > a
+
+! 2022-04-09 https://www.smiley-lol.com
+www.smiley-lol.com##.favorites
+||www.smiley-lol.com/us/template/lol-logo.gif$image
+
+! 2022-04-09 https://www.supertelevisionhd.net
+www.supertelevisionhd.net##.adsb30
+
+! 2022-04-09 https://televisionlibre.net
+televisionlibre.net##div.card-description:nth-of-type(5)
+televisionlibre.net##div.card-description:nth-of-type(6)
+televisionlibre.net##.footer
+televisionlibre.net##a.grifo
+
+! 2022-04-09 https://www.smiley-lol.com
+www.smiley-lol.com##div > table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > .relief
+www.smiley-lol.com##center
+www.smiley-lol.com##[href="gay-love.php"]
+www.smiley-lol.com##.lol
+www.smiley-lol.com##table.border:nth-of-type(5)
+www.smiley-lol.com##table.border:nth-of-type(7)
+www.smiley-lol.com##table.border:nth-of-type(6)
+www.smiley-lol.com##tr > .border
+||www.smiley-lol.com/us/favorite/scroll.php$subdocument
+||www.smiley-lol.com/us/favorite/scroll.php$subdocument
+www.smiley-lol.com##table.border:nth-of-type(9)
+www.smiley-lol.com##table.border:nth-of-type(1)
+
+! 2022-04-09 http://emb.apl126.me
+emb.apl126.me###ads > table > tbody > tr > td
+emb.apl126.me###ads
+emb.apl126.me##.ad-0.adv-ad
+emb.apl126.me##.ad-1.adv-ad
+emb.apl126.me###adbtm
+emb.apl126.me##.ad-2.adv-ad
+
+! 2022-04-11 https://www.television-libre.com
+www.television-libre.com##.card-channel
+www.television-libre.com##.post-header
+www.television-libre.com##.post-share
+
+! 2022-04-11 https://telefullenvivo.com
+telefullenvivo.com##i
+telefullenvivo.com##h1
+
+! 2022-04-11 https://lookmovie.club
+lookmovie.club###lkcyb
+lookmovie.club###lk1an
+lookmovie.club###zne7fte
+lookmovie.club##p
+lookmovie.club##.site-footer
+lookmovie.club###lk9e
+lookmovie.club###ra7usjo
+
+! 2022-04-11 https://lookmovie.video
+lookmovie.video###lkan6
+lookmovie.video###s6oljf9
+
+! 2022-04-12 https://lookmovie.video
+lookmovie.video###lk0ld
+lookmovie.video###zwjkwkl
+lookmovie.video###lkaqf
+lookmovie.video###rp4ieno
+lookmovie.video###lkfb
+lookmovie.video###v5s0l0u
+lookmovie.video###cqe5qtu
+lookmovie.video###a0cpe5d
+lookmovie.video###mjv5wnq
+lookmovie.video###b8f40iy
+lookmovie.video###k3fmnwr
+lookmovie.video###si68j20
+lookmovie.video###gxdwu74
+lookmovies.ru###footer
+||lookmovies.ru/images/windows.webp$image
+lookmovie.la##footer
+lookmovie.ws###PlayerZone > div
+
+! 2022-04-13 https://membed.net
+membed.net##iframe
+||hdrboiromo.com/articles/4024/article/9968/*$subdocument,domain=membed.net
+
+! 2022-04-18 https://1.vecdn.pw
+1.vecdn.pw##center
+
+@@||img.powvideo.net^$image,domain=pomvideo.cc
+
+! 2022-05-07 https://cdn2.link
+cdn2.link###adholder
+
+! 2022-05-08 https://www.ngenespanol.com
+www.ngenespanol.com##.cli-row
+
+! 2022-05-08 https://www.adslzone.net
+www.adslzone.net##.full-text > .i-amphtml-unresolved.amp-unresolved.i-amphtml-layout-size-defined.i-amphtml-layout-fixed.amp-notbuilt.i-amphtml-notbuilt.i-amphtml-element.amp-ad
+www.adslzone.net###attachment_1627155 > .i-amphtml-unresolved.amp-unresolved.i-amphtml-layout-size-defined.i-amphtml-layout-fixed.amp-notbuilt.i-amphtml-notbuilt.i-amphtml-element.amp-ad
+www.adslzone.net##.first-contain > .i-amphtml-unresolved.amp-unresolved.i-amphtml-layout-size-defined.i-amphtml-layout-fixed.amp-notbuilt.i-amphtml-notbuilt.i-amphtml-element.amp-ad
+
+! 2022-05-12 https://pomvideo.cc
+pomvideo.cc###header
+pomvideo.cc###footerRights
+pomvideo.cc###div_extra
+
+! 2022-05-15 https://www.youtube.com
+www.youtube.com##.ytd-download-button-renderer.style-scope.yt-simple-endpoint
+www.youtube.com##ytd-button-renderer.size-default.style-default.force-icon-button.ytd-menu-renderer.style-scope:nth-of-type(2)
+www.youtube.com##ytd-toggle-button-renderer.style-text.force-icon-button.ytd-menu-renderer.style-scope:nth-of-type(2)
+
+! 2022-05-21 https://cdn1.link
+cdn1.link###adholder
+
+! 2022-05-21 https://daddylive.eu
+||vrkfdojnwtcrvf.com^$xhr,domain=daddylive.eu
+
+! 2022-05-22 https://www.youtube.com
+www.youtube.com##.opened
+www.youtube.com##.ytd-consent-bump-v2-renderer.style-scope
+
+! 2022-05-22 https://embedstream.me
+embedstream.me##[href="//agacelebir.com/4/4111783"]
+
+! 2022-05-22 https://www.plyvdo.live
+@@||key.seckeyserv.me^$xhr,domain=www.plyvdo.live
+
+
+
+! 2022-05-22 https://www.plyvdo.live
+www.plyvdo.live##.jw-button-container.jw-reset
+
+! 2022-05-22 https://meta.fbstream.tv
+meta.fbstream.tv##.col-lg-3
+meta.fbstream.tv##h1
+meta.fbstream.tv##.mt-1.text-center
+meta.fbstream.tv##.mt-1
+meta.fbstream.tv##.navbar-brand.fw-bold
+
+! 2022-05-25 http://emb.apl138.me
+emb.apl138.me###ads > table > tbody > tr > td
+emb.apl138.me###adbtm
+emb.apl138.me##.ad-0.adv-ad
+emb.apl138.me##.ad-1.adv-ad
+emb.apl138.me###ads
+emb.apl138.me##.ad-2.adv-ad
+
+! 2022-05-27 http://cdn.laola1.live
+cdn.laola1.live##div.bottom.a_u:nth-of-type(4)
+cdn.laola1.live##div.bottom.a_u:nth-of-type(12)
+cdn.laola1.live##div.bottom.a_u:nth-of-type(11)
+cdn.laola1.live##div.bottom.a_u
+laola1.live##.sidebar.Laola1
+laola1.live##.live-streams.Laola1 > .description
+
+! 2022-05-27 https://streamhub.me
+streamhub.me##.col-md-9 > div
+streamhub.me##.sidebar.Streamhub
+
+! 2022-05-28 https://cdn.sport-play.live
+cdn.sport-play.live##.player-container
+
+! 2022-05-28 https://widget.streamthunder.org
+widget.streamthunder.org##.fkwrap > div
+
+! 2022-05-28 https://livefootball24.com
+livefootball24.com###age_verification
+
+! 2022-05-28 https://embedstream.me
+||embedstream.me/cash.min.js$script,1p,important
+
+! 2022-05-28 http://assia22.com
+assia22.com###ifre23
+assia22.com###\35 674s
+
+! 2022-05-28 http://emb.x186218.apl138.me
+emb.x186218.apl138.me##td > table
+emb.x186218.apl138.me##.ad-2.adv-ad
+emb.x186218.apl138.me###adbtm
+emb.x186218.apl138.me##.ad-0.adv-ad
+emb.x186218.apl138.me##.ad-1.adv-ad
+
+! 2022-05-28 https://www.expansion.com
+www.expansion.com##.paywall-block.ue-c-article__premium
+
+! 2022-05-28 https://seriesyonkis.io
+@@||powvideo.net^$subdocument,domain=seriesyonkis.io
+@@||powvideo.net^$domain=seriesyonkis.io
+
+! 2022-05-28 https://pomvideo.cc
+@@||www.google.com/recaptcha/api.js?render=explicit$script,domain=pomvideo.cc
+
+! 2022-05-28 https://seriesyonkis.io
+seriesyonkis.io##main > .Wdgt
+
+*##div.Container > div#ads_hd_bt.bnr
+*##.div.Container > div#ads_hd_bt.bnr
+*##div.Container > div#ads_hd_bt.bnr
+*##div#ads_hd_bt.bnr
+
+*###bnr
+*##.bnr
+*##bnr
+#bnr
+
+*###ads_hd_bt.bnr
+*##.ads_hd_bt
+*##ads_hd_bt
+#ads_hd_bt
+
+! 2022-05-28 https://pomvideo.cc
+@@||www.gstatic.com/recaptcha/*$script,domain=pomvideo.cc
+pomvideo.cc##.headerPage
+@@||pomvideo.cc/js/epu3/pu3.min.js?v=2.9.2v$script,1p
+
+! 2022-05-29 http://laola1.live
+laola1.live##.well.p
+
+! 2022-06-05 https://www.tutele.nl
+www.tutele.nl###overlayer
+*###overlayer
+
+! 2022-06-05 http://blatol.net
+blatol.net##center
+
+! 2022-06-10 https://www.amruta.org
+||www.amruta.org/wp-content/themes/catch-responsive-pro/images/body-bg.jpg$image
+
+! 2022-06-12 https://hdqwalls.com
+hdqwalls.com##.text-center.center-block.related_wallpapers.zero_padding.col-xs-12.col-sm-12.col-md-4.col-lg-4 > .adsbygoogle
+
+! 2022-06-13 https://trikooba.blog
+trikooba.blog##.chp_ads_blocker_detector-showNayn8HTAvexSW1EM5mHgAwwxbOMqvt.fadeInDown.chp_ads_block_modalNayn8HTAvexSW1EM5mHgAwwxbOMqvt
+trikooba.blog##.sgpb-popup-overlay.sgpb-popup-overlay-17323.sgpb-theme-6-overlay
+trikooba.blog##.sgpb-popup-dialog-main-div-wrapper
+
+! 2022-06-14 https://dudaslegislativas.com
+dudaslegislativas.com##.code-block-1.code-block
+
+! 2022-06-14 https://wolfstream.tv
+wolfstream.tv##.bg-dark.navbar-dark.navbar-expand-lg.navbar
+wolfstream.tv##.display-4
+wolfstream.tv##footer
+wolfstream.tv###content
+wolfstream.tv###containerInner > div > [href="#"]
+
+! 2022-06-14 https://tubitv.com
+tubitv.com##.ka_NW
+tubitv.com##.ka_NW
+
+! 2022-06-18 http://emb.apl143.me
+emb.apl143.me##td > table
+
+! 2022-06-24 https://www.pelis24.se
+www.pelis24.se##.plaxinio
+www.pelis24.se###disqus_thread
+www.pelis24.se##.clearfix.foot-line
+
+! 2022-06-25 https://www.pelis24.se
+||pelis-24.disqus.com^$script,domain=www.pelis24.se
+www.pelis24.se##.clearfix.col-sidebar
+www.pelis24.se##.clearfix.full-text.m-desc > .videoWrapperOuter
+
+! 2022-06-27 https://powvibeo.me
+powvibeo.me###header
+powvibeo.me##body > strong
+powvibeo.me##.headerPage
+powvibeo.me###footerRights
+
+! 2022-07-02 http://emb.apl145.me
+*###adbtm
+*###ads > table > tbody > tr > td
+
+! 2022-07-02 https://www.vipboxtv.sk
+www.vipboxtv.sk##body > a
+www.vipboxtv.sk##.col-lg-3
+www.vipboxtv.sk##.mt-1.text-center
+www.vipboxtv.sk##.text-warning
+www.vipboxtv.sk##h2
+www.vipboxtv.sk##a.text-success.mx-1
+www.vipboxtv.sk##.m-1.fw-bold.btn-danger.btn
+www.vipboxtv.sk##h1
+
+! 2022-07-03 https://thehouseofportable.com
+thehouseofportable.com##div.txtal.diva > div
+
+! 2022-07-03 https://streamtape.com
+streamtape.com###main-footer
+
+! 2022-07-03 https://un-block-voe.net
+un-block-voe.net##.pb-3.pt-5.bg-white.footer
+un-block-voe.net##.mb-5.mt-3.container
+
+! 2022-07-03 https://slwatch.co
+slwatch.co##.text-center.justify-content-center.row
+
+! 2022-07-04 https://seriesyonkis.io
+seriesyonkis.io##.Footer
+
+! 2022-07-04 https://seriesly.nu
+seriesly.nu##main > .Wdgt
+seriesly.nu##.Footer
+
+! 2022-07-04 https://powvibeo.me
+
+!--------------------------------
+! 2022-11-22
+!--------------------------------
+
+! 2022-11-22 https://www.lavanguardia.com
+*##.top-ad-board-container
+www.lavanguardia.com##aside.sticky-box.module-box-ads:nth-of-type(1)
+www.lavanguardia.com##aside.sticky-box.module-box-ads:nth-of-type(2)
+www.lavanguardia.com##span.hidden-ad.content-ad-module:nth-of-type(2)
+www.lavanguardia.com##.generated.article-default > .container > .row > .col-md-8.col-12.article-content > .article-modules > span.hidden-ad.content-ad-module > .content-html
+www.lavanguardia.com##aside.sticky-box.module-box-ads:nth-of-type(3)
+www.lavanguardia.com##.mega-container.visible-md.content-ad > .mega.ad-unit
+www.lavanguardia.com##section.home-board3.board-container.container > .content-list.content-first.board-row-container.row > .ads-sticky.col-md-4.col-12
+www.lavanguardia.com##.board2-v6 > div.row > .ads-sticky.col-md-4.col-12
+
+! 2022-11-22 https://www.xatakandroid.com
+www.xatakandroid.com##.base-asset-video
+
+! 2022-11-22 https://www.cnet.com
+www.cnet.com###article-main-body > .ad-amp-mpu.amp-ad
+*##.ad-amp-mpu.amp-ad
+*##.c-adSkyBox
+*##.c-reengageNewsletter
+www.cnet.com##div.stickyColumnElement:nth-of-type(2)
+www.cnet.com##.ad-slot.ad-native-mpu-middle
+*##.ad-mpu-bottom
+*##.ad-incontent-ad-plus-billboard-bottom
+www.cnet.com##.inviewElement
+www.cnet.com##.ad-slot.ad-incontent-all-top
+www.cnet.com##.pull-none.large.video.shortcode
+*##.ad-incontent-ad-plus-billboard-middle
+
+! 2022-11-22 https://gamerant.com
+gamerant.com##.ad-current
+
+! 2022-11-22 https://amp.cnn.com
+cnet.com##.c-adSkyBox_expanded.c-adSkyBox
+*###userConsentDialog
+*##div.ad-wrapper
+
+
+! 2022-11-22 https://www.noticiastrabajo.es
+noticiastrabajo.es##.i-amphtml-element > i-amphtml-sizer
+noticiastrabajo.es##.i-amphtml-layout-fixed.i-amphtml-element
+noticiastrabajo.es##.i-amphtml-consent-ui-placeholder
+noticiastrabajo.es##.i-amphtml-notbuilt.i-amphtml-element > i-amphtml-sizer
+*##.adsbygoogle
+
+! 2022-11-22 https://www.diariodesevilla.es
+*##.ad-wrap
+*##.ad-h
+*##.ad-v
+
+! 2022-11-22 https://www.elnacional.cat
+##div.banner
+www.elnacional.cat##.i-amphtml-notbuilt.i-amphtml-element
+www.elnacional.cat##.i-amphtml-element > i-amphtml-sizer
+www.elnacional.cat##.i-amphtml-consent-ui-placeholder
+www.elnacional.cat##.c-mainarticle__banners-left
+www.elnacional.cat##.c-mainarticle__content-left
+
+! 2022-11-22 https://www.diariodesevilla.es
+*##.adv-intext
+
+! 2022-11-22 https://www.latercera.com
+www.latercera.com##.i-amphtml-layout.i-amphtml-built.i-amphtml-sticky-ad-layout.i-amphtml-layout-nodisplay.i-amphtml-element
+www.latercera.com##main > div.text-center > .i-amphtml-layout.i-amphtml-built.i-amphtml-layout-size-defined.i-amphtml-layout-responsive.i-amphtml-element
+||securepubads.g.doubleclick.net/gampad/ads$subdocument
+www.latercera.com##.article-body div.text-center > .i-amphtml-layout.i-amphtml-built.i-amphtml-layout-size-defined.i-amphtml-layout-responsive.i-amphtml-element > i-amphtml-sizer
+
+! 2022-11-22 https://www.lifesitenews.com
+||www.lifesitenews.com/wp-content/plugins/lsn-ads/assets/css/ad-placeholder.png$image
+www.lifesitenews.com##.ad-inserted.ad-pos-top.ad-content.ad-block
+||www.lifesitenews.com/wp-content/plugins/lsn-ads/assets/css/ad-placeholder.png$image
+www.lifesitenews.com##.ad-inserted.ad-pos-bot.ad-content.ad-block
+www.lifesitenews.com###revive-0-2 > [href^="https://ads.lifesitenews.com/www/delivery/cl.php"]
+||ads.lifesitenews.com/www/images/*.png$image
+
+! 2022-11-22 https://seekingalpha.com
+seekingalpha.com##.cmH.cmA.sB.cnBZ.wB.cnB8.cnF.wA
+seekingalpha.com##.ubC.ubB
+
+! 2022-11-22 https://collider.com
+collider.com##.ad-current
+
+! 2022-11-22 https://www.movilzona.es
+www.movilzona.es##.__lxG__safari_mode.cl-consent-bottom.cl-consent
+www.movilzona.es##.visibility-auto.ad-block
+www.movilzona.es##.leaderboard
+www.movilzona.es##.np-card
+
+! 2022-11-22 https://www.anandtech.com
+*##.header_ad
+*###side_ad
+
+! 2022-11-22 https://www.sciencealert.com
+*##.ad-desktop\:block.hidden
+*##.grid.Purch_Y_C_0_1-container.sm\:mb-9.mb-5
+*##.ad-slot
+www.sciencealert.com###Purch_D_R_0_1
+
+! 2022-11-22 https://www.adslzone.net
+*##.np-card__container
+*##.np-card__close-btn
+
+! 2022-11-22 https://www.space.com
+www.space.com##.exitIntent.exit-intent-slice.slice-container
+www.space.com##.dfp-leaderboard-container
+*##.ad-unit.in-article
+*##.adunit
+www.space.com##.van_taboola
+www.space.com###expanding-articles
+www.space.com##.related-articles-wrap
+*##.ad-unit
+*##.sponsored-post
+
+! 2022-11-22 https://www.lainformacion.com
+*##.axds
+*##.axds-lane
+*##.taboola_container
+
+! 2022-11-22 https://www.compradiccion.com
+www.compradiccion.com##.i-amphtml-consent-ui-loading
+||www.compradiccion.com/ads.txt$subdocument
+www.compradiccion.com###meazqiEbRo
+
+! 2022-11-22 https://securityaffairs.co
+securityaffairs.co###cookie-law-info-bar
+securityaffairs.co###\32 4270x300x250x4142x_ADSLOT1
+securityaffairs.co##div.externalcode.mnet_plugin
+
+! 2022-11-22 https://www.tomshardware.com
+*##.dfp-leaderboard-container
+*###expanding-articles
+*##.related-articles-wrap
+*###taboola-below-article-thumbnails
+
+! 2022-11-22 https://www.gasteizhoy.com
+www.gasteizhoy.com##.banner-top-new
+www.gasteizhoy.com##.solo-pc.logotipo > [href="https://www.gasteizhoy.com/"]
+www.gasteizhoy.com##.bajosubpubli
+www.gasteizhoy.com##.bajosubdiv
+
+! 2022-11-22 https://alfabetajuega.com
+alfabetajuega.com##._3WZOFoC0k3RozEf-dqYPxo._1xVzGRmfcDbQc8Gao35ovj._2Vxri_N-VdGv2LbwRMG4fi
+alfabetajuega.com##.visible
+alfabetajuega.com##div.ad-div
+
+! 2022-11-22 https://www.cnet.com
+www.cnet.com##.hide.col-6.c-notifPrompt
+www.cnet.com##.c-head_disclosure
+
+! 2022-11-22 https://www.xda-developers.com
+www.xda-developers.com##.ad-zone-primis-edit
+www.xda-developers.com###dynamically-injected-refresh-ad-zone-adsninja-ad-unit-stickyHeader-635056c954b4b > .ad-current
+www.xda-developers.com##.adsninja-ad-zone-container-with-set-height
+www.xda-developers.com##.adsninja-rail-zone
+
+! 2022-11-22 https://petapixel.com
+petapixel.com##.banners-below-header.banners
+petapixel.com##.video-aspect-wrapper
+petapixel.com##div.instream_ad
+
+! 2022-11-22 https://www.androidcentral.com
+www.androidcentral.com###affiliate-disclaimer
+www.androidcentral.com##.outer-container
+www.androidcentral.com##.jw-carousel
+www.androidcentral.com##.future__jwplayer--carousel
+www.androidcentral.com##.van_vid_carousel__padding
+www.androidcentral.com###taboola-mobile-below-article-thumbnails
+
+! 2022-11-22 https://www.xataka.com
+www.xataka.com##.base-asset-video
+www.xataka.com##div.related-alts-container:nth-of-type(3)
+
+! 2022-11-22 https://www.eltiempo.com
+www.eltiempo.com##.i-amphtml-layout.i-amphtml-built.i-amphtml-sticky-ad-layout.i-amphtml-layout-nodisplay.i-amphtml-element
+www.eltiempo.com##[href="https://www.eltiempo.com"]
+www.eltiempo.com##.i-amphtml-intrinsic-sizer
+www.eltiempo.com##.i-amphtml-element:nth-of-type(2)
+www.eltiempo.com##amp-iframe.i-amphtml-layout.i-amphtml-built.i-amphtml-layout-size-defined.i-amphtml-layout-responsive.i-amphtml-element:nth-of-type(4)
+www.eltiempo.com##amp-iframe.i-amphtml-layout.i-amphtml-built.i-amphtml-layout-size-defined.i-amphtml-layout-responsive.i-amphtml-element:nth-of-type(5)
+www.eltiempo.com##.default.article.articulo > .i-amphtml-layout.i-amphtml-built.i-amphtml-layout-size-defined.i-amphtml-layout-responsive.i-amphtml-element
+
+! 2022-11-22 https://screenrant.com
+screenrant.com##.ad-zone-header-sticky-header.ad-zone
+screenrant.com##.adsninja-ad-zone-container-with-set-height.ad-zone-container-header-sticky-header.ad-zone-container
+screenrant.com##.ad-zone-content-character-count-repeatable-2.ad-zone
+screenrant.com##.adsninja-ad-zone-container-with-set-height.ad-zone-container-content-character-count-repeatable-2.ad-zone-container
+screenrant.com##.ad-zone-content-character-count-repeatable-3.ad-zone
+screenrant.com##.adsninja-ad-zone-container-with-set-height.ad-zone-container-content-character-count-repeatable-3.ad-zone-container
+screenrant.com##.ad-zone
+screenrant.com###dynamically-injected-refresh-ad-zone-div-gpt-ad-1535570269372-ccr5 > .ad-current
+screenrant.com##.ad-zone-container
+
+! 2022-11-22 https://www.xatakandroid.com
+www.xatakandroid.com##div.related-alts-container:nth-of-type(3)
+
+! 2022-11-22 https://www.wired.com
+||journey.wired.com/amp/iframe.html$subdocument
+||journey.wired.com/amp/iframe.html?canonicalUrl=https%3A%2F%2Fwww.wired.com%2Fstory%2Ftoyota-prius-gets-a-redesign&rid=&cid=&count=&max=&authenticated=true&payment=sub&contentIsPaywalled=&contentCanBeSampled=&grantReason=SUBSCRIBER&slot=consumer-marketing-unit--amp-paywall-bar$subdocument
+www.wired.com##figure.ad-ratio-size-300x250.ad-ratio.ad
+www.wired.com##.i-amphtml-element.outbrain
+www.wired.com##.ad-ratio-size-3x1.ad-ratio.ad
+||contextual.media.net/checksync.php$subdocument
+www.wired.com##.ad-stickyhero
+
+! 2022-11-22 https://www.euronews.com
+www.euronews.com##.i-amphtml-element
+www.euronews.com##.vuukle-ads
+*##.vuukle-ads
+
+! 2022-11-22 https://www.laptopmag.com
+www.laptopmag.com###taboola-mobile-below-article-thumbnails
+www.laptopmag.com##.van_vid_carousel__padding
+
+! 2022-11-22 https://www.xda-developers.com
+www.xda-developers.com##.w-pencil-banner
