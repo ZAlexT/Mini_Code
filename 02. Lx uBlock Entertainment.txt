@@ -18,6 +18,16 @@
 !--------------------------------------
 
 
+! 7 Sept 2026 https://x.com
+x.com##.one-col\:-w-\[600px\]
+x.com##.\[--exit-duration\:0\.22s\].\[--enter-delay\:0\.48s\].py-8.px-6.border.rounded.gap-4.justify-center.items-center.flex-col.max-w-\[400px\].w-\[calc\(100vw-32px\)\].flex.z-10.relative.motion-reduce\:group-data-\[state\=closed\]\:animate-exit-fade.motion-reduce\:group-data-\[state\=open\]\:animate-enter-fade.motion-safe\:group-data-\[state\=closed\]\:animate-exit-pop.motion-safe\:group-data-\[state\=open\]\:animate-enter-pop.shadow-popup.border-fg-alpha-05.bg-modal
+x.com##.bg-overlay-normal
+x.com##.data-\[state\=closed\]\:pointer-events-none.justify-center.items-center.touch-none.flex.z-50.inset-0.fixed.group
+x.com##.shadow-md.pb-\[calc\(max\(env\(safe-area-inset-bottom\,0px\)\,34px\)\+20px\)\].pt-5.px-5.gap-4.items-stretch.flex-col.flex.z-30.bottom-0.inset-x-0.fixed.bg-gray-1100.two-col\:pb-\[calc\(env\(safe-area-inset-bottom\,0px\)\+20px\)\].two-col\:justify-evenly.two-col\:items-center.two-col\:flex-row
+x.com##.r-ipm5af.r-zchlnj.r-bnwqim.r-1d2f490.r-1adg3ll.r-1p0dtai.css-g5y9jx
+
+
+
 ! ATOM Elementos | 27 Nov 2025 https://atomgencat.onbmc.com | ATOM Elementos
 		||atomgencat.onbmc.com/arsys/imagepool/SHR%3ASHR%3AConsole-Banner-Slice%21onbmc-s$image
 		||atomgencat.onbmc.com/arsys/imagepool/SHR%3ASHR%3AConsole-Banner-Slice%21onbmc-s?cid=1$image
